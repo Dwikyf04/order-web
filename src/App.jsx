@@ -17,6 +17,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Pemesanan from "./pages/Pemesanan";
+import './index.css'; // Pastikan file CSS Anda diimpor
 
 function App() {
   return (
@@ -35,8 +36,6 @@ export default App;
 
 // src/App.jsx
 
-import React from 'react';
-import './index.css'; // Pastikan file CSS Anda diimpor
 
 // Nama fungsi sekarang adalah App, dan ini adalah SATU-SATUNYA export default
 export default function App() {
