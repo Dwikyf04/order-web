@@ -33,23 +33,23 @@ function App() {
 export default App;
 
 
-export default function OrderPage() {
+// src/App.jsx
+
+import React from 'react';
+import './index.css'; // Pastikan file CSS Anda diimpor
+
+// Nama fungsi sekarang adalah App, dan ini adalah SATU-SATUNYA export default
+export default function App() {
   return (
-    // Kita set background seluruh halaman menjadi abu-abu gelap
-    // seperti pada web target.
+    // Kita set background seluruh halaman menjadi abu-abu muda
     <div className="min-h-screen bg-slate-100"> 
       
       {/* ===== NAVBAR ===== */}
-      {/* 'bg-white' untuk background putih */}
-      {/* 'shadow-md' untuk bayangan di bawah navbar */}
-      {/* 'flex justify-between items-center' untuk layout flexbox */}
-      {/* 'py-4 px-8' untuk padding (vertikal 4, horizontal 8) */}
       <nav className="bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center py-4 px-8">
           
           {/* Bagian Kiri: Logo */}
           <div className="text-2xl font-bold text-blue-700">
-            {/* Logo dari target */}
             CV. Sejahtera
           </div>
 
@@ -65,14 +65,12 @@ export default function OrderPage() {
           {/* Bagian Kanan: Ikon Keranjang & User */}
           <div className="flex items-center space-x-4">
             <button className="relative text-gray-600 hover:text-blue-700">
-              {/* Ikon keranjang (placeholder) */}
               <span>🛒</span> 
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                 1
               </span>
             </button>
             <button className="text-gray-600 hover:text-blue-700">
-              {/* Ikon user (placeholder) */}
               <span>👤</span>
             </button>
           </div>
@@ -80,15 +78,10 @@ export default function OrderPage() {
       </nav>
 
       {/* ===== KONTEN UTAMA ===== */}
-      {/* Ini adalah layout 2 kolom utama */}
-      {/* 'grid grid-cols-1 lg:grid-cols-3' -> 1 kolom di HP, 3 kolom di laptop */}
-      {/* 'gap-8' -> jarak antar kolom */}
-      {/* 'p-8' -> padding di sekeliling area konten */}
       <main className="container mx-auto p-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
           {/* --- KOLOM KIRI (Form) --- */}
-          {/* 'lg:col-span-2' -> di laptop, kolom ini mengambil 2 dari 3 bagian */}
           <div className="lg:col-span-2 space-y-6">
             
             {/* --- Card Masukkan Data Sekolah --- */}
@@ -189,7 +182,6 @@ export default function OrderPage() {
           </div>
 
           {/* --- KOLOM KANAN (Sidebar) --- */}
-          {/* 'lg:col-span-1' -> di laptop, kolom ini mengambil 1 dari 3 bagian */}
           <div className="lg:col-span-1 space-y-6">
             
             {/* Card Ulasan dan rating */}
@@ -206,7 +198,6 @@ export default function OrderPage() {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <h3 className="text-lg font-semibold text-gray-700 mb-2">Butuh Bantuan?</h3>
               <p className="text-sm text-gray-500">Kamu bisa hubungi admin disini.</p>
-              {/* Tambahkan tombol/link bantuan di sini jika perlu */}
             </div>
 
             {/* Card Ringkasan Pesanan */}
