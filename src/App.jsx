@@ -13,6 +13,25 @@
 // 3) For production deployment (free): push to GitHub and deploy with Vercel or Netlify. Or use GitHub Pages (for CRA).
 
 import React, { useState, useMemo, useRef } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Pemesanan from "./pages/Pemesanan";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pemesanan" element={<Pemesanan />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
 
 export default function OrderPage() {
   // sample product catalog — replace with API calls or CMS as needed
