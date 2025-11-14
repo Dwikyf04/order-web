@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // 1. Ubah import ini dari App ke OrderPage
 import OrderPage from "./OrderPage"; 
+
 import "./index.css"; 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -10,3 +11,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <OrderPage />
   </React.StrictMode>
 );
+
