@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+// 1. Ubah import ini dari App ke OrderPage
+import OrderPage from "./OrderPage"; 
+import "./index.css"; 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    {/* 2. Ubah render ini dari App ke OrderPage */}
+    <OrderPage />
   </React.StrictMode>
 );
