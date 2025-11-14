@@ -1,41 +1,7 @@
-// README
-// Single-file React component (default export) that implements a complete one-page ordering website
-// - Uses Tailwind CSS for styling (no imports required if your project already includes Tailwind)
-// - Features:
-//   1) School information form
-//   2) Product catalog with quantity selectors
-//   3) Cart + order review
-//   4) Generate printable invoice / nota
-//   5) Basic validation and responsive layout
-// How to use:
-// 1) Create a new React app (Vite or Create React App). Install Tailwind and enable JIT per Tailwind docs.
-// 2) Drop this file as `OrderPage.jsx` and import + render it in your app (e.g. in App.jsx).
-// 3) For production deployment (free): push to GitHub and deploy with Vercel or Netlify. Or use GitHub Pages (for CRA).
-
-import React, { useState, useMemo, useRef } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Pemesanan from "./pages/Pemesanan";
-import './index.css'; // Pastikan file CSS Anda diimpor
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/pemesanan" element={<Pemesanan />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;
-
-
 // src/App.jsx
 
+import React from 'react';
+import './index.css'; // Pastikan file CSS Anda diimpor
 
 // Nama fungsi sekarang adalah App, dan ini adalah SATU-SATUNYA export default
 export default function App() {
@@ -161,7 +127,7 @@ export default function App() {
 
                 {/* Tombol Lanjut */}
                 <div className="md:col-span-2 text-right">
-                  <button className="w-full md:w-auto bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+                  <button type="submit" className="w-full md:w-auto bg-blue-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
                     Lanjut ke Pemilihan Produk
                   </button>
                 </div>
