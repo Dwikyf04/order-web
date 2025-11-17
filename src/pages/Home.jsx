@@ -8,7 +8,7 @@ import {
   ClockIcon,
   CurrencyDollarIcon,
   DocumentCheckIcon,
-  SupportIcon,
+  LifebuoyIcon,
 } from "@heroicons/react/24/solid";
 
 const PRODUCTS_SAMPLE = [
@@ -77,7 +77,7 @@ export default function Home() {
                 Nota & Dokumen Resmi
               </span>
               <span className="inline-flex items-center gap-2">
-                <SupportIcon className="h-5 w-5 text-blue-600" />
+                <LifebuoyIcon className="h-5 w-5 text-blue-600" />
                 Konsultasi Kebutuhan Gratis
               </span>
             </div>
