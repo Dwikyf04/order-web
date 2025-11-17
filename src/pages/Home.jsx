@@ -17,7 +17,7 @@ const PRODUCTS_SAMPLE = [
     nama: "Laptop Asus ROG Strix G15",
     spesifikasi: "Intel i5, RAM 8GB, SSD 512GB",
     price: 12000000,
-    img: "/assets/products/laptop-asus.jpg",
+    src: "/assets/products/laptop-asus.jpg",
   },
   {
     id: 2,
@@ -85,7 +85,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="/img/hero-school.png"
+              src="public/img/hero-school.jpg"
               alt="Ilustrasi pengadaan"
               className="w-full max-w-md rounded-xl shadow-xl"
             />
