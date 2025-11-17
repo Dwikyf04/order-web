@@ -1,5 +1,10 @@
 // src/pages/Home.jsx
 import React from "react";
+import {
+  ShieldCheckIcon,
+  ClockIcon,
+  CurrencyDollarIcon,
+} from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom"; // Gunakan Link untuk navigasi
 
 export default function Home() {
@@ -28,15 +33,23 @@ export default function Home() {
 
       {/* Bagian Fitur (3 Kolom) */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div className="bg-white p-6 rounded-lg shadow-md border">
+        {/* Card 1 */}
+        <div className="bg-white p-6 rounded-lg shadow-md border flex flex-col items-center">
+          <ShieldCheckIcon className="h-12 w-12 text-blue-600 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Terpercaya</h3>
           <p className="text-gray-600">Produk original dengan garansi resmi.</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md border">
+
+        {/* Card 2 */}
+        <div className="bg-white p-6 rounded-lg shadow-md border flex flex-col items-center">
+          <ClockIcon className="h-12 w-12 text-blue-600 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Pengiriman Tepat Waktu</h3>
           <p className="text-gray-600">Proses cepat dan jadwal pasti.</p>
         </div>
-        <div className="bg-white p-6 rounded-lg shadow-md border">
+
+        {/* Card 3 */}
+        <div className="bg-white p-6 rounded-lg shadow-md border flex flex-col items-center">
+          <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-3" />
           <h3 className="text-xl font-semibold mb-2">Harga Kompetitif</h3>
           <p className="text-gray-600">Penawaran terbaik untuk sekolah.</p>
         </div>

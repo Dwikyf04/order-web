@@ -1,7 +1,6 @@
-// src/components/ProductCatalog.jsx
 import React from "react";
 
-// 1. Terima 'products' (yang sudah difilter) sebagai prop
+// 1. Menerima 'products' (yang sudah difilter) dan 'onProductAdd' sebagai props
 export default function ProductCatalog({ products, onProductAdd }) {
   return (
     <div>
@@ -16,7 +15,12 @@ export default function ProductCatalog({ products, onProductAdd }) {
         {/* 3. Map akan menggunakan prop 'products' */}
         {products.map((p) => (
           <div key={p.id} className="border p-4 rounded-lg shadow-sm">
-            {/* <img src={p.img} ... /> */}
+            {/* 4. Ini adalah baris <img> yang sudah DIPERBAIKI (tidak di dalam komentar) */}
+            <img
+              src={p.img}
+              alt={p.nama}
+              className="mb-3 rounded-lg w-full h-40 object-cover"
+            />
 
             <b>{p.nama}</b>
             <p className="text-sm text-gray-600">{p.spesifikasi}</p>
