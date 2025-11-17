@@ -7,18 +7,15 @@ import OrderSummary from "./OrderSummary";
 import generatePDF from "../utils/generatePDF";
 import { products } from "../data/products.js";
 
-// PENTING! Ubah nama fungsi dari 'App' menjadi 'OrderPage'
 export default function OrderPage() {
   // === STATE MANAGEMENT ===
   const [schoolData, setSchoolData] = useState(null);
   const [cart, setCart] = useState([]);
   const [step, setStep] = useState(1);
-
-  // === STATE BARU UNTUK FILTER ===
-  const [category, setCategory] = useState("Semua"); // 2. State untuk melacak kategori
+  const [category, setCategory] = useState("Semua");
 
   // === FUNGSI LOGIKA ===
-  // ... (Semua fungsi Anda: handleSchoolSubmit, handleProductAdd, dll. tidak berubah) ...
+
   function handleSchoolSubmit(data) {
     setSchoolData(data);
     setStep(2);
@@ -49,6 +46,7 @@ export default function OrderPage() {
     return cart.reduce((total, item) => total + item.price, 0);
   }, [cart]);
 
+  // === FUNGSI CHECKOUT (INI YANG KITA UBAH) ===
   function handleCheckout() {
     if (!schoolData) {
       alert("Data sekolah belum diisi.");
@@ -59,8 +57,18 @@ export default function OrderPage() {
       alert("Keranjang Anda masih kosong.");
       return;
     }
+
     try {
+      // 1. Buat PDF
       generatePDF(schoolData, cart, totalPrice);
+
+      // 2. Beri pesan sukses (BARU)
+      alert("Pemesanan berhasil! Nota PDF Anda telah di-download.");
+
+      // 3. Reset state (Ini adalah "relog" yang Anda minta)
+      setSchoolData(null);
+      setCart([]);
+      setStep(1); // Kembali ke Langkah 1
     } catch (error) {
       console.error("Gagal membuat PDF:", error);
       alert("Terjadi kesalahan saat membuat PDF. Silakan coba lagi.");
@@ -70,9 +78,9 @@ export default function OrderPage() {
   // === RENDER ===
   return (
     <>
-      {/* Hapus <Navbar /> dari sini */}
-
-      {/* Tambahkan wrapper container 'max-w-7xl' di sini */}
+      {/* Container 'max-w-7xl' ini adalah bagian dari layout halaman pemesanan.
+        Navbar tidak ada di sini karena Navbar ada di App.jsx (Router)
+      */}
       <div className="max-w-7xl mx-auto p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* === KOLOM KIRI === */}
         <div className="lg:col-span-2 space-y-6">
@@ -88,7 +96,11 @@ export default function OrderPage() {
               </span>
               Data Sekolah
             </h2>
+
+            {/* Tampilkan Form HANYA jika data sekolah KOSONG (step 1) */}
             {step === 1 && <SchoolForm onSubmit={handleSchoolSubmit} />}
+
+            {/* Tampilkan Ringkasan Data jika data sekolah SUDAH ADA (step > 1) */}
             {step > 1 && (
               <div className="p-4 bg-gray-50 rounded-lg">
                 <p>
@@ -125,7 +137,7 @@ export default function OrderPage() {
                 Katalog Produk
               </h2>
 
-              {/* === TOMBOL FILTER BARU === */}
+              {/* === TOMBOL FILTER === */}
               <div className="flex space-x-2">
                 <button
                   onClick={() => setCategory("Semua")}

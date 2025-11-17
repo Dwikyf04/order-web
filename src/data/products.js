@@ -1,5 +1,3 @@
-// src/data/products.js
-
 import paketA from "../assets/products/laptop-asus.jpg";
 import paketB from "../assets/products/printer.jpg";
 import paketC from "../assets/products/proyektor.jpg";
