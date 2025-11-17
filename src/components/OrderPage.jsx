@@ -4,8 +4,6 @@ import React, { useState, useMemo } from "react";
 import SchoolForm from "./SchoolForm";
 import ProductCatalog from "./ProductCatalog";
 import OrderSummary from "./OrderSummary";
-// Hapus import Navbar, karena Navbar sekarang ada di App.jsx
-// import Navbar from "./Navbar";
 import generatePDF from "../utils/generatePDF";
 import { products } from "../data/products.js";
 

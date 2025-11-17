@@ -1,13 +1,9 @@
 // src/data/products.js
 
-// 1. Kita tambahkan 'category' baru di setiap produk
-// 2. Kita tambahkan 'price' (harga)
-// (Anda harus menyesuaikan harga dan gambar sesuai kebutuhan)
-
 import paketA from "../assets/products/laptop-asus.jpg";
 import paketB from "../assets/products/printer.jpg";
 import paketC from "../assets/products/proyektor.jpg";
-import paketD from "../assets/products/Office chair.jpg";
+import paketD from "../assets/products/office-chair.jpg";
 import paketE from "../assets/products/sepatu-kulit.jpg";
 import paketF from "../assets/products/meja-belajar.jpg";
 

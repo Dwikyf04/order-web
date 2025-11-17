@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bagian Fitur (3 Kolom) */}
+      {/* Bagian Fitur (4 Kolom) */}
       <div className="text-center py-16 px-4 bg-gray-50 rounded-lg">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
           Produk Unggulan Kami
@@ -57,6 +57,18 @@ export default function Home() {
         >
           Lihat Katalog Produk &rarr;
         </Link>
+      </div>
+      {/* Bagian fitur about */}
+      <div className="max-w-4xl mx-auto text-center py-16 px-4">
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
+        <p className="text-lg text-gray-600 mb-6">
+          Kami adalah perusahaan yang bergerak di bidang pengadaan barang dengan
+          fokus melayani kebutuhan institusi pendidikan. Dengan pengalaman
+          bertahun-tahun, kami memahami kebutuhan sekolah akan produk
+          berkualitas dengan harga yang kompetitif. Sistem pemesanan online kami
+          memudahkan sekolah untuk melakukan pengadaan dengan proses yang
+          transparan dan dokumentasi yang lengkap.
+        </p>
       </div>
     </div>
   );
