@@ -7,7 +7,7 @@
 import paketA from "../assets/products/laptop-asus.jpg";
 import paketB from "../assets/products/printer.jpg";
 import paketC from "../assets/products/proyektor.jpg";
-import paketD from "../assets/products/kursi.jpg";
+import paketD from "../assets/products/Office chair.jpg";
 import paketE from "../assets/products/sepatu.jpg";
 import paketF from "../assets/products/meja-belajar.jpg";
 
