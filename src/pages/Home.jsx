@@ -17,21 +17,21 @@ const PRODUCTS_SAMPLE = [
     nama: "Laptop Asus ROG Strix G15",
     spesifikasi: "Intel i5, RAM 8GB, SSD 512GB",
     price: 12000000,
-    img: "/img/products/laptop-asus.jpg",
+    img: "/assets/products/laptop-asus.jpg",
   },
   {
     id: 2,
     nama: "Printer Epson L3110",
     spesifikasi: "Print/Scan/Copy, Inkjet",
     price: 2500000,
-    img: "/img/products/printer.jpg",
+    img: "/assets/products/printer.jpg",
   },
   {
     id: 3,
     nama: "Proyektor Epson EB-X05",
     spesifikasi: "3300 Lumens, XGA",
     price: 6200000,
-    img: "/img/products/proyektor.jpg",
+    img: "/assets/products/proyektor.jpg",
   },
 ];
 
