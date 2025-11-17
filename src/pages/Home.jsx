@@ -179,7 +179,7 @@ export default function Home() {
               <div className="text-3xl font-bold text-blue-700 mb-2">3</div>
               <h4 className="font-semibold mb-2">Terima Nota</h4>
               <p className="text-gray-600">
-                Generate nota PDF otomatis dan tim kami akan menghubungi.
+                Pesanan Anda akan diproses dan nota PDF akan dikirimkan.
               </p>
             </div>
           </div>
