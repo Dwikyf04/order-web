@@ -151,7 +151,7 @@ export default function Home() {
             Alur Pemesanan
           </h3>
 
-          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl shadow text-center">
               <div className="text-3xl font-bold text-blue-700 mb-2">1</div>
               <h4 className="font-semibold mb-2">Isi Data</h4>

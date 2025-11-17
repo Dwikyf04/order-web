@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ProductCard({ product, onSelect }) {
   return (
-    <div className="bg-white rounded-xl shadow p-4 flex flex-col">
+    <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
       <div className="w-full h-44 overflow-hidden rounded-lg mb-3 bg-gray-100">
         <img
           src={product.img}
