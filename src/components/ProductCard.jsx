@@ -21,13 +21,12 @@ export default function ProductCard({ product, onSelect }) {
         <div className="text-blue-700 font-semibold">
           Rp {product.price.toLocaleString()}
         </div>
-
-        <button
+        {/* <button
           onClick={() => onSelect && onSelect(product)}
           className="bg-blue-700 hover:bg-blue-800 text-white px-3 py-2 rounded-md"
         >
           Pilih
-        </button>
+        </button> */}
       </div>
     </div>
   );

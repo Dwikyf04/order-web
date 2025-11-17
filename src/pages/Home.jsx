@@ -17,21 +17,21 @@ const PRODUCTS_SAMPLE = [
     nama: "Laptop Asus ROG Strix G15",
     spesifikasi: "Intel i5, RAM 8GB, SSD 512GB",
     price: 12000000,
-    src: "/assets/products/laptop-asus.jpg",
+    img: new URL("../assets/products/laptop-asus.jpg", import.meta.url).href,
   },
   {
     id: 2,
     nama: "Printer Epson L3110",
     spesifikasi: "Print/Scan/Copy, Inkjet",
     price: 2500000,
-    img: "/assets/products/printer.jpg",
+    img: new URL("../assets/products/printer.jpg", import.meta.url).href,
   },
   {
     id: 3,
     nama: "Proyektor Epson EB-X05",
     spesifikasi: "3300 Lumens, XGA",
     price: 6200000,
-    img: "/assets/products/proyektor.jpg",
+    img: new URL("../assets/products/proyektor.jpg", import.meta.url).href,
   },
 ];
 
@@ -58,13 +58,6 @@ export default function Home() {
               >
                 Mulai Pemesanan
               </Link>
-
-              <a
-                href="/img/penawaran-sample.pdf"
-                className="inline-flex items-center justify-center border border-blue-700 text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-50"
-              >
-                Unduh Contoh Penawaran
-              </a>
             </div>
 
             <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-600">
@@ -85,7 +78,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="public/img/hero-school.jpg"
+              src="/img/bg.jpg"
               alt="Ilustrasi pengadaan"
               className="w-full max-w-md rounded-xl shadow-xl"
             />
@@ -158,7 +151,7 @@ export default function Home() {
             Alur Pemesanan
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl shadow text-center">
               <div className="text-3xl font-bold text-blue-700 mb-2">1</div>
               <h4 className="font-semibold mb-2">Isi Data</h4>
