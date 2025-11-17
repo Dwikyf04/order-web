@@ -41,6 +41,23 @@ export default function Home() {
           <p className="text-gray-600">Penawaran terbaik untuk sekolah.</p>
         </div>
       </div>
+
+      {/* Bagian Fitur (3 Kolom) */}
+      <div className="text-center py-16 px-4 bg-gray-50 rounded-lg">
+        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          Produk Unggulan Kami
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          Jelajahi berbagai produk berkualitas yang kami tawarkan untuk memenuhi
+          kebutuhan sekolah Anda.
+        </p>
+        <Link
+          to="/pemesanan"
+          className="bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg text-lg hover:bg-blue-800 transition-colors"
+        >
+          Lihat Katalog Produk &rarr;
+        </Link>
+      </div>
     </div>
   );
 }
