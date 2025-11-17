@@ -1,12 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home"; // Halaman Home yang kita buat
 import OrderPage from "./components/OrderPage"; // Halaman Pemesanan (file di bawah)
 
 export default function App() {
   return (
-    <>
+    <div className="min-h-screen bg-gray-50">
+      <Toaster position="top-center" />
       {/* Navbar sekarang tampil di SEMUA halaman */}
       <Navbar />
 
@@ -20,6 +22,6 @@ export default function App() {
         {/* Rute untuk Halaman Pemesanan (URL: /pemesanan) */}
         <Route path="/pemesanan" element={<OrderPage />} />
       </Routes>
-    </>
+    </div>
   );
 }

@@ -18,17 +18,12 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>
               <a href="/" className="hover:text-white">
-                Beranda
+                Home
               </a>
             </li>
             <li>
               <a href="/order" className="hover:text-white">
                 Pemesanan
-              </a>
-            </li>
-            <li>
-              <a href="/catalog" className="hover:text-white">
-                Katalog Produk
               </a>
             </li>
           </ul>

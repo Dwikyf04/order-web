@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import SchoolForm from "./SchoolForm";
+import toast from "react-hot-toast";
 import ProductCatalog from "./ProductCatalog";
 import OrderSummary from "./OrderSummary";
 import generatePDF from "../utils/generatePDF";
@@ -13,6 +14,7 @@ export default function OrderPage() {
   const [cart, setCart] = useState([]);
   const [step, setStep] = useState(1);
   const [category, setCategory] = useState("Semua");
+  const [isLoading, setIsLoading] = useState(false);
 
   // === FUNGSI LOGIKA ===
 
@@ -49,12 +51,12 @@ export default function OrderPage() {
   // === FUNGSI CHECKOUT (INI YANG KITA UBAH) ===
   function handleCheckout() {
     if (!schoolData) {
-      alert("Data sekolah belum diisi.");
+      toast.error("Data sekolah belum diisi.");
       setStep(1);
       return;
     }
     if (cart.length === 0) {
-      alert("Keranjang Anda masih kosong.");
+      toast.error("Keranjang Anda masih kosong.");
       return;
     }
 
@@ -63,7 +65,7 @@ export default function OrderPage() {
       generatePDF(schoolData, cart, totalPrice);
 
       // 2. Beri pesan sukses (BARU)
-      alert("Pemesanan berhasil! Nota PDF Anda telah di-download.");
+      toast.success("Pemesanan berhasil! Nota PDF Anda telah di-download.");
 
       // 3. Reset state (Ini adalah "relog" yang Anda minta)
       setSchoolData(null);
@@ -71,7 +73,7 @@ export default function OrderPage() {
       setStep(1); // Kembali ke Langkah 1
     } catch (error) {
       console.error("Gagal membuat PDF:", error);
-      alert("Terjadi kesalahan saat membuat PDF. Silakan coba lagi.");
+      toast.error("Terjadi kesalahan saat membuat PDF. Silakan coba lagi.");
     }
   }
 

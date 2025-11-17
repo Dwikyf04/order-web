@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIAL (placeholder) */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
+      {/* <section className="max-w-7xl mx-auto px-6 py-12">
         <h3 className="text-2xl font-bold text-center mb-8">
           Mereka yang sudah percaya
         </h3>
@@ -208,7 +208,7 @@ export default function Home() {
             <div className="mt-4 font-semibold">SD Islam Al-Falah</div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FOOTER */}
       <Footer />
