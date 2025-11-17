@@ -1,105 +1,223 @@
 // src/pages/Home.jsx
 import React from "react";
+import { Link } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 import {
   ShieldCheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
+  DocumentCheckIcon,
+  SupportIcon,
 } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
+
+const PRODUCTS_SAMPLE = [
+  {
+    id: 1,
+    nama: "Laptop Asus ROG Strix G15",
+    spesifikasi: "Intel i5, RAM 8GB, SSD 512GB",
+    price: 12000000,
+    img: "/img/products/laptop-asus.jpg",
+  },
+  {
+    id: 2,
+    nama: "Printer Epson L3110",
+    spesifikasi: "Print/Scan/Copy, Inkjet",
+    price: 2500000,
+    img: "/img/products/printer.jpg",
+  },
+  {
+    id: 3,
+    nama: "Proyektor Epson EB-X05",
+    spesifikasi: "3300 Lumens, XGA",
+    price: 6200000,
+    img: "/img/products/proyektor.jpg",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="space-y-24">
-      {/* HERO SECTION */}
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 py-24 px-6 bg-gradient-to-r from-blue-50 to-white rounded-lg shadow-sm">
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            Partner Terpercaya Pengadaan Sekolah
-          </h1>
-          <p className="text-lg text-gray-600 max-w-md mb-8">
-            CV. Sejahtera menyediakan solusi pengadaan barang elektronik dan
-            keperluan sekolah dengan proses pemesanan yang cepat, profesional,
-            dan mudah.
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      {/* HERO */}
+      <header className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+              Pengadaan Resmi untuk Sekolah & Instansi
+            </h1>
+            <p className="mt-4 text-lg text-gray-600 max-w-2xl">
+              CV. Sejahtera menyediakan layanan pengadaan barang elektronik dan
+              perlengkapan kantor/sekolah dengan proses profesional, transparan,
+              dan dokumentasi lengkap (nota PDF otomatis).
+            </p>
 
-          <Link
-            to="/pemesanan"
-            className="bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg text-lg hover:bg-blue-800 transition-all shadow-md hover:shadow-lg"
-          >
-            Mulai Pemesanan →
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/pemesanan"
+                className="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg shadow"
+              >
+                Mulai Pemesanan
+              </Link>
+
+              <a
+                href="/img/penawaran-sample.pdf"
+                className="inline-flex items-center justify-center border border-blue-700 text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-50"
+              >
+                Unduh Contoh Penawaran
+              </a>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-600">
+              <span className="inline-flex items-center gap-2">
+                <ShieldCheckIcon className="h-5 w-5 text-blue-600" />
+                Garansi & Keaslian
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <DocumentCheckIcon className="h-5 w-5 text-blue-600" />
+                Nota & Dokumen Resmi
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <SupportIcon className="h-5 w-5 text-blue-600" />
+                Konsultasi Kebutuhan Gratis
+              </span>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <img
+              src="/img/hero-school.png"
+              alt="Ilustrasi pengadaan"
+              className="w-full max-w-md rounded-xl shadow-xl"
+            />
+          </div>
+        </div>
+      </header>
+
+      {/* FEATURES */}
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+            <ShieldCheckIcon className="h-12 w-12 text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Terpercaya</h3>
+            <p className="text-gray-600">
+              Produk resmi, garansi pabrik, dan partner tepercaya.
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+            <ClockIcon className="h-12 w-12 text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Tepat Waktu</h3>
+            <p className="text-gray-600">
+              Pengiriman terjadwal untuk kebutuhan semester dan event.
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+            <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Harga Institusi</h3>
+            <p className="text-gray-600">
+              Penawaran kompetitif khusus lembaga dan pembelian bulk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTS HIGHLIGHT */}
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">
+              Produk Unggulan
+            </h2>
+            <p className="text-gray-600">
+              Beberapa produk populer untuk kebutuhan sekolah & kantor.
+            </p>
+          </div>
+          <Link to="/pemesanan" className="text-blue-700 hover:underline">
+            Lihat Semua Produk →
           </Link>
         </div>
 
-        {/* Hero Illustration */}
-        <div className="hidden md:flex justify-center">
-          <img
-            src="/img/hero-school.png"
-            alt="school procurement"
-            className="w-3/4 drop-shadow-xl"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {PRODUCTS_SAMPLE.map((p) => (
+            <ProductCard
+              key={p.id}
+              product={p}
+              onSelect={() => {
+                /* optional */
+              }}
+            />
+          ))}
         </div>
-      </div>
+      </section>
 
-      {/* FITUR 3 CARD */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-6">
-        {[
-          {
-            icon: ShieldCheckIcon,
-            title: "Terpercaya",
-            text: "Produk original dengan garansi resmi.",
-          },
-          {
-            icon: ClockIcon,
-            title: "Pengiriman Tepat Waktu",
-            text: "Proses cepat dan jadwal pasti.",
-          },
-          {
-            icon: CurrencyDollarIcon,
-            title: "Harga Kompetitif",
-            text: "Penawaran terbaik untuk sekolah.",
-          },
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-white p-8 rounded-2xl shadow-md border hover:shadow-xl hover:-translate-y-1 transition-all cursor-default flex flex-col items-center"
-          >
-            <item.icon className="h-14 w-14 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <p className="text-gray-600">{item.text}</p>
+      {/* ORDER FLOW */}
+      <section className="bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <h3 className="text-2xl font-bold text-center mb-8">
+            Alur Pemesanan
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow text-center">
+              <div className="text-3xl font-bold text-blue-700 mb-2">1</div>
+              <h4 className="font-semibold mb-2">Isi Data</h4>
+              <p className="text-gray-600">
+                Masukkan data sekolah atau instansi dan anggaran.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow text-center">
+              <div className="text-3xl font-bold text-blue-700 mb-2">2</div>
+              <h4 className="font-semibold mb-2">Pilih Produk</h4>
+              <p className="text-gray-600">
+                Pilih katalog produk dan jumlah yang dibutuhkan.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow text-center">
+              <div className="text-3xl font-bold text-blue-700 mb-2">3</div>
+              <h4 className="font-semibold mb-2">Terima Nota</h4>
+              <p className="text-gray-600">
+                Generate nota PDF otomatis dan tim kami akan menghubungi.
+              </p>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
 
-      {/* PRODUK UNGGULAN SECTION */}
-      <div className="text-center py-16 px-6 bg-gradient-to-b from-white to-gray-50 rounded-xl shadow-sm">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          Produk Unggulan Kami
-        </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-          Jelajahi berbagai produk berkualitas yang kami tawarkan untuk memenuhi
-          kebutuhan sekolah Anda.
-        </p>
+      {/* TESTIMONIAL (placeholder) */}
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <h3 className="text-2xl font-bold text-center mb-8">
+          Mereka yang sudah percaya
+        </h3>
 
-        <Link
-          to="/pemesanan"
-          className="bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg text-lg hover:bg-blue-800 transition-all shadow-md hover:shadow-lg"
-        >
-          Lihat Katalog Produk →
-        </Link>
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-xl shadow text-center">
+            <p className="italic text-gray-600">
+              "Pelayanan cepat dan komunikasi jelas — sangat recommended."
+            </p>
+            <div className="mt-4 font-semibold">SMA Negeri 1 Surabaya</div>
+          </div>
 
-      {/* ABOUT SECTION */}
-      <div className="max-w-4xl mx-auto text-center py-20 px-6">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
-        <p className="text-lg text-gray-600 leading-relaxed mb-6">
-          Kami adalah perusahaan yang bergerak di bidang pengadaan barang
-          berbasis kebutuhan institusi pendidikan. Dengan pengalaman
-          bertahun-tahun, kami memahami pentingnya menyediakan produk
-          berkualitas dengan proses pemesanan yang terstruktur, mudah, dan
-          transparan.
-        </p>
-      </div>
+          <div className="bg-white p-6 rounded-xl shadow text-center">
+            <p className="italic text-gray-600">
+              "Proses pemesanan mudah, nota lengkap, cocok untuk pivot kantor
+              kami."
+            </p>
+            <div className="mt-4 font-semibold">PT. Kears</div>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl shadow text-center">
+            <p className="italic text-gray-600">
+              "Harga kompetitif dan garansi aman, recommended."
+            </p>
+            <div className="mt-4 font-semibold">SD Islam Al-Falah</div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
       <Footer />
     </div>
   );
