@@ -1,0 +1,49 @@
+.header-title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+  color: #003d7a;
+  font-weight: bold;
+}
+
+.header-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.main-section {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border: 1px solid #d8e3f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.button-primary {
+  background: #0057b8;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.button-primary:hover {
+  background: #00489b;
+}
+
+
