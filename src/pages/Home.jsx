@@ -67,7 +67,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="/img/bg2.jpg"
+              src="/img/bg2.jpeg"
               alt="Ilustrasi pengadaan"
               className="w-full max-w-md rounded-xl shadow-xl"
             />
