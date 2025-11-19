@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
+import ProductCard from "../components/ProductCard";
 import {
   ShieldCheckIcon,
   ClockIcon,
@@ -35,9 +36,6 @@ const PRODUCTS_SAMPLE = [
 ];
 
 export default function Home() {
-  const [step, setStep] = useState(1);
-  const [category, setCategory] = useState("Semua");
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* HERO */}
