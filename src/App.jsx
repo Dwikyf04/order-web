@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
 import OrderPage from "./components/OrderPage";
-import LoginPage from "./pages/LoginPage"; // Import Login
+import LoginPage from "./pages/admin/LoginPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import PrivateRoute from "./components/PrivateRoute"; // Import Guard
 
