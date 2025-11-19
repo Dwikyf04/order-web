@@ -197,6 +197,7 @@ export default function Home() {
         <h3 className="text-3xl font-extrabold text-center mb-4">
           Sponsorship
         </h3>
+
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Didukung oleh brand-brand resmi yang menjadi mitra pengadaan kami.
         </p>
@@ -207,15 +208,17 @@ export default function Home() {
             { src: "/img/asus.jpg", name: "Asus" },
             { src: "/img/lenovo.jpg", name: "Lenovo" },
             { src: "/img/hp.jpg", name: "HP" },
+            { src: "/img/maspion.jpg", name: "Maspion" },
           ].map((brand, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-lg transition cursor-pointer border group"
+              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center 
+                 hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
                 src={brand.src}
                 alt={brand.name}
-                className="w-28 grayscale group-hover:grayscale-0 transition duration-300"
+                className="w-28 object-contain"
               />
             </div>
           ))}
@@ -244,7 +247,8 @@ export default function Home() {
           ].map((brand, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-lg transition cursor-pointer border group"
+              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center 
+                 hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer bordep"
             >
               <img
                 src={brand.src}
