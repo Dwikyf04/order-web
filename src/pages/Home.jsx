@@ -251,7 +251,7 @@ export default function Home() {
             <div
               key={i}
               className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center 
-                 hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer bordep"
+                 hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
                 src={brand.src}
