@@ -19,6 +19,9 @@ export default function Navbar() {
           <Link to="/pemesanan" className="hover:text-gray-200">
             Pemesanan
           </Link>
+          <Link to="/admin" className="hover:text-gray-200">
+            Admin
+          </Link>
         </div>
       </div>
     </nav>
