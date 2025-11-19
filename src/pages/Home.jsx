@@ -110,7 +110,8 @@ export default function Home() {
             <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Harga Institusi</h3>
             <p className="text-gray-600">
-              Penawaran kompetitif khusus lembaga dengan diskon 10% - 15%
+              Penawaran kompetitif khusus lembaga dengan
+              <span className="font-bold text-red-600"> diskon 10% - 15%</span>.
             </p>
           </div>
         </div>
