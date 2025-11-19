@@ -1,7 +1,9 @@
 // src/pages/Home.jsx
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import ProductCatalog from "../components/ProductCatalog";
+import { products } from "../data/products";
 import Footer from "../components/Footer";
 import {
   ShieldCheckIcon,
@@ -35,6 +37,15 @@ const PRODUCTS_SAMPLE = [
 ];
 
 export default function Home() {
+  const [category, setCategory] = useState("Semua");
+
+  // === LOGIKA FILTER (Sama seperti di OrderPage) ===
+  const filteredProducts = useMemo(() => {
+    if (category === "Semua") {
+      return products;
+    }
+    return products.filter((product) => product.category === category);
+  }, [category]);
   return (
     <div className="min-h-screen bg-gray-50">
       {/* HERO */}
@@ -181,70 +192,68 @@ export default function Home() {
       </section>
 
       {/* SPONSORSHIP */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h3 className="text-2xl font-bold text-center mb-8">Sponsorship</h3>
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h3 className="text-3xl font-extrabold text-center mb-4">
+          Sponsorship
+        </h3>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Didukung oleh brand-brand resmi yang menjadi mitra pengadaan kami.
+        </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
-          <img
-            src="/img/epson.jpg"
-            alt="Epson"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
-          <img
-            src="/img/asus.jpg"
-            alt="Asus"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
-          <img
-            src="/img/lenovo.jpg"
-            alt="Lenovo"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
-          <img
-            src="/img/hp.jpg"
-            alt="HP"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+          {[
+            { src: "/img/epson.jpg", name: "Epson" },
+            { src: "/img/asus.jpg", name: "Asus" },
+            { src: "/img/lenovo.jpg", name: "Lenovo" },
+            { src: "/img/hp.jpg", name: "HP" },
+          ].map((brand, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-lg transition cursor-pointer border group"
+            >
+              <img
+                src={brand.src}
+                alt={brand.name}
+                className="w-28 grayscale group-hover:grayscale-0 transition duration-300"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="border-t border-gray-200"></section>
-      <h3 className="text-2xl font-bold text-center my-8">Partnership</h3>
+      {/* PARTNERSHIP */}
+      <section className="border-t border-gray-300"></section>
 
-      <div className="max-w-7xl mx-auto px-6 py-8 mb-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
-          <img
-            src="/img/patnership/bagoestoko.png"
-            alt="Bagoestoko"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
-          <img
-            src="/img/patnership/barata.png"
-            alt="Barata"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
-          <img
-            src="/img/patnership/cvbbs.png"
-            alt="CV BBS"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
-          <img
-            src="/img/patnership/mitraamanah.png"
-            alt="Mitra Amanah"
-            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
-          />
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h3 className="text-3xl font-extrabold text-center mb-4">
+          Partnership
+        </h3>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Bekerja sama dengan berbagai toko, vendor, dan supplier terpercaya.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+          {[
+            { src: "/img/patnership/bagoestoko.png", name: "Bagoestoko" },
+            { src: "/img/patnership/barata.png", name: "Barata" },
+            { src: "/img/patnership/cvbbs.png", name: "CV BBS" },
+            { src: "/img/patnership/mitraamanah.png", name: "Mitra Amanah" },
+            { src: "/img/patnership/shoes.png", name: "Shoes" },
+            { src: "/img/patnership/TaHU.png", name: "TaHU" },
+          ].map((brand, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-lg transition cursor-pointer border group"
+            >
+              <img
+                src={brand.src}
+                alt={brand.name}
+                className="w-28 grayscale group-hover:grayscale-0 transition duration-300"
+              />
+            </div>
+          ))}
         </div>
-        <img
-          src="/img/patnership/shoes.png"
-          alt="Sinergi"
-          className="w-32 mx-auto mt-8 grayscale hover:grayscale-0 transition"
-        />
-        <img
-          src="/img/patnership/TaHU.png"
-          alt="Surya"
-          className="w-32 mx-auto mt-8 grayscale hover:grayscale-0 transition"
-        />
-      </div>
+      </section>
 
       {/* FOOTER */}
       <Footer />

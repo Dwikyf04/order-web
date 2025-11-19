@@ -162,6 +162,16 @@ export default function OrderPage() {
                   Elektronik
                 </button>
                 <button
+                  onClick={() => setCategory("Komputer")}
+                  className={`text-sm px-3 py-1 rounded-full ${
+                    category === "Komputer"
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-200"
+                  }`}
+                >
+                  Komputer
+                </button>
+                <button
                   onClick={() => setCategory("Furnitur")}
                   className={`text-sm px-3 py-1 rounded-full ${
                     category === "Furnitur"
