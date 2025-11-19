@@ -13,29 +13,6 @@ import {
   DocumentCheckIcon,
   LifebuoyIcon,
 } from "@heroicons/react/24/solid";
-const PRODUCTS_SAMPLE = [
-  {
-    id: 1,
-    nama: "Laptop Asus ROG Strix G15",
-    spesifikasi: "Intel i5, RAM 8GB, SSD 512GB",
-    price: 12000000,
-    img: new URL("../assets/products/laptop-asus.jpg", import.meta.url).href,
-  },
-  {
-    id: 2,
-    nama: "Printer Epson L3110",
-    spesifikasi: "Print/Scan/Copy, Inkjet",
-    price: 2500000,
-    img: new URL("../assets/products/printer.jpg", import.meta.url).href,
-  },
-  {
-    id: 3,
-    nama: "Proyektor Epson EB-X05",
-    spesifikasi: "3300 Lumens, XGA",
-    price: 6200000,
-    img: new URL("../assets/products/proyektor.jpg", import.meta.url).href,
-  },
-];
 
 export default function Home() {
   const [category, setCategory] = useState("Semua");
@@ -90,7 +67,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="/img/bg.jpg"
+              src="/img/bg2.jpg"
               alt="Ilustrasi pengadaan"
               className="w-full max-w-md rounded-xl shadow-xl"
             />

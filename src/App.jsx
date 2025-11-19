@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home"; // Halaman Home yang kita buat
 import OrderPage from "./components/OrderPage"; // Halaman Pemesanan (file di bawah)
+import AdminDashboard from "./pages/AdminDashboard";
 
 export default function App() {
   return (

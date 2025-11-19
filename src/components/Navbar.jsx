@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between">
         {/* 2. Ubah ini menjadi Link ke Homepage */}
         <Link to="/" className="text-lg font-semibold">
-          CV. Sejahtera
+          Tahutech
         </Link>
 
         <div className="flex gap-6">

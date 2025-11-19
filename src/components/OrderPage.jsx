@@ -7,6 +7,7 @@ import ProductCatalog from "./ProductCatalog";
 import OrderSummary from "./OrderSummary";
 import generatePDF from "../utils/generatePDF";
 import { products } from "../data/products.js";
+import { supabase } from "../lib/supabaseClient"; // Pastikan file ini sudah ada
 
 export default function OrderPage() {
   // === STATE MANAGEMENT ===
@@ -14,6 +15,7 @@ export default function OrderPage() {
   const [cart, setCart] = useState([]);
   const [step, setStep] = useState(1);
   const [category, setCategory] = useState("Semua");
+  const [isLoading, setIsLoading] = useState(false); // State untuk loading saat checkout
 
   // === FUNGSI LOGIKA ===
 
@@ -22,7 +24,7 @@ export default function OrderPage() {
     setStep(2);
   }
 
-  // LOGIKA TAMBAH KE KERANJANG (DENGAN QTY)
+  // LOGIKA TAMBAH KE KERANJANG
   function handleProductAdd(productToAdd, quantity = 1) {
     setCart((prevCart) => {
       const existingProduct = prevCart.find(
@@ -30,14 +32,12 @@ export default function OrderPage() {
       );
 
       if (existingProduct) {
-        // Jika produk sudah ada, update QTY-nya
         return prevCart.map((item) =>
           item.id === productToAdd.id
             ? { ...item, qty: item.qty + quantity }
             : item
         );
       } else {
-        // Jika produk baru, masukkan dengan QTY dari input
         return [...prevCart, { ...productToAdd, qty: quantity }];
       }
     });
@@ -47,7 +47,7 @@ export default function OrderPage() {
     );
   }
 
-  // LOGIKA UBAH QTY DI SIDEBAR (+ / -)
+  // LOGIKA UBAH QTY
   function handleQtyChange(productId, newQty) {
     if (newQty < 1) return;
     setCart((prevCart) =>
@@ -69,16 +69,16 @@ export default function OrderPage() {
     return products.filter((product) => product.category === category);
   }, [category]);
 
-  // === PERBAIKAN PERHITUNGAN TOTAL ===
+  // TOTAL HARGA
   const totalPrice = useMemo(() => {
     return cart.reduce((total, item) => {
-      // Rumus: Total Saat Ini + (Harga Barang * Jumlah Barang)
       return total + item.price * item.qty;
     }, 0);
   }, [cart]);
 
-  // === FUNGSI CHECKOUT ===
-  function handleCheckout() {
+  // === FUNGSI CHECKOUT (DENGAN SUPABASE) ===
+  async function handleCheckout() {
+    // 1. Validasi
     if (!schoolData) {
       toast.error("Data sekolah belum diisi.");
       setStep(1);
@@ -89,15 +89,45 @@ export default function OrderPage() {
       return;
     }
 
+    // 2. Set Loading
+    setIsLoading(true);
+    const toastId = toast.loading("Sedang memproses pesanan...");
+
     try {
+      // 3. SIMPAN KE DATABASE SUPABASE
+      // Pastikan tabel 'orders' sudah dibuat di Supabase dengan kolom:
+      // school_name (text), customer_name (text), items (json), total_price (int8)
+      const { error } = await supabase.from("orders").insert([
+        {
+          school_name: schoolData.nama,
+          customer_name: "Admin Sekolah", // Atau ambil dari form jika ada field nama PJ
+          items: cart, // Simpan seluruh object cart
+          total_price: totalPrice,
+          created_at: new Date().toISOString(),
+        },
+      ]);
+
+      if (error) throw error;
+
+      // 4. Jika sukses simpan DB, baru buat PDF
       generatePDF(schoolData, cart, totalPrice);
-      toast.success("Pemesanan berhasil! Nota PDF telah di-download.");
+
+      // 5. Sukses
+      toast.success("Pesanan Berhasil! Data tersimpan & PDF diunduh.", {
+        id: toastId,
+      });
+
+      // 6. Reset State
       setSchoolData(null);
       setCart([]);
       setStep(1);
     } catch (error) {
-      console.error("Gagal membuat PDF:", error);
-      toast.error("Terjadi kesalahan saat membuat PDF.");
+      console.error("Checkout Error:", error);
+      toast.error("Gagal menyimpan pesanan. Cek koneksi internet.", {
+        id: toastId,
+      });
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -197,6 +227,13 @@ export default function OrderPage() {
           onProductRemove={handleProductRemove}
           onQtyChange={handleQtyChange}
         />
+
+        {/* Indikator Loading (Opsional, tapi bagus untuk UX) */}
+        {isLoading && (
+          <div className="bg-blue-50 text-blue-700 p-3 rounded-lg text-center text-sm animate-pulse border border-blue-200">
+            Sedang memproses pesanan ke server...
+          </div>
+        )}
 
         <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 text-sm text-blue-800">
           <p className="font-semibold mb-1">Info:</p>
