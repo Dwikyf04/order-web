@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
-import ProductCard from "../components/ProductCard";
 import {
   ShieldCheckIcon,
   ClockIcon,
