@@ -91,7 +91,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
             <ShieldCheckIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Terpercaya</h3>
+            <h3 className="text-xl font-semibold mb-2">Amanah</h3>
             <p className="text-gray-600">
               Produk resmi, garansi pabrik, dan partner tepercaya.
             </p>
@@ -99,7 +99,7 @@ export default function Home() {
 
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
             <ClockIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Tepat Waktu</h3>
+            <h3 className="text-xl font-semibold mb-2">Terpercaya</h3>
             <p className="text-gray-600">
               Pengiriman terjadwal untuk kebutuhan semester dan event.
             </p>
@@ -107,7 +107,7 @@ export default function Home() {
 
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
             <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Harga Institusi</h3>
+            <h3 className="text-xl font-semibold mb-2">Garansi After sell</h3>
             <p className="text-gray-600">
               Penawaran kompetitif khusus lembaga dan pembelian bulk.
             </p>
@@ -178,37 +178,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* TESTIMONIAL (placeholder) */}
-      {/* <section className="max-w-7xl mx-auto px-6 py-12">
-        <h3 className="text-2xl font-bold text-center mb-8">
-          Mereka yang sudah percaya
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <p className="italic text-gray-600">
-              "Pelayanan cepat dan komunikasi jelas — sangat recommended."
-            </p>
-            <div className="mt-4 font-semibold">SMA Negeri 1 Surabaya</div>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <p className="italic text-gray-600">
-              "Proses pemesanan mudah, nota lengkap, cocok untuk pivot kantor
-              kami."
-            </p>
-            <div className="mt-4 font-semibold">PT. Kears</div>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <p className="italic text-gray-600">
-              "Harga kompetitif dan garansi aman, recommended."
-            </p>
-            <div className="mt-4 font-semibold">SD Islam Al-Falah</div>
-          </div>
-        </div>
-      </section> */}
 
       {/* FOOTER */}
       <Footer />
