@@ -140,7 +140,7 @@ export default function Home() {
 
           {/* TOMBOL KATEGORI (Pills) */}
           <div className="flex space-x-2 bg-gray-100 p-1 rounded-full self-start md:self-auto">
-            {["Semua", "Elektronik", "Furnitur"].map((cat) => (
+            {["Semua", "Elektronik", "Furnitur", "Komputer"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
@@ -170,35 +170,6 @@ export default function Home() {
           >
             Lanjut ke Pemesanan &rarr;
           </Link>
-        </div>
-      </section>
-
-      {/* PRODUCTS HIGHLIGHT */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900">
-              Produk Unggulan
-            </h2>
-            <p className="text-gray-600">
-              Beberapa produk populer untuk kebutuhan sekolah & kantor.
-            </p>
-          </div>
-          <Link to="/pemesanan" className="text-blue-700 hover:underline">
-            Lihat Semua Produk →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {PRODUCTS_SAMPLE.map((p) => (
-            <ProductCard
-              key={p.id}
-              product={p}
-              onSelect={() => {
-                /* optional */
-              }}
-            />
-          ))}
         </div>
       </section>
 

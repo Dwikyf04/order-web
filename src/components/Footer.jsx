@@ -12,23 +12,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links */}
-        {/* <div>
-          <h3 className="text-white font-semibold mb-3">Navigasi</h3>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="/" className="hover:text-white">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/order" className="hover:text-white">
-                Pemesanan
-              </a>
-            </li>
-          </ul>
-        </div> */}
-
         {/* Contact */}
         <div>
           <h3 className="text-white font-semibold mb-3">Kontak</h3>
