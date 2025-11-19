@@ -181,6 +181,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PARTNER / SPONSORSHIP */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h3 className="text-2xl font-bold text-center mb-8">
+          Partner & Brand yang Bekerja Sama
+        </h3>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
+          <img
+            src="/img/partners/epson.png"
+            alt="Epson"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+          <img
+            src="/img/partners/asus.png"
+            alt="Asus"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+          <img
+            src="/img/partners/lenovo.png"
+            alt="Lenovo"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+          <img
+            src="/img/partners/hp.png"
+            alt="HP"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+        </div>
+
+        <p className="text-center mt-6 text-gray-500 text-sm">
+          *Logo bersifat ilustrasi — dapat diganti dengan brand resmi mitra
+          Anda.
+        </p>
+      </section>
+
       {/* FOOTER */}
       <Footer />
     </div>
