@@ -229,8 +229,6 @@ export default function Home() {
       </section>
 
       {/* PARTNERSHIP */}
-      <section className="border-t border-gray-300"></section>
-
       <section className="max-w-7xl mx-auto px-6 py-20">
         <h3 className="text-3xl font-extrabold text-center mb-4">
           Partnership
@@ -256,7 +254,7 @@ export default function Home() {
               <img
                 src={brand.src}
                 alt={brand.name}
-                className="w-28 grayscale group-hover:grayscale-0 transition duration-300"
+                className="w-28 object-contain"
               />
             </div>
           ))}
