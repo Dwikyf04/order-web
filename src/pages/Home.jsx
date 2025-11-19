@@ -209,11 +209,6 @@ export default function Home() {
             className="w-32 mx-auto grayscale hover:grayscale-0 transition"
           />
         </div>
-
-        <p className="text-center mt-6 text-gray-500 text-sm">
-          *Logo bersifat ilustrasi — dapat diganti dengan brand resmi mitra
-          Anda.
-        </p>
       </section>
 
       {/* FOOTER */}
