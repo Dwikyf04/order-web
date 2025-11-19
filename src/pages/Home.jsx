@@ -209,6 +209,9 @@ export default function Home() {
             { src: "/img/lenovo.jpg", name: "Lenovo" },
             { src: "/img/hp.jpg", name: "HP" },
             { src: "/img/maspion.jpg", name: "Maspion" },
+            { src: "/img/daikin.jpg", name: "Daikin" },
+            { src: "/img/rog.jpg", name: "ROG" },
+            { src: "/img/tuf.jpg", name: "TUF" },
           ].map((brand, i) => (
             <div
               key={i}
@@ -238,12 +241,12 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
           {[
-            { src: "/img/patnership/bagoestoko.png", name: "Bagoestoko" },
-            { src: "/img/patnership/barata.png", name: "Barata" },
-            { src: "/img/patnership/cvbbs.png", name: "CV BBS" },
-            { src: "/img/patnership/mitraamanah.png", name: "Mitra Amanah" },
-            { src: "/img/patnership/shoes.png", name: "Shoes" },
-            { src: "/img/patnership/TaHU.png", name: "TaHU" },
+            { src: "/img/patnership/bagoestoko1.jpeg", name: "Bagoestoko" },
+            { src: "/img/patnership/barata1.jpeg", name: "Barata" },
+            { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
+            { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
+            { src: "/img/patnership/shoes1.jpeg", name: "Shoes" },
+            { src: "/img/patnership/TaHU1.jpeg", name: "TaHU" },
           ].map((brand, i) => (
             <div
               key={i}
