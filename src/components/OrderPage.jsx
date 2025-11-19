@@ -48,7 +48,7 @@ export default function OrderPage() {
     return cart.reduce((total, item) => total + item.price, 0);
   }, [cart]);
 
-  // === FUNGSI CHECKOUT (INI YANG KITA UBAH) ===
+  // === FUNGSI CHECKOUT  ===
   function handleCheckout() {
     if (!schoolData) {
       toast.error("Data sekolah belum diisi.");

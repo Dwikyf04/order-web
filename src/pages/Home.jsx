@@ -146,6 +146,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PRODUCTS katalog */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-xl font-bold flex items-center">
+          <span
+            className={`flex items-center justify-center w-7 h-7 mr-3 rounded-full ${
+              step === 2 ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
+          >
+            2
+          </span>
+          Katalog Produk
+        </h2>
+
+        {/* === TOMBOL FILTER === */}
+        <div className="flex space-x-2">
+          <button
+            onClick={() => setCategory("Semua")}
+            className={`text-sm px-3 py-1 rounded-full ${
+              category === "Semua" ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
+          >
+            Semua
+          </button>
+          <button
+            onClick={() => setCategory("Elektronik")}
+            className={`text-sm px-3 py-1 rounded-full ${
+              category === "Elektronik"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200"
+            }`}
+          >
+            Elektronik
+          </button>
+          <button
+            onClick={() => setCategory("Furnitur")}
+            className={`text-sm px-3 py-1 rounded-full ${
+              category === "Furnitur" ? "bg-blue-600 text-white" : "bg-gray-200"
+            }`}
+          >
+            Furnitur
+          </button>
+        </div>
+      </div>
+
       {/* ORDER FLOW */}
       <section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-12">
@@ -181,11 +225,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PARTNER / SPONSORSHIP */}
+      {/* SPONSORSHIP */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <h3 className="text-2xl font-bold text-center mb-8">
-          Partner & Brand yang Bekerja Sama
-        </h3>
+        <h3 className="text-2xl font-bold text-center mb-8">Sponsorship</h3>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
           <img
@@ -210,6 +252,44 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <section className="border-t border-gray-200"></section>
+      <h3 classname="text-2xl font-bold text-center my-8">Patnership</h3>
+
+      <div className="max-w-7xl mx-auto px-6 py-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
+          <img
+            src="/img/patnership/bagoestoko.png"
+            alt="Bagoestoko"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+          <img
+            src="/img/patnership/barata.png"
+            alt="Barata"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+          <img
+            src="/img/patnership/cv.bbs.png"
+            alt="CV BBS"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+          <img
+            src="/img/patnership/mitraamanah.png"
+            alt="Mitra Amanah"
+            className="w-32 mx-auto grayscale hover:grayscale-0 transition"
+          />
+        </div>
+        <img
+          src="/img/patnership/shoes.png"
+          alt="Sinergi"
+          className="w-32 mx-auto mt-8 grayscale hover:grayscale-0 transition"
+        />
+        <img
+          src="/img/patnership/TaHU.png"
+          alt="Surya"
+          className="w-32 mx-auto mt-8 grayscale hover:grayscale-0 transition"
+        />
+      </div>
 
       {/* FOOTER */}
       <Footer />
