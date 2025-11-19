@@ -68,8 +68,14 @@ export default function Home() {
           <div className="flex justify-center">
             <img
               src="/img/bg2.jpeg"
-              alt="Ilustrasi pengadaan"
+              alt="Ilustrasi"
               className="w-full max-w-md rounded-xl shadow-xl"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, black 70%, transparent 100%)",
+                maskImage:
+                  "linear-gradient(to bottom, black 70%, transparent 100%)",
+              }}
             />
           </div>
         </div>
