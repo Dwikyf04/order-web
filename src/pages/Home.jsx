@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 import ProductCatalog from "../components/ProductCatalog";
 import { products } from "../data/products";
 import Footer from "../components/Footer";
+import { Wallet } from "lucide-react";
 import {
   ShieldCheckIcon,
   ClockIcon,
@@ -117,7 +118,7 @@ export default function Home() {
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
-            <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-4" />
+            <Wallet className="h-12 w-12 text-blue-600 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Harga Institusi</h3>
             <p className="text-gray-600">
               Penawaran kompetitif khusus lembaga dengan
