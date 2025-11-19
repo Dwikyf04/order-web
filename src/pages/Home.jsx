@@ -127,6 +127,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PRODUCTS KATALOG */}
+      <section className="max-w-7xl mx-auto px-6 py-12 bg-white rounded-3xl shadow-sm my-8 border border-gray-100">
+        {/* HEADER KATALOG & TOMBOL FILTER */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+          <div>
+            <h2 className="text-3xl font-bold text-gray-900">Katalog Produk</h2>
+            <p className="text-gray-500 mt-1">
+              Telusuri semua kebutuhan operasional Anda.
+            </p>
+          </div>
+
+          {/* TOMBOL KATEGORI (Pills) */}
+          <div className="flex space-x-2 bg-gray-100 p-1 rounded-full self-start md:self-auto">
+            {["Semua", "Elektronik", "Furnitur"].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setCategory(cat)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  category === cat
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* RENDER KATALOG */}
+        {/* Kita set showButton={false} agar tombol "+ Tambah" HILANG */}
+        <ProductCatalog products={filteredProducts} showButton={false} />
+
+        <div className="mt-10 text-center">
+          <p className="text-gray-600 mb-4">
+            Sudah menemukan barang yang dicari?
+          </p>
+          <Link
+            to="/pemesanan"
+            className="inline-block border-2 border-blue-600 text-blue-700 font-bold py-2 px-6 rounded-lg hover:bg-blue-50 transition"
+          >
+            Lanjut ke Pemesanan &rarr;
+          </Link>
+        </div>
+      </section>
+
       {/* PRODUCTS HIGHLIGHT */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex items-center justify-between mb-6">
