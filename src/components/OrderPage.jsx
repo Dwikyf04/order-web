@@ -1,3 +1,5 @@
+// src/components/OrderPage.jsx
+
 import React, { useState, useMemo } from "react";
 import SchoolForm from "./SchoolForm";
 import toast from "react-hot-toast";
@@ -20,7 +22,7 @@ export default function OrderPage() {
     setStep(2);
   }
 
-  // 1. PERBAIKAN: Default quantity jadi 1 (bukan 0)
+  // LOGIKA TAMBAH KE KERANJANG (DENGAN QTY)
   function handleProductAdd(productToAdd, quantity = 1) {
     setCart((prevCart) => {
       const existingProduct = prevCart.find(
@@ -28,13 +30,14 @@ export default function OrderPage() {
       );
 
       if (existingProduct) {
+        // Jika produk sudah ada, update QTY-nya
         return prevCart.map((item) =>
           item.id === productToAdd.id
             ? { ...item, qty: item.qty + quantity }
             : item
         );
       } else {
-        // Pastikan qty masuk ke state
+        // Jika produk baru, masukkan dengan QTY dari input
         return [...prevCart, { ...productToAdd, qty: quantity }];
       }
     });
@@ -44,9 +47,9 @@ export default function OrderPage() {
     );
   }
 
-  // 2. PERBAIKAN: Fungsi handleQtyChange ditambahkan kembali
+  // LOGIKA UBAH QTY DI SIDEBAR (+ / -)
   function handleQtyChange(productId, newQty) {
-    if (newQty < 1) return; // Cegah minus
+    if (newQty < 1) return;
     setCart((prevCart) =>
       prevCart.map((item) =>
         item.id === productId ? { ...item, qty: newQty } : item
@@ -66,9 +69,12 @@ export default function OrderPage() {
     return products.filter((product) => product.category === category);
   }, [category]);
 
-  // 3. PERBAIKAN UTAMA: Total harga dikali quantity
+  // === PERBAIKAN PERHITUNGAN TOTAL ===
   const totalPrice = useMemo(() => {
-    return cart.reduce((total, item) => total + item.price * item.qty, 0);
+    return cart.reduce((total, item) => {
+      // Rumus: Total Saat Ini + (Harga Barang * Jumlah Barang)
+      return total + item.price * item.qty;
+    }, 0);
   }, [cart]);
 
   // === FUNGSI CHECKOUT ===
@@ -85,23 +91,22 @@ export default function OrderPage() {
 
     try {
       generatePDF(schoolData, cart, totalPrice);
-      toast.success("Pemesanan berhasil! Nota PDF Anda telah di-download.");
-
+      toast.success("Pemesanan berhasil! Nota PDF telah di-download.");
       setSchoolData(null);
       setCart([]);
       setStep(1);
     } catch (error) {
       console.error("Gagal membuat PDF:", error);
-      toast.error("Terjadi kesalahan saat membuat PDF. Silakan coba lagi.");
+      toast.error("Terjadi kesalahan saat membuat PDF.");
     }
   }
 
   // === RENDER ===
   return (
     <div className="max-w-7xl mx-auto p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-      {/* === KOLOM KIRI === */}
+      {/* === KOLOM KIRI (Main Content) === */}
       <div className="lg:col-span-2 space-y-6">
-        {/* --- LANGKAH 1: DATA SEKOLAH --- */}
+        {/* STEP 1: DATA SEKOLAH */}
         <div className="bg-white shadow-lg p-6 rounded-xl border">
           <h2 className="text-xl font-bold mb-4 flex items-center">
             <span
@@ -113,34 +118,34 @@ export default function OrderPage() {
             </span>
             Data Sekolah
           </h2>
-
           {step === 1 && <SchoolForm onSubmit={handleSchoolSubmit} />}
-
           {step > 1 && (
-            <div className="p-4 bg-gray-50 rounded-lg">
-              <p>
-                <strong>Nama Sekolah:</strong> {schoolData.nama}
-              </p>
-              <p>
-                <strong>Kontak:</strong> {schoolData.telepon}
-              </p>
+            <div className="p-4 bg-gray-50 rounded-lg flex justify-between items-center">
+              <div>
+                <p>
+                  <strong>Nama:</strong> {schoolData.nama}
+                </p>
+                <p>
+                  <strong>Kontak:</strong> {schoolData.telepon}
+                </p>
+              </div>
               <button
                 onClick={() => setStep(1)}
-                className="text-blue-600 text-sm mt-2 hover:underline"
+                className="text-blue-600 text-sm hover:underline"
               >
-                Ubah Data
+                Ubah
               </button>
             </div>
           )}
         </div>
 
-        {/* --- LANGKAH 2: KATALOG --- */}
+        {/* STEP 2: KATALOG PRODUK */}
         <div
           className={`bg-white shadow-lg p-6 rounded-xl border ${
             step < 2 ? "opacity-50 pointer-events-none" : ""
           }`}
         >
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
             <h2 className="text-xl font-bold flex items-center">
               <span
                 className={`flex items-center justify-center w-7 h-7 mr-3 rounded-full ${
@@ -151,8 +156,6 @@ export default function OrderPage() {
               </span>
               Katalog Produk
             </h2>
-
-            {/* Filter Buttons */}
             <div className="flex flex-wrap gap-2">
               {["Semua", "Elektronik", "Komputer", "Furnitur"].map((cat) => (
                 <button
@@ -161,7 +164,7 @@ export default function OrderPage() {
                   className={`text-sm px-3 py-1 rounded-full transition ${
                     category === cat
                       ? "bg-blue-600 text-white"
-                      : "bg-gray-200 hover:bg-gray-300"
+                      : "bg-gray-100 hover:bg-gray-200 text-gray-600"
                   }`}
                 >
                   {cat}
@@ -174,19 +177,19 @@ export default function OrderPage() {
             <ProductCatalog
               products={filteredProducts}
               onProductAdd={handleProductAdd}
+              showButton={true}
             />
           )}
           {step < 2 && (
-            <p className="text-gray-500">
-              Selesaikan Langkah 1 untuk memilih produk.
+            <p className="text-gray-500 text-center italic">
+              Selesaikan pengisian data sekolah terlebih dahulu.
             </p>
           )}
         </div>
       </div>
 
-      {/* === KOLOM KANAN (Sidebar) === */}
+      {/* === KOLOM KANAN (Sidebar Ringkasan) === */}
       <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-8">
-        {/* 4. PERBAIKAN: Pass prop onQtyChange ke OrderSummary */}
         <OrderSummary
           cart={cart}
           totalPrice={totalPrice}
@@ -195,10 +198,11 @@ export default function OrderPage() {
           onQtyChange={handleQtyChange}
         />
 
-        <div className="bg-white shadow-lg p-6 rounded-xl border">
-          <h2 className="text-xl font-bold mb-4">Butuh Bantuan?</h2>
-          <p className="text-gray-600">
-            Kamu bisa hubungi admin kami jika ada kendala dalam pemesanan.
+        <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 text-sm text-blue-800">
+          <p className="font-semibold mb-1">Info:</p>
+          <p>
+            Harga yang tertera adalah harga estimasi. Nota resmi akan digenerate
+            otomatis setelah checkout.
           </p>
         </div>
       </div>
