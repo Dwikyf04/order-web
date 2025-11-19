@@ -11,8 +11,6 @@ import {
   LifebuoyIcon,
 } from "@heroicons/react/24/solid";
 
-const [step, setStep] = useState(1);
-const [category, setCategory] = useState("Semua");
 const PRODUCTS_SAMPLE = [
   {
     id: 1,
@@ -38,6 +36,8 @@ const PRODUCTS_SAMPLE = [
 ];
 
 export default function Home() {
+  const [step, setStep] = useState(1);
+  const [category, setCategory] = useState("Semua");
   return (
     <div className="min-h-screen bg-gray-50">
       {/* HERO */}
@@ -259,7 +259,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-gray-200"></section>
-      <h3 classname="text-2xl font-bold text-center my-8">Patnership</h3>
+      <h3 className="text-2xl font-bold text-center my-8">Partnership</h3>
 
       <div className="max-w-7xl mx-auto px-6 py-8 mb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
