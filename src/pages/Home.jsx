@@ -189,17 +189,17 @@ export default function Home() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center opacity-80">
           <img
-            src="/img/partners/epson.png"
+            src="/img/partners/epson.jpg"
             alt="Epson"
             className="w-32 mx-auto grayscale hover:grayscale-0 transition"
           />
           <img
-            src="/img/partners/asus.png"
+            src="/img/partners/asus.jpg"
             alt="Asus"
             className="w-32 mx-auto grayscale hover:grayscale-0 transition"
           />
           <img
-            src="/img/partners/lenovo.png"
+            src="/img/partners/lenovo.jpg"
             alt="Lenovo"
             className="w-32 mx-auto grayscale hover:grayscale-0 transition"
           />
