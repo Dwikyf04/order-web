@@ -23,13 +23,29 @@ export default function OrderPage() {
     setStep(2);
   }
 
-  function handleProductAdd(productToAdd) {
-    const existingProduct = cart.find((item) => item.id === productToAdd.id);
-    if (existingProduct) {
-      alert("Produk sudah ada di keranjang.");
-    } else {
-      setCart([...cart, productToAdd]);
-    }
+  function handleProductAdd(productToAdd, quantity = 1) {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find(
+        (item) => item.id === productToAdd.id
+      );
+
+      if (existingProduct) {
+        // Jika produk sudah ada, tambahkan QTY baru ke QTY lama
+        return prevCart.map((item) =>
+          item.id === productToAdd.id
+            ? { ...item, qty: item.qty + quantity } // <-- Ditambah quantity dari input
+            : item
+        );
+      } else {
+        // Jika produk baru, set qty sesuai input
+        return [...prevCart, { ...productToAdd, qty: quantity }]; // <-- Pakai quantity dari input
+      }
+    });
+
+    // Ubah pesan toast agar lebih informatif
+    toast.success(
+      `${quantity} ${productToAdd.satuan || "item"} masuk keranjang`
+    );
   }
 
   function handleProductRemove(productIdToRemove) {
