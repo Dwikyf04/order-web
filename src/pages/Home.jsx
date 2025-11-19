@@ -12,8 +12,6 @@ import {
 } from "@heroicons/react/24/solid";
 
 export default function Home() {
-  const [step, setStep] = useState(1);
-  const [category, setCategory] = useState("Semua");
   const PRODUCTS_SAMPLE = [
     {
       id: 1,
