@@ -43,12 +43,13 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-              Pengadaan Resmi untuk Sekolah & Instansi
+              Pengadaan kebutuhan untuk Sekolah & Instansi
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl">
-              CV. Sejahtera menyediakan layanan pengadaan barang elektronik dan
-              perlengkapan kantor/sekolah dengan proses profesional, transparan,
-              dan dokumentasi lengkap (nota PDF otomatis).
+              TaHUtech menyediakan layanan pengadaan Barang dan Jasa untuk
+              Komputer, Elektronik, Furniture dan perlengkapan kantor/sekolah
+              dengan proses profesional, transparan, dan dokumentasi lengkap
+              (nota PDF otomatis)
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
@@ -101,7 +102,7 @@ export default function Home() {
             <ClockIcon className="h-12 w-12 text-blue-600 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Tepat Waktu</h3>
             <p className="text-gray-600">
-              Pengiriman terjadwal untuk kebutuhan semester dan event.
+              Pengiriman terjadwal untuk kebutuhan semester dan event
             </p>
           </div>
 
@@ -109,7 +110,7 @@ export default function Home() {
             <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Harga Institusi</h3>
             <p className="text-gray-600">
-              Penawaran kompetitif khusus lembaga.
+              Penawaran kompetitif khusus lembaga dengan diskon 10% - 15%
             </p>
           </div>
         </div>
