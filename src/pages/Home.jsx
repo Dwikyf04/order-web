@@ -148,53 +148,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS katalog */}
-      {/* PRODUCTS katalog */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold flex items-center">
-          <span
-            className={`flex items-center justify-center w-7 h-7 mr-3 rounded-full ${
-              step === 2 ? "bg-blue-600 text-white" : "bg-gray-200"
-            }`}
-          >
-            2
-          </span>
-          Katalog Produk
-        </h2>
-
-        {/* === TOMBOL FILTER === */}
-        <div className="flex space-x-2">
-          <button
-            onClick={() => setCategory("Semua")}
-            className={`text-sm px-3 py-1 rounded-full ${
-              category === "Semua" ? "bg-blue-600 text-white" : "bg-gray-200"
-            }`}
-          >
-            Semua
-          </button>
-
-          <button
-            onClick={() => setCategory("Elektronik")}
-            className={`text-sm px-3 py-1 rounded-full ${
-              category === "Elektronik"
-                ? "bg-blue-600 text-white"
-                : "bg-gray-200"
-            }`}
-          >
-            Elektronik
-          </button>
-
-          <button
-            onClick={() => setCategory("Furnitur")}
-            className={`text-sm px-3 py-1 rounded-full ${
-              category === "Furnitur" ? "bg-blue-600 text-white" : "bg-gray-200"
-            }`}
-          >
-            Furnitur
-          </button>
-        </div>
-      </div>
-
       {/* ORDER FLOW */}
       <section className="bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-12">
