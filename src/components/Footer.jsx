@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div>
+        {/* <div>
           <h3 className="text-white font-semibold mb-3">Navigasi</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -27,7 +27,7 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact */}
         <div>

@@ -93,13 +93,13 @@ export default function Home() {
             <ShieldCheckIcon className="h-12 w-12 text-blue-600 mb-4" />
             <h3 className="text-xl font-semibold mb-2">Amanah</h3>
             <p className="text-gray-600">
-              Produk resmi, garansi pabrik, dan partner tepercaya.
+              Produk resmi, Garansi After Sell, dan Tanggung Jawab
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
             <ClockIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Terpercaya</h3>
+            <h3 className="text-xl font-semibold mb-2">Tepat Waktu</h3>
             <p className="text-gray-600">
               Pengiriman terjadwal untuk kebutuhan semester dan event.
             </p>
@@ -107,9 +107,9 @@ export default function Home() {
 
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
             <CurrencyDollarIcon className="h-12 w-12 text-blue-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Garansi After sell</h3>
+            <h3 className="text-xl font-semibold mb-2">Harga Institusi</h3>
             <p className="text-gray-600">
-              Penawaran kompetitif khusus lembaga dan pembelian bulk.
+              Penawaran kompetitif khusus lembaga.
             </p>
           </div>
         </div>
