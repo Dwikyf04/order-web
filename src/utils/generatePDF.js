@@ -19,7 +19,7 @@ export default function generatePDF(schoolData, cart, totalPrice) {
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
-    doc.text("Pengadaan Barang Elektronik & Keperluan Sekolah", 105, 22, {
+    doc.text("Pengadaan Komputer, Elektronik & Furnitur", 105, 22, {
       align: "center",
     });
     doc.setLineWidth(0.5);
