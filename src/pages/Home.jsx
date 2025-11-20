@@ -245,7 +245,6 @@ export default function Home() {
             { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
             { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
             { src: "/img/patnership/shoes.png", name: "Shoes" },
-            { src: "/img/patnership/TaHU.png", name: "TaHU" },
           ].map((brand, i) => (
             <div
               key={i}
