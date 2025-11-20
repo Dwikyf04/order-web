@@ -16,7 +16,6 @@ export default function AdminDashboard() {
   async function fetchOrders() {
     try {
       setLoading(true);
-      // Mengambil semua kolom, pastikan kolom 'payment_status' sudah ada di Supabase
       const { data, error } = await supabase
         .from("orders")
         .select("*")
@@ -36,7 +35,6 @@ export default function AdminDashboard() {
   // === FUNGSI UPDATE STATUS PEMBAYARAN ===
   const updatePaymentStatus = async (orderId, newStatus) => {
     try {
-      // 1. Update ke database Supabase
       const { error } = await supabase
         .from("orders")
         .update({ payment_status: newStatus })
@@ -44,7 +42,6 @@ export default function AdminDashboard() {
 
       if (error) throw error;
 
-      // 2. Update state lokal agar UI langsung berubah tanpa refresh
       setOrders((prevOrders) =>
         prevOrders.map((order) =>
           order.id === orderId ? { ...order, payment_status: newStatus } : order
@@ -52,6 +49,28 @@ export default function AdminDashboard() {
       );
     } catch (err) {
       alert("Gagal update status pembayaran: " + err.message);
+    }
+  };
+
+  // === FUNGSI UPDATE STATUS PENGIRIMAN (BARU) ===
+  const updateDeliveryStatus = async (orderId, newStatus) => {
+    try {
+      const { error } = await supabase
+        .from("orders")
+        .update({ delivery_status: newStatus })
+        .eq("id", orderId);
+
+      if (error) throw error;
+
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order.id === orderId
+            ? { ...order, delivery_status: newStatus }
+            : order
+        )
+      );
+    } catch (err) {
+      alert("Gagal update status pengiriman: " + err.message);
     }
   };
 
@@ -82,7 +101,9 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[90rem] mx-auto">
+        {" "}
+        {/* Lebar dimaksimalkan */}
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div>
@@ -90,7 +111,7 @@ export default function AdminDashboard() {
               Dashboard Admin
             </h1>
             <p className="text-gray-500">
-              Pantau pesanan masuk dan status pembayaran.
+              Pantau pesanan, pembayaran, dan pengiriman.
             </p>
           </div>
           <div className="flex gap-3">
@@ -108,7 +129,6 @@ export default function AdminDashboard() {
               Ke Home
             </Link>
 
-            {/* === TOMBOL LOGOUT === */}
             <button
               onClick={handleLogout}
               className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm font-bold transition shadow-sm"
@@ -117,18 +137,16 @@ export default function AdminDashboard() {
             </button>
           </div>
         </div>
-
         {/* Error Message Box */}
         {errorMsg && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
             <strong>Error:</strong> {errorMsg} <br />
             <small>
               Cek tab "Table Editor" di Supabase, pastikan kolom
-              'payment_status' ada dan RLS dimatikan.
+              'payment_status' dan 'delivery_status' ada.
             </small>
           </div>
         )}
-
         {/* Main Content */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
           {loading ? (
@@ -138,9 +156,6 @@ export default function AdminDashboard() {
           ) : orders.length === 0 ? (
             <div className="p-12 text-center">
               <p className="text-gray-500 text-lg">Belum ada pesanan masuk.</p>
-              <p className="text-sm text-gray-400">
-                Data akan muncul di sini setelah user melakukan checkout.
-              </p>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -149,16 +164,16 @@ export default function AdminDashboard() {
                   <tr>
                     <th className="p-4 font-semibold">Tanggal & ID</th>
                     <th className="p-4 font-semibold">Sekolah</th>
-                    <th className="p-4 font-semibold">Detail Barang</th>
+                    <th className="p-4 font-semibold w-1/3">Detail Barang</th>
                     <th className="p-4 font-semibold text-right">
                       Total Harga
                     </th>
-                    {/* Kolom Baru */}
+                    {/* Header Kolom */}
                     <th className="p-4 font-semibold text-center">
                       Pembayaran
                     </th>
                     <th className="p-4 font-semibold text-center">
-                      Status Order
+                      Pengiriman
                     </th>
                   </tr>
                 </thead>
@@ -210,29 +225,40 @@ export default function AdminDashboard() {
                         Rp {(order.total_price || 0).toLocaleString("id-ID")}
                       </td>
 
-                      {/* === STATUS PEMBAYARAN (DROPDOWN) === */}
+                      {/* === STATUS PEMBAYARAN === */}
                       <td className="p-4 align-top text-center">
                         <select
                           value={order.payment_status || "Belum"}
                           onChange={(e) =>
                             updatePaymentStatus(order.id, e.target.value)
                           }
-                          className={`text-xs font-bold px-3 py-1.5 rounded-full border focus:outline-none cursor-pointer transition shadow-sm ${
+                          className={`text-xs font-bold px-3 py-1.5 rounded-full border focus:outline-none cursor-pointer transition shadow-sm w-28 ${
                             order.payment_status === "Lunas"
                               ? "bg-green-100 text-green-800 border-green-200"
                               : "bg-red-100 text-red-800 border-red-200"
                           }`}
                         >
-                          <option value="Belum">Belum Lunas</option>
+                          <option value="Belum">Belum</option>
                           <option value="Lunas">Lunas</option>
                         </select>
                       </td>
 
-                      {/* Status Order (Lama) */}
+                      {/* === STATUS PENGIRIMAN (BARU) === */}
                       <td className="p-4 align-top text-center">
-                        <span className="inline-block px-2 py-1 text-xs font-semibold text-gray-600 bg-gray-100 rounded-full border">
-                          {order.status || "Baru"}
-                        </span>
+                        <select
+                          value={order.delivery_status || "Belum Terkirim"}
+                          onChange={(e) =>
+                            updateDeliveryStatus(order.id, e.target.value)
+                          }
+                          className={`text-xs font-bold px-3 py-1.5 rounded-full border focus:outline-none cursor-pointer transition shadow-sm w-32 ${
+                            order.delivery_status === "Terkirim"
+                              ? "bg-blue-100 text-blue-800 border-blue-200"
+                              : "bg-yellow-100 text-yellow-800 border-yellow-200"
+                          }`}
+                        >
+                          <option value="Belum Terkirim">Belum Terkirim</option>
+                          <option value="Terkirim">Terkirim</option>
+                        </select>
                       </td>
                     </tr>
                   ))}
