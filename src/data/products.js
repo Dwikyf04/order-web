@@ -11,7 +11,7 @@ export const products = [
     nama: "Laptop Asus Rog Strix G15",
     spesifikasi: "Intel i5 Gen 11, RAM 8GB, SSD 512GB",
     satuan: "Unit",
-    category: "Elektronik",
+    category: "Komputer",
     price: 12500000,
     img: paketA,
   },
