@@ -212,6 +212,7 @@ export default function Home() {
             { src: "/img/daikin.jpg", name: "Daikin" },
             { src: "/img/rog.jpg", name: "ROG" },
             { src: "/img/tuf.jpg", name: "TUF" },
+            { src: "/img/gree.png", name: "Gree" },
           ].map((brand, i) => (
             <div
               key={i}
