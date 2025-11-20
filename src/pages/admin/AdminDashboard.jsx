@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 // Pastikan import ini sudah benar (naik 2 level)
 import { supabase } from "../../lib/supabaseClient";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Tambah useNavigate
 
 export default function AdminDashboard() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
+  const navigate = useNavigate(); // Hook untuk pindah halaman
 
   useEffect(() => {
     fetchOrders();
@@ -15,7 +16,6 @@ export default function AdminDashboard() {
   async function fetchOrders() {
     try {
       setLoading(true);
-      // Ambil data dari tabel 'orders'
       const { data, error } = await supabase
         .from("orders")
         .select("*")
@@ -23,7 +23,6 @@ export default function AdminDashboard() {
 
       if (error) throw error;
 
-      console.log("Data Orders:", data); // Cek di Console (F12)
       setOrders(data || []);
     } catch (err) {
       console.error("Error fetch:", err);
@@ -32,6 +31,15 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   }
+
+  // === FUNGSI LOGOUT ===
+  const handleLogout = async () => {
+    const confirmLogout = window.confirm("Yakin ingin keluar?");
+    if (confirmLogout) {
+      await supabase.auth.signOut();
+      navigate("/login"); // Kembali ke halaman login
+    }
+  };
 
   // Format tanggal aman
   const formatDate = (dateString) => {
@@ -53,7 +61,7 @@ export default function AdminDashboard() {
     <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <div>
             <h1 className="text-3xl font-bold text-gray-800">
               Dashboard Admin
@@ -62,16 +70,28 @@ export default function AdminDashboard() {
               Pantau pesanan masuk secara real-time.
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             <button
               onClick={fetchOrders}
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm font-medium transition"
             >
               Refresh Data
             </button>
-            <Link to="/" className="text-gray-600 hover:text-blue-600 py-2">
+
+            <Link
+              to="/"
+              className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm font-medium transition flex items-center"
+            >
               Ke Home
             </Link>
+
+            {/* === TOMBOL LOGOUT (BARU) === */}
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm font-bold transition shadow-sm"
+            >
+              Logout
+            </button>
           </div>
         </div>
 
@@ -80,14 +100,13 @@ export default function AdminDashboard() {
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
             <strong>Error:</strong> {errorMsg} <br />
             <small>
-              Cek tab "Table Editor" di Supabase, pastikan nama tabel 'orders'
-              dan RLS dimatikan.
+              Cek tab "Table Editor" di Supabase, pastikan RLS dimatikan.
             </small>
           </div>
         )}
 
         {/* Main Content */}
-        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
           {loading ? (
             <div className="p-12 text-center text-gray-500 animate-pulse">
               Memuat data pesanan...
@@ -96,7 +115,7 @@ export default function AdminDashboard() {
             <div className="p-12 text-center">
               <p className="text-gray-500 text-lg">Belum ada pesanan masuk.</p>
               <p className="text-sm text-gray-400">
-                Coba lakukan order test di halaman pemesanan.
+                Data akan muncul di sini setelah user melakukan checkout.
               </p>
             </div>
           ) : (
@@ -136,13 +155,13 @@ export default function AdminDashboard() {
                         </div>
                       </td>
 
-                      {/* Barang (Safe Mapping) */}
+                      {/* Barang */}
                       <td className="p-4 align-top">
                         <ul className="space-y-1 text-sm text-gray-600">
                           {Array.isArray(order.items) ? (
                             order.items.map((item, idx) => (
                               <li key={idx} className="flex items-center gap-2">
-                                <span className="font-bold text-gray-800">
+                                <span className="font-bold text-gray-800 min-w-[20px]">
                                   {item.qty}x
                                 </span>
                                 <span>{item.nama}</span>
@@ -150,7 +169,7 @@ export default function AdminDashboard() {
                             ))
                           ) : (
                             <li className="text-red-500 italic">
-                              Format data item salah
+                              Format data salah
                             </li>
                           )}
                         </ul>
@@ -161,7 +180,7 @@ export default function AdminDashboard() {
                         Rp {(order.total_price || 0).toLocaleString("id-ID")}
                       </td>
 
-                      {/* Status (Dummy) */}
+                      {/* Status */}
                       <td className="p-4 align-top text-center">
                         <span className="inline-block px-2 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
                           {order.status || "Baru"}
