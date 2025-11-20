@@ -2,12 +2,16 @@
 import React, { useState } from "react";
 
 export default function ProductCard({ product, onAddToCart, action }) {
-  const [qty, setQty] = useState(1);
+  // 1. UBAH DISINI: Default quantity jadi 0
+  const [qty, setQty] = useState(0);
 
   const handleAddClick = () => {
     if (onAddToCart) {
-      onAddToCart(product, qty); // Kirim data produk DAN jumlahnya
-      setQty(1); // Reset input jadi 1 setelah ditambah
+      // Hanya kirim jika qty lebih dari 0
+      if (qty > 0) {
+        onAddToCart(product, qty); // Kirim data produk DAN jumlahnya
+        setQty(0); // Reset input kembali jadi 0 setelah ditambah
+      }
     }
   };
 
@@ -45,10 +49,10 @@ export default function ProductCard({ product, onAddToCart, action }) {
             {/* Input Angka */}
             <input
               type="number"
-              min="1"
+              min="0"
               value={qty}
               onChange={(e) =>
-                setQty(Math.max(1, parseInt(e.target.value) || 1))
+                setQty(Math.max(0, parseInt(e.target.value) || 0))
               }
               className="w-16 border border-gray-300 rounded-lg text-center font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -56,7 +60,12 @@ export default function ProductCard({ product, onAddToCart, action }) {
             {/* Tombol Tambah */}
             <button
               onClick={handleAddClick}
-              className="flex-1 bg-blue-700 hover:bg-blue-800 text-white rounded-lg font-medium text-sm transition shadow-md active:scale-95"
+              disabled={qty === 0} // Tombol mati jika 0
+              className={`flex-1 rounded-lg font-medium text-sm transition shadow-md active:scale-95 ${
+                qty === 0
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-blue-700 hover:bg-blue-800 text-white"
+              }`}
             >
               + Tambah
             </button>
