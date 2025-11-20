@@ -215,7 +215,7 @@ export default function Home() {
           ].map((brand, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
+              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
                 src={brand.src}
@@ -242,10 +242,11 @@ export default function Home() {
             { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
             { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
             { src: "/img/patnership/shoes.png", name: "Shoes" },
+            { src: "/img/patnership/TaHU.png", name: "TaHU" },
           ].map((brand, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
+              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
                 src={brand.src}
