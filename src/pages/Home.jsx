@@ -196,7 +196,6 @@ export default function Home() {
       {/* Revisi: py-20 -> py-10 */}
       <section className="max-w-7xl mx-auto px-6 py-10">
         <h3 className="text-2xl font-bold text-center mb-2">Sponsorship</h3>
-        {/* Revisi: mb-12 -> mb-8 */}
         <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto text-sm">
           Didukung oleh brand-brand resmi yang menjadi mitra pengadaan kami.
         </p>
@@ -215,12 +214,13 @@ export default function Home() {
           ].map((brand, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer border"
+              className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
             >
+              {/* REVISI: Menghapus class grayscale */}
               <img
                 src={brand.src}
                 alt={brand.name}
-                className="w-20 object-contain grayscale hover:grayscale-0 transition"
+                className="w-20 object-contain transition"
               />
             </div>
           ))}
@@ -229,7 +229,7 @@ export default function Home() {
 
       {/* PARTNERSHIP */}
       {/* Revisi: py-20 -> py-10 */}
-      <section className="max-w-7xl mx-auto px-6 py-10 border-t border-gray-200">
+      <section className="max-w-7xl mx-auto px-6 py-10">
         <h3 className="text-2xl font-bold text-center mb-2">Partnership</h3>
         <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto text-sm">
           Bekerja sama dengan berbagai toko, vendor, dan supplier terpercaya.
@@ -246,7 +246,7 @@ export default function Home() {
           ].map((brand, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-center hover:shadow-xl hover:scale-105 transition duration-300 cursor-pointer border"
+              className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
                 src={brand.src}
