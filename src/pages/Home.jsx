@@ -237,10 +237,10 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {[
-            { src: "/img/patnership/bagoestoko1.jpeg", name: "Bagoestoko" },
             { src: "/img/patnership/barata1.jpeg", name: "Barata" },
             { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
             { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
+            { src: "/img/patnership/bagoestoko1.jpeg", name: "Bagoestoko" },
             { src: "/img/patnership/shoes.png", name: "Shoes" },
           ].map((brand, i) => (
             <div
