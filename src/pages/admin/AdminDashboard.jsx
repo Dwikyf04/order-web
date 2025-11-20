@@ -16,6 +16,7 @@ export default function AdminDashboard() {
   async function fetchOrders() {
     try {
       setLoading(true);
+      // Mengambil semua kolom, pastikan kolom 'payment_status' sudah ada di Supabase
       const { data, error } = await supabase
         .from("orders")
         .select("*")
@@ -31,6 +32,28 @@ export default function AdminDashboard() {
       setLoading(false);
     }
   }
+
+  // === FUNGSI UPDATE STATUS PEMBAYARAN ===
+  const updatePaymentStatus = async (orderId, newStatus) => {
+    try {
+      // 1. Update ke database Supabase
+      const { error } = await supabase
+        .from("orders")
+        .update({ payment_status: newStatus })
+        .eq("id", orderId);
+
+      if (error) throw error;
+
+      // 2. Update state lokal agar UI langsung berubah tanpa refresh
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order.id === orderId ? { ...order, payment_status: newStatus } : order
+        )
+      );
+    } catch (err) {
+      alert("Gagal update status pembayaran: " + err.message);
+    }
+  };
 
   // === FUNGSI LOGOUT ===
   const handleLogout = async () => {
@@ -67,7 +90,7 @@ export default function AdminDashboard() {
               Dashboard Admin
             </h1>
             <p className="text-gray-500">
-              Pantau pesanan masuk secara real-time.
+              Pantau pesanan masuk dan status pembayaran.
             </p>
           </div>
           <div className="flex gap-3">
@@ -85,7 +108,7 @@ export default function AdminDashboard() {
               Ke Home
             </Link>
 
-            {/* === TOMBOL LOGOUT (BARU) === */}
+            {/* === TOMBOL LOGOUT === */}
             <button
               onClick={handleLogout}
               className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 text-sm font-bold transition shadow-sm"
@@ -100,7 +123,8 @@ export default function AdminDashboard() {
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
             <strong>Error:</strong> {errorMsg} <br />
             <small>
-              Cek tab "Table Editor" di Supabase, pastikan RLS dimatikan.
+              Cek tab "Table Editor" di Supabase, pastikan kolom
+              'payment_status' ada dan RLS dimatikan.
             </small>
           </div>
         )}
@@ -129,7 +153,13 @@ export default function AdminDashboard() {
                     <th className="p-4 font-semibold text-right">
                       Total Harga
                     </th>
-                    <th className="p-4 font-semibold text-center">Status</th>
+                    {/* Kolom Baru */}
+                    <th className="p-4 font-semibold text-center">
+                      Pembayaran
+                    </th>
+                    <th className="p-4 font-semibold text-center">
+                      Status Order
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -180,9 +210,27 @@ export default function AdminDashboard() {
                         Rp {(order.total_price || 0).toLocaleString("id-ID")}
                       </td>
 
-                      {/* Status */}
+                      {/* === STATUS PEMBAYARAN (DROPDOWN) === */}
                       <td className="p-4 align-top text-center">
-                        <span className="inline-block px-2 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
+                        <select
+                          value={order.payment_status || "Belum"}
+                          onChange={(e) =>
+                            updatePaymentStatus(order.id, e.target.value)
+                          }
+                          className={`text-xs font-bold px-3 py-1.5 rounded-full border focus:outline-none cursor-pointer transition shadow-sm ${
+                            order.payment_status === "Lunas"
+                              ? "bg-green-100 text-green-800 border-green-200"
+                              : "bg-red-100 text-red-800 border-red-200"
+                          }`}
+                        >
+                          <option value="Belum">Belum Lunas</option>
+                          <option value="Lunas">Lunas</option>
+                        </select>
+                      </td>
+
+                      {/* Status Order (Lama) */}
+                      <td className="p-4 align-top text-center">
+                        <span className="inline-block px-2 py-1 text-xs font-semibold text-gray-600 bg-gray-100 rounded-full border">
                           {order.status || "Baru"}
                         </span>
                       </td>
