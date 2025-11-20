@@ -15,7 +15,7 @@ export default function generatePDF(schoolData, cart, totalPrice) {
     // === HEADER ===
     doc.setFontSize(18);
     doc.setFont("helvetica", "bold");
-    doc.text("CV. SEJAHTERA", 105, 15, { align: "center" });
+    doc.text("TaHutech", 105, 15, { align: "center" });
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
@@ -113,7 +113,7 @@ export default function generatePDF(schoolData, cart, totalPrice) {
 
     // Kanan: Penerima (CV)
     doc.text("Penerima", 160, finalY, { align: "center" });
-    doc.text("( CV. SEJAHTERA )", 160, finalY + 25, { align: "center" });
+    doc.text("( TaHutech )", 160, finalY + 25, { align: "center" });
 
     // Simpan PDF
     doc.save(`Nota-${schoolData.nama.replace(/\s+/g, "_")}-${orderId}.pdf`);

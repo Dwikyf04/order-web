@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-5 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Brand */}
         <div>
-          <h2 className="text-xl font-semibold text-white">OrderWeb</h2>
+          <h2 className="text-xl font-semibold text-white">TaHutech</h2>
           <p className="text-gray-400 mt-2 text-sm">
             Platform pemesanan cepat untuk kebutuhan sekolah Anda.
           </p>
@@ -38,7 +38,7 @@ export default function Footer() {
                 href="mailto:orderweb-support@gmail.com"
                 className="hover:text-red-500"
               >
-                orderweb-support@gmail.com
+                TaHutechsbysdrj@gmail.com
               </a>
             </li>
 
@@ -57,7 +57,7 @@ export default function Footer() {
                 href="https://wa.me/6281234567890"
                 className="hover:text-green-600"
               >
-                +62 812-3456-7890
+                +62 812-2222-01235
               </a>
             </li>
           </ul>
@@ -65,7 +65,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-700 py-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} OrderWeb – All Rights Reserved.
+        © {new Date().getFullYear()} TaHutech – All Rights Reserved.
       </div>
     </footer>
   );
