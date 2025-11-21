@@ -15,7 +15,7 @@ import paketN from "../assets/products/lenovo-flex-3-11.jpg";
 import paketO from "../assets/products/Laptop Lenovo 11GL05 05ID.jpg";
 import paketP from "../assets/products/Laptop Acer SWIFT 3 SF314-43.jpg";
 import paketQ from "../assets/products/Laptop Acer A514-54 SSD.jpg";
-import paketR from "../assets/products/Laptop Asus A416EPSSD512 dan VGA.jpeg";
+import paketR from "../assets/products/Laptop Asus A416EPSSD512 dan VGA.jpg";
 import paketS from "../assets/products/Laptop Lenovo  IP Slim 3-14IML05.jpg";
 import paketT from "../assets/products/Laptop Lenovo IP Slim 3I.jpg";
 import paketU from "../assets/products/Laptop Acer 514-54-SSD 512.jpg";
