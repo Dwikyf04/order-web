@@ -91,8 +91,12 @@ export const products = [
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
-    price: 2350000 - 2500000,
+    price: 23500000,
     img: paketC,
+    variants: [
+      { name: "paket 1", price: 23500000 },
+      { name: "paket 2", price: 25000000 },
+    ],
   },
   {
     id: 4,
@@ -100,8 +104,12 @@ export const products = [
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
-    price: 2750000 - 3000000,
+    price: 2750000,
     img: paketD,
+    variants: [
+      { name: "paket 1", price: 2750000 },
+      { name: "paket 2", price: 3000000 },
+    ],
   },
   {
     id: 5,
