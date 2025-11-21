@@ -4,7 +4,7 @@ import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
 import paketD from "../assets/products/kursi direktur.png";
 import paketE from "../assets/products/Kursi STAFF OVC-002.jpg";
 import paketF from "../assets/products/kursi tunggu 3set.jpg";
-import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpeg";
+import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpg";
 import paketH from "../assets/products/acer-A134.jpg";
 import paketI from "../assets/products/A134-35-SSD 256GB.jpeg";
 import paketJ from "../assets/products/Laptop ASUS OK1100-Gj0410T-CKA.jpg";
@@ -53,17 +53,18 @@ import paketDK from "../assets/products/DK.jpg";
 import paketDL from "../assets/products/DL.jpg";
 import paketDM from "../assets/products/DM.jpg";
 import paketDN from "../assets/products/DN.jpg";
+S;
 import paketDO from "../assets/products/DO.jpg";
 import paketDP from "../assets/products/DP.jpg";
 import paketDQ from "../assets/products/DP.jpg";
 import paketDR from "../assets/products/DP.jpg";
 import paketDS from "../assets/products/DP.jpg";
 import paketDT from "../assets/products/DP.jpg";
-import paketDU from "../assets/products/pc-deskop-asus-11.jpg";
+import paketDU from "../assets/products/DU.jpg";
 import paketDV from "../assets/products/DV.jpg";
-import paketDW from "../assets/products/pc-aio-asus.jpg";
-import paketDX from "../assets/products/pc-aio-asus-2.jpg";
-import paketDY from "../assets/products/pc-aio-asus-3.jpg";
+import paketDW from "../assets/products/DP.jpg";
+import paketDX from "../assets/products/DP.jpg";
+import paketDY from "../assets/products/DP.jpg";
 
 export const products = [
   {
