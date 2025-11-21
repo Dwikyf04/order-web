@@ -1,4 +1,3 @@
-import paketA from "../assets/products/laptop-asus.jpg";
 import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.jpg";
 import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
 import paketD from "../assets/products/kursi direktur.png";
@@ -67,15 +66,6 @@ import paketDY from "../assets/products/DP.jpg";
 
 export const products = [
   {
-    id: 1,
-    nama: "Laptop Asus",
-    spesifikasi: "Intel N Series N5100/N4500/N4020",
-    satuan: "Unit",
-    category: "Komputer",
-    price: 8000000,
-    img: paketA,
-  },
-  {
     id: 2,
     nama: "Laptop  Asus A413EP-VIP5751",
     spesifikasi:
@@ -126,8 +116,12 @@ export const products = [
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
-    price: 1800000 - 1950000,
+    price: 1800000,
     img: paketF,
+    variants: [
+      { name: "paket 1", price: 1800000 },
+      { name: "paket 2", price: 1950000 },
+    ],
   },
   {
     id: 7,
@@ -138,6 +132,10 @@ export const products = [
     category: "Komputer",
     price: 21650000,
     img: paketG,
+    variants: [
+      { name: "paket 1", price: 21650000 },
+      { name: "paket 2", price: 19200000 },
+    ],
   },
   {
     id: 8,
@@ -147,6 +145,10 @@ export const products = [
     category: "Komputer",
     price: 6600000,
     img: paketH,
+    variants: [
+      { name: "paket 1", price: 6600000 },
+      { name: "paket 2", price: 7000000 },
+    ],
   },
   {
     id: 9,
@@ -156,6 +158,10 @@ export const products = [
     category: "Komputer",
     price: 7900000,
     img: paketI,
+    variants: [
+      { name: "paket 1", price: 7900000 },
+      { name: "paket 2", price: 8000000 },
+    ],
   },
   {
     id: 10,
@@ -163,8 +169,12 @@ export const products = [
     spesifikasi: "Intel Dual Core N4500 | 4GB DDR4 | SSD 128GB | 12 ",
     satuan: "Unit",
     category: "Komputer",
-    price: 3500000,
+    price: 3520000,
     img: paketJ,
+    variants: [
+      { name: "paket 1", price: 3520000 },
+      { name: "paket 2", price: 4500000 },
+    ],
   },
   {
     id: 11,
@@ -175,6 +185,10 @@ export const products = [
     category: "Komputer",
     price: 6875000,
     img: paketK,
+    variants: [
+      { name: "paket 1", price: 6875000 },
+      { name: "paket 2", price: 8000000 },
+    ],
   },
   {
     id: 12,
@@ -184,6 +198,10 @@ export const products = [
     category: "Komputer",
     price: 5450000,
     img: paketL,
+    variants: [
+      { name: "paket 1", price: 5450000 },
+      { name: "paket 2", price: 6000000 },
+    ],
   },
   {
     id: 13,
@@ -193,6 +211,10 @@ export const products = [
     category: "Komputer",
     price: 6250000,
     img: paketM,
+    variants: [
+      { name: "paket 1", price: 6250000 },
+      { name: "paket 2", price: 7000000 },
+    ],
   },
   {
     id: 14,
@@ -203,6 +225,10 @@ export const products = [
     category: "Komputer",
     price: 7700000,
     img: paketN,
+    variants: [
+      { name: "paket 1", price: 7700000 },
+      { name: "paket 2", price: 8000000 },
+    ],
   },
   {
     id: 15,
@@ -212,6 +238,10 @@ export const products = [
     category: "Komputer",
     price: 5750000,
     img: paketO,
+    variants: [
+      { name: "paket 1", price: 5750000 },
+      { name: "paket 2", price: 6000000 },
+    ],
   },
   {
     id: 16,
@@ -221,6 +251,10 @@ export const products = [
     category: "Komputer",
     price: 14250000,
     img: paketP,
+    variants: [
+      { name: "paket 1", price: 14250000 },
+      { name: "paket 2", price: 14600000 },
+    ],
   },
   {
     id: 17,
@@ -230,6 +264,10 @@ export const products = [
     category: "Komputer",
     price: 9000000,
     img: paketQ,
+    variants: [
+      { name: "paket 1", price: 9000000 },
+      { name: "paket 2", price: 9500000 },
+    ],
   },
   {
     id: 18,
@@ -239,6 +277,10 @@ export const products = [
     category: "Komputer",
     price: 13250000,
     img: paketR,
+    variants: [
+      { name: "paket 1", price: 13250000 },
+      { name: "paket 2", price: 14150000 },
+    ],
   },
   {
     id: 19,
@@ -248,6 +290,10 @@ export const products = [
     category: "Komputer",
     price: 10500000,
     img: paketS,
+    variants: [
+      { name: "paket 1", price: 10500000 },
+      { name: "paket 2", price: 11000000 },
+    ],
   },
   {
     id: 20,
@@ -257,6 +303,10 @@ export const products = [
     category: "Komputer",
     price: 8640000,
     img: paketT,
+    variants: [
+      { name: "paket 1", price: 8640000 },
+      { name: "paket 2", price: 9500000 },
+    ],
   },
   {
     id: 21,
@@ -267,6 +317,10 @@ export const products = [
     category: "Komputer",
     price: 12000000,
     img: paketU,
+    variants: [
+      { name: "paket 1", price: 1200000 },
+      { name: "paket 2", price: 1300000 },
+    ],
   },
   {
     id: 22,
@@ -277,6 +331,10 @@ export const products = [
     category: "Komputer",
     price: 13500000,
     img: paketV,
+    variants: [
+      { name: "paket 1", price: 1350000 },
+      { name: "paket 2", price: 1400000 },
+    ],
   },
   {
     id: 24,
@@ -286,6 +344,10 @@ export const products = [
     category: "Komputer",
     price: 15500000,
     img: paketX,
+    variants: [
+      { name: "paket 1", price: 15500000 },
+      { name: "paket 2", price: 16000000 },
+    ],
   },
   {
     id: 25,
@@ -294,6 +356,10 @@ export const products = [
     satuan: "Unit",
     category: "Komputer",
     price: 15500000,
+    variants: [
+      { name: "paket 1", price: 15500000 },
+      { name: "paket 2", price: 15700000 },
+    ],
     img: paketY,
   },
   {
@@ -303,8 +369,12 @@ export const products = [
       "Core i7-1165G7-Up to 4,7 Ghz | 8GB DDR4 | SSD 512GB NVMe | 14",
     satuan: "Unit",
     category: "Komputer",
-    price: 17500000,
+    price: 175000000,
     img: paketZ,
+    variants: [
+      { name: "paket 1", price: 175000000 },
+      { name: "paket 2", price: 177500000 },
+    ],
   },
   {
     id: 27,
@@ -312,7 +382,7 @@ export const products = [
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
-    price: 2850000 - 3000000,
+    price: 2850000,
     img: paketAA,
   },
   {
@@ -321,8 +391,12 @@ export const products = [
     spesifikasi: "",
     satuan: "Unit",
     category: "Elektronik",
-    price: 1000000 - 1100000,
+    price: 1000000,
     img: paketBA,
+    variants: [
+      { name: "paket 1", price: 1000000 },
+      { name: "paket 2", price: 1100000 },
+    ],
   },
   {
     id: 29,
@@ -330,8 +404,12 @@ export const products = [
     spesifikasi: "Multifungsi Print Scan Copy",
     satuan: "Unit",
     category: "Elektronik",
-    price: 3000000 - 3250000,
+    price: 3000000,
     img: paketBB,
+    variants: [
+      { name: "paket 1", price: 3000000 },
+      { name: "paket 2", price: 3250000 },
+    ],
   },
   {
     id: 30,
@@ -339,8 +417,12 @@ export const products = [
     spesifikasi: "",
     satuan: "Unit",
     category: "Elektronik",
-    price: 2500000 - 2650000,
+    price: 2500000,
     img: paketBC,
+    variants: [
+      { name: "paket 1", price: 2500000 },
+      { name: "paket 2", price: 2650000 },
+    ],
   },
   {
     id: 31,
@@ -357,8 +439,12 @@ export const products = [
     spesifikasi: "Wifi Print Scan Copy",
     satuan: "Unit",
     category: "Elektronik",
-    price: 4500000 - 5000000,
+    price: 4500000,
     img: paketBE,
+    variants: [
+      { name: "paket 1", price: 4500000 },
+      { name: "paket 2", price: 5000000 },
+    ],
   },
   {
     id: 33,
@@ -474,8 +560,12 @@ export const products = [
     spesifikasi: "Intel Core i5/8GB/512 SSD/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 14500000 - 15750000,
+    price: 14500000,
     img: paketDC,
+    variants: [
+      { name: "paket 1", price: 14500000 },
+      { name: "paket 2", price: 15750000 },
+    ],
   },
   {
     id: 46,
@@ -483,8 +573,12 @@ export const products = [
     spesifikasi: "Intel Core i3/4GB/HDD 1TB /Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 11500000 - 11750000,
+    price: 11500000,
     img: paketDD,
+    variants: [
+      { name: "paket 1", price: 11500000 },
+      { name: "paket 2", price: 11750000 },
+    ],
   },
   {
     id: 47,
@@ -492,8 +586,12 @@ export const products = [
     spesifikasi: "Intel Core i5/8GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 15000000 - 16000000,
+    price: 15000000,
     img: paketDE,
+    variants: [
+      { name: "paket 1", price: 15000000 },
+      { name: "paket 2", price: 16000000 },
+    ],
   },
   {
     id: 48,
@@ -501,8 +599,12 @@ export const products = [
     spesifikasi: "Intel Core i3/4GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 11000000 - 11500000,
+    price: 11000000,
     img: paketDF,
+    variants: [
+      { name: "paket 1", price: 11000000 },
+      { name: "paket 2", price: 11500000 },
+    ],
   },
   {
     id: 49,
@@ -510,8 +612,12 @@ export const products = [
     spesifikasi: "Intel Core i3/4GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 11250000 - 11750000,
+    price: 11250000,
     img: paketDG,
+    variants: [
+      { name: "paket 1", price: 11250000 },
+      { name: "paket 2", price: 11750000 },
+    ],
   },
   {
     id: 50,
@@ -519,8 +625,12 @@ export const products = [
     spesifikasi: "Intel Core i5/4GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 12000000 - 12850000,
+    price: 12000000,
     img: paketDH,
+    variants: [
+      { name: "paket 1", price: 12000000 },
+      { name: "paket 2", price: 12850000 },
+    ],
   },
   {
     id: 51,
@@ -529,8 +639,12 @@ export const products = [
       "V161GART-BD141W/N420/Mem 4GB/HDD 1TB/NO VGA/NO DVD/WIN 11 HOME/NO OHS/15,6 inch TOUCH",
     satuan: "Unit",
     category: "Elektronik",
-    price: 8000000 - 8500000,
+    price: 8000000,
     img: paketDI,
+    variants: [
+      { name: "paket 1", price: 8000000 },
+      { name: "paket 2", price: 8500000 },
+    ],
   },
   {
     id: 52,
@@ -539,8 +653,12 @@ export const products = [
       "V222GAK-WA142W/Cel J4025/Mem 4GB/SSD 256GB/NO VGA/NO DVD/WIN 11 HOME/NO OHS/21,5 inch/ white",
     satuan: "Unit",
     category: "Elektronik",
-    price: 7500000 - 810000,
+    price: 7500000,
     img: paketDJ,
+    variants: [
+      { name: "paket 1", price: 7500000 },
+      { name: "paket 2", price: 8100000 },
+    ],
   },
   {
     id: 53,
@@ -549,8 +667,12 @@ export const products = [
       "V222FAK-BA342W/CORE i3-10110U/Core i3-10110OU/Mem 4GB/SSD 256GB/NO VGA/NO DVD/WIN 11 HOME/NO OHS/21,5 inch/ black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 9500000 - 10000000,
+    price: 9500000,
     img: paketDK,
+    variants: [
+      { name: "paket 1", price: 9500000 },
+      { name: "paket 2", price: 1000000 },
+    ],
   },
   {
     id: 54,
@@ -559,8 +681,12 @@ export const products = [
       "V222FAK-BA345W/Core i3-10110U/Mem 4GB/SSD 512GB/NO VGA/NO DVD/WIN 11 HOME/NO OHS/21,5 inch/ black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 10500000 - 11000000,
+    price: 10500000,
     img: paketDL,
+    variants: [
+      { name: "paket 1", price: 10500000 },
+      { name: "paket 2", price: 11000000 },
+    ],
   },
   {
     id: 55,
@@ -569,8 +695,12 @@ export const products = [
       "M3200WUAK-BA341W/AMD R3-5300U/Mem 4GB/HDD 1 TB/NO VGA/NO DVD/WIN 11 HOME/NO OHS/21,5 inch/ black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 10750000 - 11175000,
+    price: 10750000,
     img: paketDM,
+    variants: [
+      { name: "paket 1", price: 10750000 },
+      { name: "paket 2", price: 11175000 },
+    ],
   },
   {
     id: 56,
@@ -579,8 +709,12 @@ export const products = [
       "V222FAK-BA542W/Core i5-10210U/Mem 4GB/SSD 256GB /NO VGA/NO DVD/WIN 11 HOME/NO OHS/21,5 inch/ black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 12500000 - 13000000,
+    price: 12500000,
     img: paketDN,
+    variants: [
+      { name: "paket 1", price: 12500000 },
+      { name: "paket 2", price: 13000000 },
+    ],
   },
   {
     id: 57,
@@ -589,8 +723,12 @@ export const products = [
       "V222FAK-BA585W/Core i5-1135G7/Mem 8GB/SSD 512GB /NO VGA/NO DVD/WIN 11 HOME/NO OHS/23,8 inch/ black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 13750000 - 14750000,
+    price: 13750000,
     img: paketDO,
+    variants: [
+      { name: "paket 1", price: 13750000 },
+      { name: "paket 2", price: 14750000 },
+    ],
   },
   {
     id: 58,
@@ -599,8 +737,12 @@ export const products = [
       "V222FAK-BA581W/Core i5-1135G7/Mem 8GB/HDD 1TB/NO VGA/NO DVD/WIN 11 HOME/NO OHS/23,8 inch/black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 15000000 - 16000000,
+    price: 15000000,
     img: paketDP,
+    variants: [
+      { name: "paket 1", price: 15000000 },
+      { name: "paket 2", price: 16000000 },
+    ],
   },
   {
     id: 59,
@@ -609,8 +751,12 @@ export const products = [
       "V222FAK-BA581W/Core i5-10500T/Mem 8GB/HDD 1TB/VGA MX330 2GB/WIN 11 HOME/OHS/NO DVD/23,8 inch/black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 16750000 - 18000000,
+    price: 16750000,
     img: paketDQ,
+    variants: [
+      { name: "paket 1", price: 16750000 },
+      { name: "paket 2", price: 18000000 },
+    ],
   },
   {
     id: 60,
@@ -619,8 +765,12 @@ export const products = [
       "V222FAK-BA581W/Core i5-10500T/Mem 8GB/HDD 1TB/NO VGA/WIN 11 HOME/OHS/NO DVD/23,8 inch/black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 15750000 - 16700000,
+    price: 15750000,
     img: paketDR,
+    variants: [
+      { name: "paket 1", price: 15750000 },
+      { name: "paket 2", price: 16700000 },
+    ],
   },
   {
     id: 61,
@@ -629,8 +779,12 @@ export const products = [
       "V222FAK-BA585W/Core i5-1135G7/Mem 8GB/SSD 512GB/NO VGA/WIN 11 HOME/NO OHS/NO DVD/23,8 inch TOUCH/black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 15500000 - 16650000,
+    price: 15500000,
     img: paketDS,
+    variants: [
+      { name: "paket 1", price: 15500000 },
+      { name: "paket 2", price: 16650000 },
+    ],
   },
   {
     id: 62,
@@ -639,8 +793,12 @@ export const products = [
       "V222FAK-BA585W/RS5625U/Mem 8GB/SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/21,5 inch/black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 13250000 - 14100000,
+    price: 13250000,
     img: paketDT,
+    variants: [
+      { name: "paket 1", price: 13250000 },
+      { name: "paket 2", price: 14100000 },
+    ],
   },
   {
     id: 63,
@@ -649,8 +807,12 @@ export const products = [
       "V222FAK-BA585W/RS5625U/Mem 8GB/SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/23,8 inch/White",
     satuan: "Unit",
     category: "Elektronik",
-    price: 13300000 - 14300000,
+    price: 13300000,
     img: paketDU,
+    variants: [
+      { name: "paket 1", price: 13300000 },
+      { name: "paket 2", price: 14300000 },
+    ],
   },
   {
     id: 64,
@@ -659,8 +821,12 @@ export const products = [
       "V222FAK-BA585W/RS5625U/Mem 8GB/SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/23,8 inch/Black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 13300000 - 15900000,
+    price: 13300000,
     img: paketDV,
+    variants: [
+      { name: "paket 1", price: 13300000 },
+      { name: "paket 2", price: 15900000 },
+    ],
   },
   {
     id: 65,
@@ -669,8 +835,12 @@ export const products = [
       "V222FAK-BA785W/Core I7 1165G7/Mem 8GB/SSD 512GB/NO VGA/WIN 11 HOME/NO OHS/NO DVD/23,8 inch FHD/Black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 14800000 - 19400000,
+    price: 14800000,
     img: paketDW,
+    variants: [
+      { name: "paket 1", price: 14800000 },
+      { name: "paket 2", price: 19400000 },
+    ],
   },
   {
     id: 66,
@@ -679,8 +849,12 @@ export const products = [
       "V222FAK-BA785W/Core I7 1165G7/Mem 8GB/SSD 512GB/NO VGA/WIN 11 HOME/NO OHS/NO DVD/23,8 inch FHD TOUCH/Black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 20000000 - 214000000,
+    price: 20000000,
     img: paketDX,
+    variants: [
+      { name: "paket 1", price: 20000000 },
+      { name: "paket 2", price: 21400000 },
+    ],
   },
   {
     id: 67,
@@ -689,7 +863,11 @@ export const products = [
       "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
     satuan: "Unit",
     category: "Elektronik",
-    price: 24750000 - 26500000,
+    price: 24750000,
     img: paketDY,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
   },
 ];
