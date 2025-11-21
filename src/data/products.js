@@ -1,67 +1,66 @@
 import paketA from "../assets/products/laptop-asus.jpg";
-import paketB from "../assets/products/printer.jpg";
-import paketC from "../assets/products/proyektor.jpg";
-import paketD from "../assets/products/office-chair.jpg";
-import paketE from "../assets/products/sepatu-kulit.jpg";
-import paketF from "../assets/products/meja-belajar.jpg";
-import paketG from "../assets/products/lenovo-ip-slim.jpg";
+import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.jpg";
+import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
+import paketD from "../assets/products/kursi direktur.png";
+import paketE from "../assets/products/Kursi STAFF OVC-002.jpg";
+import paketF from "../assets/products/kursi tunggu 3set.jpg";
+import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpeg";
 import paketH from "../assets/products/acer-A134.jpg";
 import paketI from "../assets/products/A134-35-SSD 256GB.jpeg";
-import paketJ from "../assets/products/laptop-acer.jpg";
-import paketK from "../assets/products/asus-tp401ma.jpg";
-import paketL from "../assets/products/asus-x441ma.jpg";
-import paketM from "../assets/products/asus-e410ma.jpg";
+import paketJ from "../assets/products/Laptop ASUS OK1100-Gj0410T-CKA.jpg";
+import paketK from "../assets/products/Laptop ASUS TP401MA.jpg";
+import paketL from "../assets/products/Laptop ASUS X441MA.jpg";
+import paketM from "../assets/products/Laptop Asus E410MA.jpg";
 import paketN from "../assets/products/lenovo-flex-3-11.jpg";
-import paketO from "../assets/products/lenovo-11-gl05-05id.jpg";
-import paketP from "../assets/products/acer-swift-3-sf314-43.jpg";
-import paketQ from "../assets/products/acer-514-54-ssd.jpg";
-import paketR from "../assets/products/asus-a416epssd512-dan-vga.jpg";
-import paketS from "../assets/products/lenovo-ip-slim-3-14iml05.jpg";
-import paketT from "../assets/products/lenovo-ip-slim-3i.jpg";
-import paketU from "../assets/products/acer-514-54-ssd-512.jpg";
-import paketV from "../assets/products/acer-514-54g-ssd-512.jpg";
-import paketW from "../assets/products/acer-514-54g-ssd-512-2.jpg";
-import paketX from "../assets/products/asus-a413eo.jpg";
-import paketY from "../assets/products/lenovo-slim-3-ip-3-r1id.jpg";
-import paketZ from "../assets/products/acer-a514-54g.jpg";
+import paketO from "../assets/products/Laptop Lenovo 11GL05 05ID.jpg";
+import paketP from "../assets/products/Laptop Acer SWIFT 3 SF314-43.jpg";
+import paketQ from "../assets/products/Laptop Acer A514-54 SSD.jpg";
+import paketR from "../assets/products/Laptop Asus A416EPSSD512 dan VGA.jpeg";
+import paketS from "../assets/products/Laptop Lenovo  IP Slim 3-14IML05.jpg";
+import paketT from "../assets/products/Laptop Lenovo IP Slim 3I.jpg";
+import paketU from "../assets/products/Laptop Acer 514-54-SSD 512.jpg";
+import paketV from "../assets/products/Laptop Acer 514-54G-SSD 512.jpg";
+import paketX from "../assets/products/Laptop Asus A413EP.jpeg";
+import paketY from "../assets/products/Laptop Lenovo Slim 3 IP 3-R1ID.jpg";
+import paketZ from "../assets/products/Laptop Acer A514-54G.jpeg";
 import paketAA from "../assets/products/lemari-kabinet.jpg";
-import paketBA from "../assets/products/printer-canon-ip-2770-inkjet.jpg";
-import paketBB from "../assets/products/printer-epson-l3210.jpg";
-import paketBC from "../assets/products/printer-epson-l121.jpg";
-import paketBD from "../assets/products/printer-epson-l210.jpg";
-import paketBE from "../assets/products/printer-epson-l31150.jpg";
-import paketBF from "../assets/products/printer-epson-l5190.jpg";
-import paketBG from "../assets/products/printer-brother-mfc-t920dw.jpg";
-import paketCA from "../assets/products/ac-daikin-1pk-lite-series.jpg";
-import paketCB from "../assets/products/ac-gree-1pk.jpg";
-import paketCC from "../assets/products/ac-split-panasonic-1pk.jpg";
-import paketCD from "../assets/products/sharp-1pk-ac-split.jpg";
-import paketCE from "../assets/products/ac-split-aux-low-watt-1pk.jpg";
-import paketCF from "../assets/products/changhong-csc09nvb3.jpg";
-import paketCG from "../assets/products/honshu-ac-1pk-hsd9006.jpg";
-import paketCH from "../assets/products/samsung-ac-standard-wall-mounted-1pk.jpg";
-import paketDA from "../assets/products/pc-deskop-acer.jpg";
-import paketDB from "../assets/products/pc-deskop-acer-2.jpg";
-import paketDC from "../assets/products/pc-aio-acer-lenovo.jpg";
-import paketDD from "../assets/products/pc-aio-acer-lenovo-2.jpg";
-import paketDE from "../assets/products/pc-aio-lenovo.jpg";
-import paketDF from "../assets/products/pc-aio-lenovo-2.jpg";
-import paketDG from "../assets/products/pc-deskop-asus.jpg";
-import paketDH from "../assets/products/pc-deskop-asus-2.jpg";
-import paketDI from "../assets/products/pc-aio-asus-1.jpg";
-import paketDJ from "../assets/products/pc-aio-asus-2.jpg";
-import paketDK from "../assets/products/pc-aio-asus-3.jpg";
-import paketDL from "../assets/products/pc-aio-asus-4.jpg";
-import paketDM from "../assets/products/pc-deskop-asus-3.jpg";
-import paketDN from "../assets/products/pc-deskop-asus-4.jpg";
-import paketDO from "../assets/products/pc-deskop-asus-5.jpg";
-import paketDP from "../assets/products/pc-deskop-asus-6.jpg";
-import paketDQ from "../assets/products/pc-deskop-asus-7.jpg";
-import paketDR from "../assets/products/pc-deskop-asus-8.jpg";
-import paketDS from "../assets/products/pc-deskop-asus-9.jpg";
-import paketDT from "../assets/products/pc-deskop-asus-10.jpg";
+import paketBA from "../assets/products/Printer Canon IP 2770 Inkjet.png";
+import paketBB from "../assets/products/Printer Epson L3210.jpg";
+import paketBC from "../assets/products/Printer Epson L121.png";
+import paketBD from "../assets/products/Printer Epson L210.png";
+import paketBE from "../assets/products/Printer Epson L31150.png";
+import paketBF from "../assets/products/Printer Epson L5190.jpg";
+import paketBG from "../assets/products/Printer Brother MFC-T920DW T920 Duplex Wireless.jpg";
+import paketCA from "../assets/products/AC Daikin 1 PK LITE SERIES FTV 25 CXV14 MADE IN MALAYSIA.jpg";
+import paketCB from "../assets/products/AC GREE 1 PK GWC 09 MOOS STANDART SERIES.jpg";
+import paketCC from "../assets/products/AC SPLIT PANASONIC 1 PK CSYN 9 WIKI.jpg";
+import paketCD from "../assets/products/sharp_sharp_aha9zcyn_ac_split_standart_1_pk_full02_myy63vtq.jpg";
+import paketCE from "../assets/products/AC SPLIT AUX LOW WATT 1 PK ASW 09 FFR.jpg";
+import paketCF from "../assets/products/Changhong  CSC09NVB3 (+CSC09NVB3_OUT).jpg";
+import paketCG from "../assets/products/Honshu AC 1 PK HSD9006 Low Watt.jpg";
+import paketCH from "../assets/products/samsung_samsung_ar09tghqasinse_wall_mount_ac_split_-1_pk-_full01_cmlpdv08.jpg";
+import paketDA from "../assets/products/DEKSTOP ACER.jpg";
+import paketDB from "../assets/products/DEKSTOP ACER.jpg";
+import paketDC from "../assets/products/pc aio acer.jpg";
+import paketDD from "../assets/products/AIO ACER.jpg";
+import paketDE from "../assets/products/PC AIO LENOVO.jpg";
+import paketDF from "../assets/products/PC AIO LENOVO.jpg";
+import paketDG from "../assets/products/DEKSTOP ASUS.jpg";
+import paketDH from "../assets/products/DEKSTOP ASUS.jpg";
+import paketDI from "../assets/products/DI.jpg";
+import paketDJ from "../assets/products/DJ.jpeg";
+import paketDK from "../assets/products/DK.jpg";
+import paketDL from "../assets/products/DL.jpg";
+import paketDM from "../assets/products/DM.jpg";
+import paketDN from "../assets/products/DN.jpg";
+import paketDO from "../assets/products/DO.jpg";
+import paketDP from "../assets/products/DP.jpg";
+import paketDQ from "../assets/products/DP.jpg";
+import paketDR from "../assets/products/DP.jpg";
+import paketDS from "../assets/products/DP.jpg";
+import paketDT from "../assets/products/DP.jpg";
 import paketDU from "../assets/products/pc-deskop-asus-11.jpg";
-import paketDV from "../assets/products/pc-deskop-asus-12.jpg";
+import paketDV from "../assets/products/DV.jpg";
 import paketDW from "../assets/products/pc-aio-asus.jpg";
 import paketDX from "../assets/products/pc-aio-asus-2.jpg";
 import paketDY from "../assets/products/pc-aio-asus-3.jpg";
@@ -134,7 +133,7 @@ export const products = [
   },
   {
     id: 8,
-    nama: "Laptop Acer A314-22 AMD 512 SSD",
+    nama: "Laptop ACER A314-22 AMD 512 SSD",
     spesifikasi: "AMD Athion Silver 3050U | 4GB DDR4 | 256 SSD ",
     satuan: "Unit",
     category: "Komputer",
@@ -143,7 +142,7 @@ export const products = [
   },
   {
     id: 9,
-    nama: "Laptop Acer A134-35-SSD 256GB",
+    nama: "Laptop ACER A134-35-SSD 256GB",
     spesifikasi: "Intel Dual Core N5100 | 4GB DDR4 | 256 SSD ",
     satuan: "Unit",
     category: "Komputer",
@@ -152,8 +151,8 @@ export const products = [
   },
   {
     id: 10,
-    nama: "Laptop Acer BR1100-Gj0410T-CKA",
-    spesifikasi: "Intel Dual Core N5400 | 4GB DDR4 | SSD 128GB | 12 ",
+    nama: "Laptop ASUS OK1100-Gj0410T-CKA",
+    spesifikasi: "Intel Dual Core N4500 | 4GB DDR4 | SSD 128GB | 12 ",
     satuan: "Unit",
     category: "Komputer",
     price: 3500000,
@@ -161,7 +160,7 @@ export const products = [
   },
   {
     id: 11,
-    nama: "Laptop Asus TP401MA",
+    nama: "Laptop ASUS TP401MA",
     spesifikasi:
       "Intel Dual Core N4020 | 4GB DDR4 | SSD 256GB | NVMe | 14 IPS Touch Screen",
     satuan: "Unit",
@@ -171,7 +170,7 @@ export const products = [
   },
   {
     id: 12,
-    nama: "Laptop Asus X441MA",
+    nama: "Laptop ASUS X441MA",
     spesifikasi: "Intel Dual Core N4020 | 4GB DDR4 | HD 1TB | DVD RW| 14 ",
     satuan: "Unit",
     category: "Komputer",
@@ -272,18 +271,8 @@ export const products = [
     img: paketV,
   },
   {
-    id: 23,
-    nama: "Laptop Acer 514-54G-SSD 512",
-    spesifikasi:
-      "Core i5-1135G7 | 8GB DDR4 (Free 1 Slot) | SSD 512GB NVMe | 14",
-    satuan: "Unit",
-    category: "Komputer",
-    price: 13500000,
-    img: paketW,
-  },
-  {
     id: 24,
-    nama: "Laptop Asus A413EO",
+    nama: "Laptop Asus A413EP",
     spesifikasi: "Core i5-1135G7 | 8GB DDR4 | SSD 512GB NVMe | 14",
     satuan: "Unit",
     category: "Komputer",
@@ -329,7 +318,7 @@ export const products = [
   },
   {
     id: 29,
-    nama: "Printer Epson L3210  ",
+    nama: "Printer Epson L3210",
     spesifikasi: "Multifungsi Print Scan Copy",
     satuan: "Unit",
     category: "Elektronik",
@@ -338,7 +327,7 @@ export const products = [
   },
   {
     id: 30,
-    nama: "Printer Epson L121  ",
+    nama: "Printer Epson L121",
     spesifikasi: "",
     satuan: "Unit",
     category: "Elektronik",
@@ -347,7 +336,7 @@ export const products = [
   },
   {
     id: 31,
-    nama: "Printer Epson L210  ",
+    nama: "Printer Epson L210",
     spesifikasi: "",
     satuan: "Unit",
     category: "Elektronik",
@@ -356,7 +345,7 @@ export const products = [
   },
   {
     id: 32,
-    nama: "Printer Epson L31150  ",
+    nama: "Printer Epson L31150",
     spesifikasi: "Wifi Print Scan Copy",
     satuan: "Unit",
     category: "Elektronik",
@@ -365,7 +354,7 @@ export const products = [
   },
   {
     id: 33,
-    nama: "Printer Epson L5190  ",
+    nama: "Printer Epson L5190",
     spesifikasi: "All in One Print + Wifi + ADF",
     satuan: "Unit",
     category: "Elektronik",
@@ -455,7 +444,7 @@ export const products = [
   },
   {
     id: 43,
-    nama: "PC DESKOP ACER",
+    nama: "PC DEKSTOP ACER",
     spesifikasi: "Intel Core i3/4GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
@@ -464,7 +453,7 @@ export const products = [
   },
   {
     id: 44,
-    nama: "PC DESKOP ACER",
+    nama: "PC DEKSTOP ACER",
     spesifikasi: "Intel Core i5/8GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
@@ -482,7 +471,7 @@ export const products = [
   },
   {
     id: 46,
-    nama: "PC AIO ACER LENOVO",
+    nama: "PC AIO ACER",
     spesifikasi: "Intel Core i3/4GB/HDD 1TB /Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
@@ -509,7 +498,7 @@ export const products = [
   },
   {
     id: 49,
-    nama: "PC DESKOP ASUS",
+    nama: "PC DEKSTOP ASUS",
     spesifikasi: "Intel Core i3/4GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
@@ -518,7 +507,7 @@ export const products = [
   },
   {
     id: 50,
-    nama: "PC DESKOP ASUS",
+    nama: "PC DEKSTOP ASUS",
     spesifikasi: "Intel Core i5/4GB/HDD 1TB/Monitor Minimal 19,5 inch",
     satuan: "Unit",
     category: "Elektronik",
