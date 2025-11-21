@@ -23,7 +23,7 @@ import paketV from "../assets/products/Laptop Acer 514-54G-SSD 512.jpg";
 import paketX from "../assets/products/Laptop Asus A413EP.jpg";
 import paketY from "../assets/products/Laptop Lenovo Slim 3 IP 3-R1ID.jpg";
 import paketZ from "../assets/products/Laptop Acer A514-54G.jpg";
-import paketAA from "../assets/products/lemari-kabinet.jpg";
+import paketAA from "../assets/products/lemari kabinet.jpg";
 import paketBA from "../assets/products/Printer Canon IP 2770 Inkjet.png";
 import paketBB from "../assets/products/Printer Epson L3210.jpg";
 import paketBC from "../assets/products/Printer Epson L121.png";
