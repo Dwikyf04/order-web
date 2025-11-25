@@ -103,7 +103,7 @@ export default function ProductCard({ product, onAddToCart, action }) {
                   : "bg-blue-700 hover:bg-blue-800 text-white"
               }`}
             >
-              + Tambah
+              Pesan
             </button>
           </div>
         )}
