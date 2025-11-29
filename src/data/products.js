@@ -1,7 +1,7 @@
 import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.jpg";
 import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
 import paketD from "../assets/products/kursi direktur.png";
-import paketE from "../assets/products/kursi-C-301.jpeg";
+import paketE from "../assets/products/kursi-susun.jpeg";
 import paketF from "../assets/products/kursi-kc-525.jpeg";
 import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpg";
 import paketH from "../assets/products/acer-A134.jpg";
@@ -103,7 +103,7 @@ export const products = [
   },
   {
     id: 5,
-    nama: "Kursi STAFF OVC-002/ Hadap L / Putar",
+    nama: "Kursi Susun",
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
