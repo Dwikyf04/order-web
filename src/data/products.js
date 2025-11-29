@@ -1,6 +1,6 @@
 import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.jpg";
 import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
-import paketD from "../assets/products/kursi direktur.png";
+import paketD from "../assets/products/kursi-525.jpeg";
 import paketE from "../assets/products/kursi-susun.jpeg";
 import paketF from "../assets/products/kursi-kc-525.jpeg";
 import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpg";
