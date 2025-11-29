@@ -1,7 +1,7 @@
 import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.jpg";
 import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
 import paketD from "../assets/products/kursi direktur.png";
-import paketE from "../assets/products/Kursi STAFF OVC-002.jpg";
+import paketE from "../assets/products/kursi-C-301.jpeg";
 import paketF from "../assets/products/kursi tunggu 3set.jpg";
 import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpg";
 import paketH from "../assets/products/acer-A134.jpg";
@@ -112,7 +112,7 @@ export const products = [
   },
   {
     id: 6,
-    nama: "Kursi Tunggu AC-302 / Bandara 3 set",
+    nama: "Kursi Tunggu C-301",
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
@@ -858,6 +858,20 @@ export const products = [
   },
   {
     id: 67,
+    nama: "PC AIO ASUS",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Elektronik",
+    price: 24750000,
+    img: paketDY,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 68,
     nama: "PC AIO ASUS",
     spesifikasi:
       "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
