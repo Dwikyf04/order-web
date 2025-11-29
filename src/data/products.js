@@ -75,7 +75,6 @@ import paketFI from "../assets/products/kursi-kk-025.jpeg";
 import paketFJ from "../assets/products/kursi-kk-035a.jpeg";
 import paketFK from "../assets/products/kursi-kk-036.jpeg";
 import paketFL from "../assets/products/kursi-kk-037.jpeg";
-import paketFM from "../assets/products/kursi-kk-035A.jpeg";
 
 export const products = [
   {
@@ -1046,20 +1045,6 @@ export const products = [
     category: "Furnitur",
     price: 24750000,
     img: paketFL,
-    variants: [
-      { name: "paket 1", price: 24750000 },
-      { name: "paket 2", price: 26500000 },
-    ],
-  },
-  {
-    id: 78,
-    nama: "Kursi KK-035A",
-    spesifikasi:
-      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
-    satuan: "Unit",
-    category: "Furnitur",
-    price: 24750000,
-    img: paketFM,
     variants: [
       { name: "paket 1", price: 24750000 },
       { name: "paket 2", price: 26500000 },
