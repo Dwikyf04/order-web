@@ -16,18 +16,28 @@ import {
 export default function Home() {
   const [category, setCategory] = useState("Semua");
 
-  // === LOGIKA FILTER ===
+  // === LOGIKA FILTER UNGGULAN ===
   const filteredProducts = useMemo(() => {
     if (category === "Semua") {
-      return products;
+      // 1. Ambil daftar semua kategori yang ada di data produk (unik)
+      const uniqueCategories = [...new Set(products.map((p) => p.category))];
+
+      // 2. Untuk setiap kategori, ambil 1 produk pertama saja sebagai "Unggulan"
+      const featured = uniqueCategories.map((cat) => {
+        return products.find((p) => p.category === cat);
+      });
+
+      // Filter out undefined (jika ada data yang tidak lengkap)
+      return featured.filter((item) => item !== undefined);
     }
+
+    // Jika user memilih kategori spesifik, tampilkan SEMUA produk di kategori itu
     return products.filter((product) => product.category === category);
   }, [category]);
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* HERO SECTION */}
-      {/* Revisi: py-20 -> py-12, md:py-28 -> md:py-16 (Lebih pendek atas bawah) */}
       <header className="max-w-7xl mx-auto px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
@@ -83,7 +93,6 @@ export default function Home() {
       </header>
 
       {/* FEATURES */}
-      {/* Revisi: py-12 -> py-8 (Jarak lebih rapat) */}
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-5 rounded-xl shadow hover:shadow-xl transition border border-gray-100">
@@ -114,17 +123,18 @@ export default function Home() {
       </section>
 
       {/* PRODUCTS KATALOG */}
-      {/* Revisi: py-12 -> py-8, my-8 -> my-4 (Jarak margin atas bawah dikurangi) */}
       <section className="max-w-7xl mx-auto px-6 py-8 bg-white rounded-3xl shadow-sm my-4 border border-gray-100">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Katalog Produk</h2>
             <p className="text-gray-500 mt-1 text-sm">
-              Telusuri semua kebutuhan operasional Anda.
+              {category === "Semua"
+                ? "Produk unggulan dari setiap kategori."
+                : `Menampilkan semua produk kategori ${category}.`}
             </p>
           </div>
 
-          <div className="flex space-x-2 bg-gray-100 p-1 rounded-full self-start md:self-auto">
+          <div className="flex flex-wrap gap-2 md:self-auto">
             {["Semua", "Elektronik", "Furnitur", "Komputer"].map((cat) => (
               <button
                 key={cat}
@@ -132,7 +142,7 @@ export default function Home() {
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                   category === cat
                     ? "bg-blue-600 text-white shadow-md"
-                    : "text-gray-600 hover:bg-gray-200"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
                 {cat}
@@ -157,7 +167,6 @@ export default function Home() {
       </section>
 
       {/* ORDER FLOW */}
-      {/* Revisi: py-12 -> py-10 */}
       <section className="bg-gradient-to-b from-white to-gray-50 py-10">
         <div className="max-w-7xl mx-auto px-6">
           <h3 className="text-2xl font-bold text-center mb-8">
@@ -193,7 +202,6 @@ export default function Home() {
       </section>
 
       {/* SPONSORSHIP */}
-      {/* Revisi: py-20 -> py-10 */}
       <section className="max-w-7xl mx-auto px-6 py-10">
         <h3 className="text-2xl font-bold text-center mb-2">Sponsorship</h3>
         <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto text-sm">
@@ -216,7 +224,6 @@ export default function Home() {
               key={i}
               className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
             >
-              {/* REVISI: Menghapus class grayscale */}
               <img
                 src={brand.src}
                 alt={brand.name}
@@ -228,8 +235,7 @@ export default function Home() {
       </section>
 
       {/* PARTNERSHIP */}
-      {/* Revisi: py-20 -> py-10 */}
-      <section className="max-w-7xl mx-auto px-6 py-10">
+      <section className="max-w-7xl mx-auto px-6 py-10 border-t border-gray-200">
         <h3 className="text-2xl font-bold text-center mb-2">Partnership</h3>
         <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto text-sm">
           Bekerja sama dengan berbagai toko, vendor, dan supplier terpercaya.
@@ -237,11 +243,12 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {[
+            { src: "/img/patnership/bagoestoko1.jpeg", name: "Bagoestoko" },
             { src: "/img/patnership/barata1.jpeg", name: "Barata" },
             { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
             { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
-            { src: "/img/patnership/bagoestoko1.jpeg", name: "Bagoestoko" },
             { src: "/img/patnership/shoes.png", name: "Shoes" },
+            { src: "/img/patnership/TaHU.png", name: "TaHU" },
           ].map((brand, i) => (
             <div
               key={i}
