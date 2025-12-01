@@ -14,11 +14,11 @@ import {
 } from "@heroicons/react/24/solid";
 
 export default function Home() {
-  const [category, setCategory] = useState("Semua");
+  const [category, setCategory] = useState("Unggulan");
 
   // === LOGIKA FILTER UNGGULAN ===
   const filteredProducts = useMemo(() => {
-    if (category === "Semua") {
+    if (category === "Unggulan") {
       // 1. Ambil daftar semua kategori yang ada di data produk (unik)
       const uniqueCategories = [...new Set(products.map((p) => p.category))];
 
@@ -128,14 +128,14 @@ export default function Home() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Katalog Produk</h2>
             <p className="text-gray-500 mt-1 text-sm">
-              {category === "Semua"
+              {category === "Unggulan"
                 ? "Produk unggulan dari setiap kategori."
-                : `Menampilkan semua produk kategori ${category}.`}
+                : `Menampilkan Unggulan produk kategori ${category}.`}
             </p>
           </div>
 
           <div className="flex flex-wrap gap-2 md:self-auto">
-            {["Semua", "Elektronik", "Furnitur", "Komputer"].map((cat) => (
+            {["Unggulan", "Elektronik", "Furnitur", "Komputer"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
