@@ -76,7 +76,7 @@ import paketFJ from "../assets/products/kursi-kk-035a.jpeg";
 import paketFK from "../assets/products/kursi-kk-036.jpeg";
 import paketFL from "../assets/products/kursi-kk-037.jpeg";
 import paketFM from "../assets/products/kursi-kantor-KK.jpeg";
-import paketFN from "../assets/products/kursI-kantor-kk-400an.jpeg";
+import paketFN from "../assets/products/kursi-kantor-kk-400an.jpeg";
 import paketFO from "../assets/products/kursi-kk-e-805.jpeg";
 import paketFP from "../assets/products/kursi-kk-D02.jpeg";
 import paketFQ from "../assets/products/kursi-kk-m10.jpeg";
