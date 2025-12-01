@@ -75,6 +75,17 @@ import paketFI from "../assets/products/kursi-kk-025.jpeg";
 import paketFJ from "../assets/products/kursi-kk-035a.jpeg";
 import paketFK from "../assets/products/kursi-kk-036.jpeg";
 import paketFL from "../assets/products/kursi-kk-037.jpeg";
+import paketFM from "../assets/products/kursi-kantor-KK.jpeg";
+import paketFN from "../assets/products/kursI-kantor-kk-400an.jpeg";
+import paketFO from "../assets/products/kursi-kk-e-805.jpeg";
+import paketFP from "../assets/products/kursi-kk-D02.jpeg";
+import paketFQ from "../assets/products/kursi-kk-m10.jpeg";
+import paketFR from "../assets/products/kursi-kk-m30.jpeg";
+import paketFS from "../assets/products/kursi-kk-h5015.jpeg";
+import paketFT from "../assets/products/kursi-kk-h5018.jpeg";
+import paketFU from "../assets/products/kursi-kk-h5019.jpeg";
+import paketFV from "../assets/products/kursi-kk-h022.jpeg";
+import paketFW from "../assets/products/kursi-kantor-h5.jpeg";
 
 export const products = [
   {
@@ -1050,4 +1061,200 @@ export const products = [
       { name: "paket 2", price: 26500000 },
     ],
   },
+  {
+    id: 79,
+    nama: "Kursi KK-538, KK-607B, KK-610B",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFM,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 80,
+    nama: "Kursi KK-4010, KK-4009, KK-615B",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFN,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 81,
+    nama: "Kursi KK-6210, KK-805",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFO,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 82,
+    nama: "Kursi KK-D02",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFP,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 83,
+    nama: "Kursi KK-M10",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFQ,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 84,
+    nama: "Kursi KK-M30",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFR,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 85,
+    nama: "Kursi KK-H5015",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFS,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 86,
+    nama: "Kursi KK-H5018",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFT,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 87,
+    nama: "Kursi KK-H5019",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFU,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 88,
+    nama: "Kursi KK-H022",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFV,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  {
+    id: 89,
+    nama: "Kursi KK-H5022, KK-H5025, KK-H110",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketFW,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+    ],
+  },
+  // {
+  //   id: 90,
+  //   nama: "Kursi KK-037",
+  //   spesifikasi:
+  //     "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+  //   satuan: "Unit",
+  //   category: "Furnitur",
+  //   price: 24750000,
+  //   img: paketFX,
+  //   variants: [
+  //     { name: "paket 1", price: 24750000 },
+  //     { name: "paket 2", price: 26500000 },
+  //   ],
+  // },
+  // {
+  //   id: 91,
+  //   nama: "Kursi KK-037",
+  //   spesifikasi:
+  //     "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+  //   satuan: "Unit",
+  //   category: "Furnitur",
+  //   price: 24750000,
+  //   img: paketFY,
+  //   variants: [
+  //     { name: "paket 1", price: 24750000 },
+  //     { name: "paket 2", price: 26500000 },
+  //   ],
+  // },
+  // {
+  //   id: 92,
+  //   nama: "Kursi KK-037",
+  //   spesifikasi:
+  //     "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+  //   satuan: "Unit",
+  //   category: "Furnitur",
+  //   price: 24750000,
+  //   img: paketFZ,
+  //   variants: [
+  //     { name: "paket 1", price: 24750000 },
+  //     { name: "paket 2", price: 26500000 },
+  //   ],
+  // },
 ];
