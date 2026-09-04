@@ -19,7 +19,7 @@ export default function Home() {
   // === LOGIKA FILTER UNGGULAN ===
   const filteredProducts = useMemo(() => {
     if (category === "Unggulan") {
-      const featuredIds = [43, 2, 28, 27, 91, 3, 35];
+      const featuredIds = [90, 2, 29, 27, 91, 3, 35];
 
       return featuredIds
         .map((id) => products.find((product) => product.id === id))
