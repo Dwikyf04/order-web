@@ -410,19 +410,19 @@ export const products = [
     price: 2850000,
     img: paketAA,
   },
-  {
-    id: 28,
-    nama: "Printer Canon IP 2770 Inkjet",
-    spesifikasi: "",
-    satuan: "Unit",
-    category: "Elektronik",
-    price: 1000000,
-    img: paketBA,
-    variants: [
-      { name: "paket 1", price: 1000000 },
-      { name: "paket 2", price: 1100000 },
-    ],
-  },
+  // {
+  //   id: 28,
+  //   nama: "Printer Canon IP 2770 Inkjet",
+  //   spesifikasi: "",
+  //   satuan: "Unit",
+  //   category: "Elektronik",
+  //   price: 1000000,
+  //   img: paketBA,
+  //   variants: [
+  //     { name: "paket 1", price: 1000000 },
+  //     { name: "paket 2", price: 1100000 },
+  //   ],
+  // },
   {
     id: 29,
     nama: "Printer Epson L3210",
@@ -1224,7 +1224,7 @@ export const products = [
       "Komputer PC Intel Core i5, RAM 4GB/8GB, SSD 256GB/512GB, Monitor LG / Lenovo / Asus 22 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 75000000,
+    price: 7500000,
     img: paketFX,
   },
   {
