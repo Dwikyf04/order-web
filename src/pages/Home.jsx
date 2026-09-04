@@ -19,19 +19,13 @@ export default function Home() {
   // === LOGIKA FILTER UNGGULAN ===
   const filteredProducts = useMemo(() => {
     if (category === "Unggulan") {
-      // 1. Ambil daftar semua kategori yang ada di data produk (unik)
-      const uniqueCategories = [...new Set(products.map((p) => p.category))];
+      const featuredIds = [43, 2, 28, 27, 91, 3, 35];
 
-      // 2. Untuk setiap kategori, ambil 1 produk pertama saja sebagai "Unggulan"
-      const featured = uniqueCategories.map((cat) => {
-        return products.find((p) => p.category === cat);
-      });
-
-      // Filter out undefined (jika ada data yang tidak lengkap)
-      return featured.filter((item) => item !== undefined);
+      return featuredIds
+        .map((id) => products.find((product) => product.id === id))
+        .filter(Boolean);
     }
 
-    // Jika user memilih kategori spesifik, tampilkan SEMUA produk di kategori itu
     return products.filter((product) => product.category === category);
   }, [category]);
 

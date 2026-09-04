@@ -86,6 +86,8 @@ import paketFT from "../assets/products/kursi-kk-h5018.jpeg";
 import paketFU from "../assets/products/kursi-kk-h5019.jpeg";
 import paketFV from "../assets/products/kursi-kk-h022.jpeg";
 import paketFW from "../assets/products/kursi-kantor-h5.jpeg";
+import paketFX from "../assets/products/PCkomputeri5.jpeg";
+import paketFY from "../assets/products/Kipas.png";
 
 export const products = [
   {
@@ -1214,6 +1216,30 @@ export const products = [
       { name: "paket 1", price: 24750000 },
       { name: "paket 2", price: 26500000 },
     ],
+  },
+  {
+    id: 90,
+    nama: "PC komputer i5 + Monitor 22",
+    spesifikasi:
+      "Komputer PC Desktop Intel Core i5-10400F, RAM 8GB, SSD 512GB, VGA GTX 1650 4GB, Monitor 24 inch",
+    satuan: "Unit",
+    category: "Elektronik",
+    price: 24750000,
+    img: paketFX,
+    variants: [
+      { name: "I3", price: 24750000 },
+      { name: "I5", price: 26500000 },
+    ],
+  },
+  {
+    id: 91,
+    nama: "Kipas Angin",
+    spesifikasi:
+      "Kipas angin dengan desain modern dan efisien, dilengkapi dengan pengaturan kecepatan dan osilasi otomatis untuk kenyamanan maksimal.",
+    satuan: "Unit",
+    category: "Elektronik",
+    price: 1000000,
+    img: paketFY,
   },
   // {
   //   id: 90,
