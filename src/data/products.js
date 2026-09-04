@@ -99,8 +99,8 @@ export const products = [
     price: 19675000,
     img: paketB,
     Variants: [
-      { name: "I3", price: 19675000 },
-      { name: "I5", price: 20000000 },
+      { name: "I3", price: 10000000 },
+      { name: "I5", price: 12000000 },
     ],
   },
   {
