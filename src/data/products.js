@@ -435,7 +435,7 @@ export const products = [
     price: 3000000,
     img: paketBB,
     variants: [
-      { name: "L121", priceMin: 2200000, priceMax: 2500000 },
+      { name: "L121", price: 2500000 },
       { name: "L3211 ", price: 3000000 },
       { name: "L3251 ", price: 3500000 },
       { name: "L5290  ", price: 6500000 },
