@@ -92,13 +92,16 @@ import paketFY from "../assets/products/Kipas.png";
 export const products = [
   {
     id: 2,
-    nama: "Laptop  Asus A413EP-VIP5751",
-    spesifikasi:
-      "Core i7-1165G7-Up to 4,7 Ghz | 8GB DDR4 | SSD 512GB NVMe | 14",
+    nama: "Laptop",
+    spesifikasi: "Core i3 / Core i5 / Core i7",
     satuan: "Unit",
     category: "Komputer",
     price: 19675000,
     img: paketB,
+    Variants: [
+      { name: "I3", price: 19675000 },
+      { name: "I5", price: 20000000 },
+    ],
   },
   {
     id: 3,
