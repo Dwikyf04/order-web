@@ -98,7 +98,7 @@ export const products = [
     category: "Komputer",
     price: 19675000,
     img: paketB,
-    Variants: [
+    variants: [
       { name: "I3", price: 10000000 },
       { name: "I5", price: 12000000 },
     ],
