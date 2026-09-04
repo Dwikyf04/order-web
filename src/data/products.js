@@ -1221,15 +1221,11 @@ export const products = [
     id: 90,
     nama: "PC komputer i5 + Monitor 22",
     spesifikasi:
-      "Komputer PC Desktop Intel Core i5-10400F, RAM 8GB, SSD 512GB, VGA GTX 1650 4GB, Monitor 24 inch",
+      "Komputer PC Intel Core i5, RAM 4GB/8GB, SSD 256GB/512GB, Monitor LG / Lenovo / Asus 22 inch",
     satuan: "Unit",
     category: "Elektronik",
-    price: 24750000,
+    price: 75000000,
     img: paketFX,
-    variants: [
-      { name: "I3", price: 24750000 },
-      { name: "I5", price: 26500000 },
-    ],
   },
   {
     id: 91,
