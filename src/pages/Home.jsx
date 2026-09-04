@@ -78,7 +78,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="/img/bg2.jpeg"
+              src="/img/logo_baru.jpeg"
               alt="Ilustrasi"
               className="w-full max-w-md rounded-xl shadow-xl"
               style={{
