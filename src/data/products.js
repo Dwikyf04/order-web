@@ -428,7 +428,7 @@ export const products = [
   // },
   {
     id: 29,
-    nama: "Printer Epson L3210",
+    nama: "Printer Epson",
     spesifikasi: "Multifungsi Print Scan Copy",
     satuan: "Unit",
     category: "Elektronik",
