@@ -54,7 +54,7 @@ export default function Home() {
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <Link
                 to="/pemesanan"
-                className="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg shadow"
+                className="inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg shadow"
               >
                 Mulai Pemesanan
               </Link>
@@ -116,7 +116,7 @@ export default function Home() {
             <h3 className="text-lg font-bold mb-2">Harga Institusi</h3>
             <p className="text-gray-600 text-sm">
               Penawaran kompetitif khusus lembaga dengan
-              <span className="font-bold text-red-600"> diskon 10% - 15%</span>.
+              <span className="font-bold text-red-600"> diskon 15%</span>.
             </p>
           </div>
         </div>
