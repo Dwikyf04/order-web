@@ -48,7 +48,7 @@ export default function Home() {
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <Link
                 to="/pemesanan"
-                className="inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg shadow"
+                className="inline-flex items-center justify-center bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg shadow font-bold"
               >
                 Mulai Pemesanan
               </Link>
@@ -237,7 +237,7 @@ export default function Home() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {[
-            { src: "/img/patnership/bagoestoko1.jpeg", name: "Bagoestoko" },
+            { src: "/img/patnership/toko_bagoes.jpeg", name: "Bagoestoko" },
             { src: "/img/patnership/barata1.jpeg", name: "Barata" },
             { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
             { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
