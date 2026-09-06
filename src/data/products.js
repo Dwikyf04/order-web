@@ -88,6 +88,13 @@ import paketFV from "../assets/products/kursi-kk-h022.jpeg";
 import paketFW from "../assets/products/kursi-kantor-h5.jpeg";
 import paketFX from "../assets/products/PCkomputeri5.jpeg";
 import paketFY from "../assets/products/Kipas.png";
+import paketFZ from "../assets/products/proyektor.png";
+import paketGA from "../assets/products/Lemari-arsip.jpeg";
+import paketGB from "../assets/products/speaker.jpg";
+import paketGC from "../assets/products/meja.jpg";
+
+import laptopI3 from "../assets/products/laptop-i3.jpg";
+import laptopI5 from "../assets/products/laptop-i5.jpg";
 
 export const products = [
   {
@@ -98,9 +105,18 @@ export const products = [
     category: "Komputer",
     price: 19675000,
     img: paketB,
+
     variants: [
-      { name: "I3", price: 10000000 },
-      { name: "I5", price: 12000000 },
+      {
+        name: "I3",
+        price: 10000000,
+        img: laptopI3,
+      },
+      {
+        name: "I5",
+        price: 12000000,
+        img: laptopI5,
+      },
     ],
   },
   {
@@ -1242,11 +1258,46 @@ export const products = [
     price: 1000000,
     img: paketFY,
   },
-  // {
-  //   id: 90,
-  //   nama: "Kursi KK-037",
-  //   spesifikasi:
-  //     "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+  {
+    id: 92,
+    nama: "Proyektor",
+    spesifikasi:
+      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    satuan: "Unit",
+    category: "Elektronik",
+    price: 24750000,
+    img: paketFZ,
+  },
+  {
+    id: 93,
+    nama: "Lemari Arsip",
+    spesifikasi:
+      "Lemari arsip dengan desain modern dan kapasitas penyimpanan yang luas, cocok untuk keperluan penyimpanan dokumen di kantor atau sekolah.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketGA,
+  },
+  {
+    id: 94,
+    nama: "Speaker Bluetooth",
+    spesifikasi:
+      "Speaker Bluetooth dengan kualitas suara terbaik dan desain modern, cocok untuk keperluan audio di kantor atau sekolah.",
+    satuan: "Unit",
+    category: "Elektronik",
+    price: 1500000,
+    img: paketGB,
+  },
+  {
+    id: 95,
+    nama: "Meja Kantor",
+    spesifikasi:
+      "Meja kantor dengan desain ergonomis dan bahan berkualitas tinggi, cocok untuk keperluan kerja di kantor atau sekolah.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: paketGC,
+  },
   //   satuan: "Unit",
   //   category: "Furnitur",
   //   price: 24750000,

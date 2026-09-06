@@ -48,7 +48,11 @@ export default function ProductCard({ product, onAddToCart, action }) {
           title="Klik untuk memperbesar gambar"
         >
           <img
-            src={product.img}
+            src={
+              hasVariants && product.variants[selectedVariantIndex].img
+                ? product.variants[selectedVariantIndex].img
+                : product.img
+            }
             alt={product.nama}
             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
           />
@@ -146,10 +150,14 @@ export default function ProductCard({ product, onAddToCart, action }) {
 
             {/* Gambar Besar */}
             <img
-              src={product.img}
+              src={
+                hasVariants && product.variants[selectedVariantIndex].img
+                  ? product.variants[selectedVariantIndex].img
+                  : product.img
+              }
               alt={product.nama}
               className="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain"
-              onClick={(e) => e.stopPropagation()} // Agar klik gambar tidak menutup modal
+              onClick={(e) => e.stopPropagation()}
             />
 
             {/* Info di bawah gambar */}
