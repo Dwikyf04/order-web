@@ -1257,6 +1257,13 @@ export const products = [
     category: "Elektronik",
     price: 1000000,
     img: paketFY,
+    variants: [
+      { name: "paket 1", price: 1000000 },
+      { name: "paket 2", price: 1200000 },
+      { name: "paket 3", price: 1500000 },
+      { name: "paket 4", price: 1800000 },
+      { name: "paket 5", price: 2000000 },
+    ],
   },
   {
     id: 92,
@@ -1277,6 +1284,18 @@ export const products = [
     category: "Furnitur",
     price: 24750000,
     img: paketGA,
+    variants: [
+      { name: "paket 1", price: 24750000 },
+      { name: "paket 2", price: 26500000 },
+      { name: "paket 3", price: 28000000 },
+      { name: "paket 4", price: 30000000 },
+      { name: "paket 5", price: 32000000 },
+      { name: "paket 6", price: 35000000 },
+      { name: "paket 7", price: 40000000 },
+      { name: "paket 8", price: 45000000 },
+      { name: "paket 9", price: 50000000 },
+      { name: "paket 10", price: 55000000 },
+    ],
   },
   {
     id: 94,
