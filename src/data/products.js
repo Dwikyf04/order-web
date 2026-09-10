@@ -89,7 +89,7 @@ import paketFW from "../assets/products/kursi-kantor-h5.jpeg";
 import paketFX from "../assets/products/PCkomputeri5.jpeg";
 import paketFY from "../assets/products/Kipas.png";
 import paketFZ from "../assets/products/proyektor.png";
-import paketGA from "../assets/products/Lemari-baru.jpeg";
+import paketGA from "../assets/products/lemari-baru.jpeg";
 import paketGB from "../assets/products/speaker.jpg";
 import paketGC from "../assets/products/meja.jpg";
 
