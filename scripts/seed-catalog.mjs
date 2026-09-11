@@ -101,7 +101,7 @@ for (const [index, product] of products.entries()) {
         unit: product.satuan || "Unit",
         base_price: product.price,
         image_url: await uploadImage(supabase, bucket, product.img, imageCache),
-        is_featured: [90, 2, 92, 29, 93, 91, 3, 35, 94, 95, 96].includes(product.id),
+        is_featured: [90, 2, 92, 29, 93, 91, 3, 35, 94, 95].includes(product.id),
         sort_order: index,
       },
       { onConflict: "legacy_id" }

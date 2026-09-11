@@ -1,101 +1,100 @@
-import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.jpg";
-import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.jpg";
-import paketD from "../assets/products/kursi-c-401.jpeg";
-import paketE from "../assets/products/kursi-susun.jpeg";
-import paketF from "../assets/products/kursi-kc-525.jpeg";
-import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.jpg";
-import paketH from "../assets/products/acer-A134.jpg";
-import paketI from "../assets/products/A134-35-SSD 256GB.jpeg";
-import paketJ from "../assets/products/Laptop ASUS OK1100-Gj0410T-CKA.jpg";
-import paketK from "../assets/products/Laptop ASUS TP401MA.jpg";
-import paketL from "../assets/products/Laptop ASUS X441MA.jpg";
-import paketM from "../assets/products/Laptop Asus E410MA.jpg";
-import paketN from "../assets/products/lenovo-flex-3-11.jpg";
-import paketO from "../assets/products/Laptop Lenovo 11GL05 05ID.jpg";
-import paketP from "../assets/products/Laptop Acer SWIFT 3 SF314-43.jpg";
-import paketQ from "../assets/products/Laptop Acer A514-54 SSD.jpg";
-import paketR from "../assets/products/Laptop Asus A416EPSSD512 dan VGA.jpg";
-import paketS from "../assets/products/Laptop Lenovo  IP Slim 3-14IML05.jpg";
-import paketT from "../assets/products/Laptop Lenovo IP Slim 3I.jpg";
-import paketU from "../assets/products/Laptop Acer 514-54-SSD 512.jpg";
-import paketV from "../assets/products/Laptop Acer 514-54G-SSD 512.jpg";
-import paketX from "../assets/products/Laptop Asus A413EP.jpg";
-import paketY from "../assets/products/Laptop Lenovo Slim 3 IP 3-R1ID.jpg";
-import paketZ from "../assets/products/Laptop Acer A514-54G.jpg";
-import paketAA from "../assets/products/lemari kabinet.jpg";
-import paketBA from "../assets/products/Printer Canon IP 2770 Inkjet.png";
-import paketBB from "../assets/products/Printer Epson L3210.jpg";
-import paketBC from "../assets/products/Printer Epson L121.png";
-import paketBD from "../assets/products/Printer Epson L210.png";
-import paketBE from "../assets/products/Printer Epson L31150.png";
-import paketBF from "../assets/products/Printer Epson L5190.jpg";
-import paketBG from "../assets/products/Printer Brother MFC-T920DW T920 Duplex Wireless.jpg";
-import paketCA from "../assets/products/AC Daikin 1 PK LITE SERIES FTV 25 CXV14 MADE IN MALAYSIA.jpg";
-import paketCB from "../assets/products/AC GREE 1 PK GWC 09 MOOS STANDART SERIES.jpg";
-import paketCC from "../assets/products/AC SPLIT PANASONIC 1 PK CSYN 9 WIKI.jpg";
-import paketCD from "../assets/products/sharp_sharp_aha9zcyn_ac_split_standart_1_pk_full02_myy63vtq.jpg";
-import paketCE from "../assets/products/AC SPLIT AUX LOW WATT 1 PK ASW 09 FFR.jpg";
-import paketCF from "../assets/products/Changhong  CSC09NVB3 (+CSC09NVB3_OUT).jpg";
-import paketCG from "../assets/products/Honshu AC 1 PK HSD9006 Low Watt.jpg";
-import paketCH from "../assets/products/samsung_samsung_ar09tghqasinse_wall_mount_ac_split_-1_pk-_full01_cmlpdv08.jpg";
-import paketDA from "../assets/products/DEKSTOP ACER.jpg";
-import paketDB from "../assets/products/DEKSTOP ACER.jpg";
-import paketDC from "../assets/products/pc aio acer.jpg";
-import paketDD from "../assets/products/AIO ACER.jpg";
-import paketDE from "../assets/products/PC AIO LENOVO.jpg";
-import paketDF from "../assets/products/PC AIO LENOVO.jpg";
-import paketDG from "../assets/products/DEKSTOP ASUS.jpg";
-import paketDH from "../assets/products/DEKSTOP ASUS.jpg";
-import paketDI from "../assets/products/DI.jpg";
-import paketDJ from "../assets/products/DJ.jpeg";
-import paketDK from "../assets/products/DK.jpg";
-import paketDL from "../assets/products/DL.jpg";
-import paketDM from "../assets/products/DM.jpg";
-import paketDN from "../assets/products/DN.jpg";
-import paketDO from "../assets/products/DO.jpg";
-import paketDP from "../assets/products/DP.jpg";
-import paketDQ from "../assets/products/DP.jpg";
-import paketDR from "../assets/products/DP.jpg";
-import paketDS from "../assets/products/DP.jpg";
-import paketDT from "../assets/products/DP.jpg";
-import paketDU from "../assets/products/DU.jpg";
-import paketDV from "../assets/products/DV.jpg";
-import paketDW from "../assets/products/DP.jpg";
-import paketDX from "../assets/products/DP.jpg";
-import paketDY from "../assets/products/DP.jpg";
-import paketFA from "../assets/products/kursi-ak-46h.jpeg";
-import paketFB from "../assets/products/kursi-ak-45h.jpeg";
-import paketFC from "../assets/products/kursi-kd-1018.jpeg";
-import paketFD from "../assets/products/kursi-kd-1016.jpeg";
-import paketFE from "../assets/products/kursi-kd-075b.jpeg";
-import paketFF from "../assets/products/kursi-kd-6039.jpeg";
-import paketFG from "../assets/products/kursi-kd-e6012.jpeg";
-import paketFH from "../assets/products/kursi-kk-007r.jpeg";
-import paketFI from "../assets/products/kursi-kk-025.jpeg";
-import paketFJ from "../assets/products/kursi-kk-035a.jpeg";
-import paketFK from "../assets/products/kursi-kk-036.jpeg";
-import paketFL from "../assets/products/kursi-kk-037.jpeg";
-import paketFM from "../assets/products/kursi-kantor-KK.jpeg";
-import paketFN from "../assets/products/kursi-kantor-kk-400an.jpeg";
-import paketFO from "../assets/products/kursi-kk-e-805.jpeg";
-import paketFP from "../assets/products/kursi-kk-D02.jpeg";
-import paketFQ from "../assets/products/kursi-kk-m10.jpeg";
-import paketFR from "../assets/products/kursi-kk-m30.jpeg";
-import paketFS from "../assets/products/kursi-kk-h5015.jpeg";
-import paketFT from "../assets/products/kursi-kk-h5018.jpeg";
-import paketFU from "../assets/products/kursi-kk-h5019.jpeg";
-import paketFV from "../assets/products/kursi-kk-h022.jpeg";
-import paketFW from "../assets/products/kursi-kantor-h5.jpeg";
-import paketFX from "../assets/products/PCkomputeri5.jpeg";
-import paketFY from "../assets/products/Kipas.png";
-import paketFZ from "../assets/products/proyektor.png";
-import paketGA from "../assets/products/lemari-baru.jpeg";
-import paketGB from "../assets/products/speaker.jpg";
-import paketGC from "../assets/products/meja.jpg";
-import paketGD from "../assets/products/epson.jpg";
+import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.webp";
+import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.webp";
+import paketD from "../assets/products/kursi-c-401.webp";
+import paketE from "../assets/products/kursi-susun.webp";
+import paketF from "../assets/products/kursi-kc-525.webp";
+import paketG from "../assets/products/Laptop Lenovo IP SLIM 3-14ITL6.webp";
+import paketH from "../assets/products/acer-A134.webp";
+import paketI from "../assets/products/A134-35-SSD 256GB.webp";
+import paketJ from "../assets/products/Laptop ASUS OK1100-Gj0410T-CKA.webp";
+import paketK from "../assets/products/Laptop ASUS TP401MA.webp";
+import paketL from "../assets/products/Laptop ASUS X441MA.webp";
+import paketM from "../assets/products/Laptop Asus E410MA.webp";
+import paketN from "../assets/products/lenovo-flex-3-11.webp";
+import paketO from "../assets/products/Laptop Lenovo 11GL05 05ID.webp";
+import paketP from "../assets/products/Laptop Acer SWIFT 3 SF314-43.webp";
+import paketQ from "../assets/products/Laptop Acer A514-54 SSD.webp";
+import paketR from "../assets/products/Laptop Asus A416EPSSD512 dan VGA.webp";
+import paketS from "../assets/products/Laptop Lenovo  IP Slim 3-14IML05.webp";
+import paketT from "../assets/products/Laptop Lenovo IP Slim 3I.webp";
+import paketU from "../assets/products/Laptop Acer 514-54-SSD 512.webp";
+import paketV from "../assets/products/Laptop Acer 514-54G-SSD 512.webp";
+import paketX from "../assets/products/Laptop Asus A413EP.webp";
+import paketY from "../assets/products/Laptop Lenovo Slim 3 IP 3-R1ID.webp";
+import paketZ from "../assets/products/Laptop Acer A514-54G.webp";
+import paketAA from "../assets/products/lemari kabinet.webp";
+import paketBA from "../assets/products/Printer Canon IP 2770 Inkjet.webp";
+import paketBB from "../assets/products/Printer Epson L3210.webp";
+import paketBC from "../assets/products/Printer Epson L121.webp";
+import paketBD from "../assets/products/Printer Epson L210.webp";
+import paketBE from "../assets/products/Printer Epson L31150.webp";
+import paketBF from "../assets/products/Printer Epson L5190.webp";
+import paketBG from "../assets/products/Printer Brother MFC-T920DW T920 Duplex Wireless.webp";
+import paketCA from "../assets/products/AC Daikin 1 PK LITE SERIES FTV 25 CXV14 MADE IN MALAYSIA.webp";
+import paketCB from "../assets/products/AC GREE 1 PK GWC 09 MOOS STANDART SERIES.webp";
+import paketCC from "../assets/products/AC SPLIT PANASONIC 1 PK CSYN 9 WIKI.webp";
+import paketCD from "../assets/products/sharp_sharp_aha9zcyn_ac_split_standart_1_pk_full02_myy63vtq.webp";
+import paketCE from "../assets/products/AC SPLIT AUX LOW WATT 1 PK ASW 09 FFR.webp";
+import paketCF from "../assets/products/Changhong  CSC09NVB3 (+CSC09NVB3_OUT).webp";
+import paketCG from "../assets/products/Honshu AC 1 PK HSD9006 Low Watt.webp";
+import paketCH from "../assets/products/samsung_samsung_ar09tghqasinse_wall_mount_ac_split_-1_pk-_full01_cmlpdv08.webp";
+import paketDA from "../assets/products/DEKSTOP ACER.webp";
+import paketDB from "../assets/products/DEKSTOP ACER.webp";
+import paketDC from "../assets/products/pc aio acer.webp";
+import paketDD from "../assets/products/AIO ACER.webp";
+import paketDE from "../assets/products/PC AIO LENOVO.webp";
+import paketDF from "../assets/products/PC AIO LENOVO.webp";
+import paketDG from "../assets/products/DEKSTOP ASUS.webp";
+import paketDH from "../assets/products/DEKSTOP ASUS.webp";
+import paketDI from "../assets/products/DI.webp";
+import paketDJ from "../assets/products/DJ.webp";
+import paketDK from "../assets/products/DK.webp";
+import paketDL from "../assets/products/DL.webp";
+import paketDM from "../assets/products/DM.webp";
+import paketDN from "../assets/products/DN.webp";
+import paketDO from "../assets/products/DO.webp";
+import paketDP from "../assets/products/DP.webp";
+import paketDQ from "../assets/products/DP.webp";
+import paketDR from "../assets/products/DP.webp";
+import paketDS from "../assets/products/DP.webp";
+import paketDT from "../assets/products/DP.webp";
+import paketDU from "../assets/products/DU.webp";
+import paketDV from "../assets/products/DV.webp";
+import paketDW from "../assets/products/DP.webp";
+import paketDX from "../assets/products/DP.webp";
+import paketDY from "../assets/products/DP.webp";
+import paketFA from "../assets/products/kursi-ak-46h.webp";
+import paketFB from "../assets/products/kursi-ak-45h.webp";
+import paketFC from "../assets/products/kursi-kd-1018.webp";
+import paketFD from "../assets/products/kursi-kd-1016.webp";
+import paketFE from "../assets/products/kursi-kd-075b.webp";
+import paketFF from "../assets/products/kursi-kd-6039.webp";
+import paketFG from "../assets/products/kursi-kd-e6012.webp";
+import paketFH from "../assets/products/kursi-kk-007r.webp";
+import paketFI from "../assets/products/kursi-kk-025.webp";
+import paketFJ from "../assets/products/kursi-kk-035a.webp";
+import paketFK from "../assets/products/kursi-kk-036.webp";
+import paketFL from "../assets/products/kursi-kk-037.webp";
+import paketFM from "../assets/products/kursi-kantor-KK.webp";
+import paketFN from "../assets/products/kursi-kantor-kk-400an.webp";
+import paketFO from "../assets/products/kursi-kk-e-805.webp";
+import paketFP from "../assets/products/kursi-kk-D02.webp";
+import paketFQ from "../assets/products/kursi-kk-m10.webp";
+import paketFR from "../assets/products/kursi-kk-m30.webp";
+import paketFS from "../assets/products/kursi-kk-h5015.webp";
+import paketFT from "../assets/products/kursi-kk-h5018.webp";
+import paketFU from "../assets/products/kursi-kk-h5019.webp";
+import paketFV from "../assets/products/kursi-kk-h022.webp";
+import paketFW from "../assets/products/kursi-kantor-h5.webp";
+import paketFX from "../assets/products/PCkomputeri5.webp";
+import paketFY from "../assets/products/Kipas.webp";
+import paketFZ from "../assets/products/proyektor.webp";
+import paketGA from "../assets/products/lemari-baru.webp";
+import paketGB from "../assets/products/speaker.webp";
+import paketGC from "../assets/products/meja.webp";
 
-import laptopI3 from "../assets/products/laptop-i3.jpg";
-import laptopI5 from "../assets/products/laptop-i5.jpg";
+import laptopI3 from "../assets/products/laptop-i3.webp";
+import laptopI5 from "../assets/products/laptop-i5.webp";
 
 export const products = [
   {
@@ -1278,9 +1277,9 @@ export const products = [
   },
   {
     id: 93,
-    nama: "Lemari Arsip",
+    nama: "Lemari",
     spesifikasi:
-      "Lemari arsip dengan desain modern dan kapasitas penyimpanan yang luas, cocok untuk keperluan penyimpanan dokumen di kantor atau sekolah.",
+      "Lemari dengan desain modern dan kapasitas penyimpanan yang luas, cocok untuk kebutuhan kantor atau sekolah.",
     satuan: "Unit",
     category: "Furnitur",
     price: 24750000,
@@ -1296,6 +1295,16 @@ export const products = [
       { name: "paket 8", price: 45000000 },
       { name: "paket 9", price: 50000000 },
       { name: "paket 10", price: 55000000 },
+      { name: "paket 11", price: 60000000 },
+      { name: "paket 12", price: 65000000 },
+      { name: "paket 13", price: 70000000 },
+      { name: "paket 14", price: 75000000 },
+      { name: "paket 15", price: 80000000 },
+      { name: "paket 16", price: 85000000 },
+      { name: "paket 17", price: 90000000 },
+      { name: "paket 18", price: 95000000 },
+      { name: "paket 19", price: 100000000 },
+      { name: "paket 20", price: 105000000 },
     ],
   },
   {

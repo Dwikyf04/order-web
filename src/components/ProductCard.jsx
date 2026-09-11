@@ -4,7 +4,7 @@ import React, { useState } from "react";
 export default function ProductCard({ product, onAddToCart, action }) {
   // State untuk Logic Toko
   const [qty, setQty] = useState(0);
-  const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
+  const [selectedVariantId, setSelectedVariantId] = useState(product.variants?.[0]?.id || "");
 
   // FITUR BARU: State untuk Modal Gambar
   const [isImageOpen, setIsImageOpen] = useState(false);
@@ -13,8 +13,11 @@ export default function ProductCard({ product, onAddToCart, action }) {
   const hasVariants = product.variants && product.variants.length > 0;
 
   // Tentukan harga yang ditampilkan (Varian vs Default)
+  const selectedVariant = hasVariants
+    ? product.variants.find((variant) => variant.id === selectedVariantId) || product.variants[0]
+    : null;
   const currentPrice = hasVariants
-    ? product.variants[selectedVariantIndex].price
+    ? selectedVariant.price
     : product.price;
 
   const handleAddClick = () => {
@@ -23,10 +26,10 @@ export default function ProductCard({ product, onAddToCart, action }) {
 
       // Jika ada varian, modifikasi item yang dikirim
       if (hasVariants) {
-        const variant = product.variants[selectedVariantIndex];
+        const variant = selectedVariant;
         itemToSend = {
           ...product,
-          id: `${product.id}-${selectedVariantIndex}`, // ID Unik
+          id: `${product.id}-${variant.id}`,
           catalogId: product.id,
           variantKey: variant.name,
           nama: `${product.nama} (${variant.name})`, // Nama Lengkap
@@ -51,8 +54,8 @@ export default function ProductCard({ product, onAddToCart, action }) {
         >
           <img
             src={
-              hasVariants && product.variants[selectedVariantIndex].img
-                ? product.variants[selectedVariantIndex].img
+              hasVariants && selectedVariant.img
+                ? selectedVariant.img
                 : product.img
             }
             alt={product.nama}
@@ -84,13 +87,11 @@ export default function ProductCard({ product, onAddToCart, action }) {
               </label>
               <select
                 className="w-full border border-gray-300 text-sm rounded-md p-1 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"
-                value={selectedVariantIndex}
-                onChange={(e) =>
-                  setSelectedVariantIndex(Number(e.target.value))
-                }
+                value={selectedVariantId}
+                onChange={(e) => setSelectedVariantId(e.target.value)}
               >
-                {product.variants.map((variant, index) => (
-                  <option key={index} value={index}>
+                {product.variants.map((variant) => (
+                  <option key={variant.id} value={variant.id}>
                     {variant.name}
                   </option>
                 ))}
@@ -153,8 +154,8 @@ export default function ProductCard({ product, onAddToCart, action }) {
             {/* Gambar Besar */}
             <img
               src={
-                hasVariants && product.variants[selectedVariantIndex].img
-                  ? product.variants[selectedVariantIndex].img
+                hasVariants && selectedVariant.img
+                  ? selectedVariant.img
                   : product.img
               }
               alt={product.nama}

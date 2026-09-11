@@ -6,6 +6,7 @@ import OrderDetailModal from "./OrderDetailModal";
 import { exportOrdersToExcel } from "../../application/orders/exportOrders";
 import { listOrders, updateOrderStatus } from "../../infrastructure/orders/orderRepository";
 import { signOut } from "../../infrastructure/auth/authRepository";
+import CatalogAdmin from "./CatalogAdmin";
 
 const initialFilters = { search: "", payment: "", delivery: "" };
 
@@ -16,6 +17,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [actionError, setActionError] = useState("");
+  const [activeSection, setActiveSection] = useState("orders");
   const navigate = useNavigate();
 
   async function fetchOrders() {
@@ -83,6 +85,8 @@ export default function AdminDashboard() {
             <p className="text-gray-500">Pantau pesanan, pembayaran, dan pengiriman.</p>
           </div>
           <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+            <button type="button" onClick={() => setActiveSection("orders")} className={`${activeSection === "orders" ? "bg-blue-700 text-white" : "bg-white text-gray-700"} border border-gray-300 px-4 py-2 rounded text-sm font-medium`}>Pesanan</button>
+            <button type="button" onClick={() => setActiveSection("catalog")} className={`${activeSection === "catalog" ? "bg-blue-700 text-white" : "bg-white text-gray-700"} border border-gray-300 px-4 py-2 rounded text-sm font-medium`}>Katalog</button>
             <button type="button" onClick={fetchOrders} className="bg-white border border-gray-300 px-4 py-2 rounded hover:bg-gray-50 text-sm font-medium">Refresh Data</button>
             <button type="button" onClick={handleExport} className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm font-bold">Export Excel</button>
             <Link to="/" className="bg-white border border-gray-300 px-4 py-2 rounded hover:bg-gray-50 text-sm font-medium">Ke Home</Link>
@@ -90,22 +94,24 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {errorMessage && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">{errorMessage}</div>}
-        {actionError && <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-3 rounded mb-4">{actionError}</div>}
-        <Filters filters={filters} onChange={changeFilters} onReset={() => setFilters(initialFilters)} />
+        {activeSection === "catalog" ? <CatalogAdmin /> : <>
+          {errorMessage && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">{errorMessage}</div>}
+          {actionError && <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-3 rounded mb-4">{actionError}</div>}
+          <Filters filters={filters} onChange={changeFilters} onReset={() => setFilters(initialFilters)} />
 
-        {loading ? (
-          <div className="bg-white rounded-xl p-12 text-center text-gray-500 animate-pulse">Memuat data pesanan...</div>
-        ) : filteredOrders.length === 0 ? (
-          <div className="bg-white rounded-xl p-12 text-center text-gray-500">Tidak ada order yang sesuai filter.</div>
-        ) : (
-          <OrderTable
-            orders={filteredOrders}
-            onSelect={setSelectedOrder}
-            onPaymentChange={(id, value) => changeStatus(id, "payment_status", value)}
-            onDeliveryChange={(id, value) => changeStatus(id, "delivery_status", value)}
-          />
-        )}
+          {loading ? (
+            <div className="bg-white rounded-xl p-12 text-center text-gray-500 animate-pulse">Memuat data pesanan...</div>
+          ) : filteredOrders.length === 0 ? (
+            <div className="bg-white rounded-xl p-12 text-center text-gray-500">Tidak ada order yang sesuai filter.</div>
+          ) : (
+            <OrderTable
+              orders={filteredOrders}
+              onSelect={setSelectedOrder}
+              onPaymentChange={(id, value) => changeStatus(id, "payment_status", value)}
+              onDeliveryChange={(id, value) => changeStatus(id, "delivery_status", value)}
+            />
+          )}
+        </>}
       </div>
       <OrderDetailModal order={selectedOrder} onClose={() => setSelectedOrder(null)} />
     </div>

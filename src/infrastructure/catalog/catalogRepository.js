@@ -10,12 +10,15 @@ function mapProduct(row) {
     categorySlug: row.categories?.slug,
     price: Number(row.base_price),
     img: row.image_url,
-    variants: (row.product_variants || []).map((variant) => ({
+    variants: (row.product_variants || [])
+      .filter((variant) => variant.active !== false)
+      .sort((a, b) => a.sort_order - b.sort_order)
+      .map((variant) => ({
       id: variant.id,
       name: variant.name,
       price: Number(variant.price),
       img: variant.image_url,
-    })),
+      })),
   };
 }
 
@@ -45,4 +48,50 @@ export async function listCategories() {
 
   if (error) throw error;
   return data || [];
+}
+
+export async function listAdminCatalog() {
+  const { data, error } = await supabase
+    .from("products")
+    .select("*, categories!inner(id, name, slug), product_variants(*)")
+    .order("sort_order", { ascending: true });
+  if (error) throw error;
+  return data || [];
+}
+
+export async function createCatalogProduct(product, variants = []) {
+  const { data, error } = await supabase
+    .from("products")
+    .insert(product)
+    .select("id")
+    .single();
+  if (error) throw error;
+  if (variants.length) {
+    const { error: variantError } = await supabase
+      .from("product_variants")
+      .insert(variants.map((variant, index) => ({ ...variant, product_id: data.id, sort_order: index })));
+    if (variantError) throw variantError;
+  }
+  return data.id;
+}
+
+export async function updateCatalogProduct(id, product, variants = []) {
+  const { error } = await supabase.from("products").update(product).eq("id", id);
+  if (error) throw error;
+  const { error: deactivateError } = await supabase
+    .from("product_variants")
+    .update({ active: false })
+    .eq("product_id", id);
+  if (deactivateError) throw deactivateError;
+  if (variants.length) {
+    const { error: variantError } = await supabase
+      .from("product_variants")
+      .upsert(variants.map((variant, index) => ({ ...variant, product_id: id, sort_order: index, active: true })), { onConflict: "product_id,legacy_key" });
+    if (variantError) throw variantError;
+  }
+}
+
+export async function removeCatalogProduct(id) {
+  const { error } = await supabase.from("products").update({ active: false }).eq("id", id);
+  if (error) throw error;
 }
