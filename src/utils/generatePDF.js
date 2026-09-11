@@ -1,8 +1,15 @@
 // src/utils/generatePDF.js
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import { siteConfig as defaultSiteConfig } from "../config/site";
 
-export default function generatePDF(schoolData, cart, totalPrice) {
+export default function generatePDF(
+  schoolData,
+  cart,
+  totalPrice,
+  orderCode,
+  siteConfig = defaultSiteConfig
+) {
   try {
     const doc = new jsPDF();
     const today = new Date().toLocaleDateString("id-ID", {
@@ -10,12 +17,12 @@ export default function generatePDF(schoolData, cart, totalPrice) {
       month: "long",
       year: "numeric",
     });
-    const orderId = `ORD-${Date.now()}`;
+    const orderId = orderCode || "-";
 
     // === HEADER ===
     doc.setFontSize(18);
     doc.setFont("helvetica", "bold");
-    doc.text("TaHutech", 105, 15, { align: "center" });
+    doc.text(siteConfig.name, 105, 15, { align: "center" });
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
@@ -42,14 +49,14 @@ export default function generatePDF(schoolData, cart, totalPrice) {
     autoTable(doc, {
       startY: 68,
       body: [
-        ["Nama Sekolah", schoolData.nama || "-"],
-        ["Alamat Sekolah", schoolData.alamat || "-"],
+        ["Nama Sekolah", schoolData.name || "-"],
+        ["Alamat Sekolah", schoolData.address || "-"],
         [
           "Kota/Kecamatan",
-          `${schoolData.kota || "-"} / ${schoolData.kecamatan || "-"}`,
+          `${schoolData.city || "-"} / ${schoolData.district || "-"}`,
         ],
-        ["Nomor Telepon", schoolData.telepon || "-"],
-        ["Anggaran", schoolData.anggaran || "-"],
+        ["Nomor Telepon", schoolData.phone || "-"],
+        ["Anggaran", schoolData.budget || "-"],
       ],
       theme: "plain",
       styles: { fontSize: 9, cellPadding: 1 },
@@ -105,18 +112,18 @@ export default function generatePDF(schoolData, cart, totalPrice) {
 
     // UPDATE 2: Mengisi Nama Sekolah secara otomatis & diberi garis bawah/kurung
     // Menggunakan ( Nama Sekolah ) agar terlihat rapi
-    const namaSekolahSign = schoolData.nama
-      ? `( ${schoolData.nama.toUpperCase()} )`
+    const namaSekolahSign = schoolData.name
+      ? `( ${schoolData.name.toUpperCase()} )`
       : "( ........................... )";
 
     doc.text(namaSekolahSign, 50, finalY + 25, { align: "center" });
 
     // Kanan: Penerima (CV)
     doc.text("Penerima", 160, finalY, { align: "center" });
-    doc.text("( TaHutech )", 160, finalY + 25, { align: "center" });
+    doc.text(`( ${siteConfig.name} )`, 160, finalY + 25, { align: "center" });
 
     // Simpan PDF
-    doc.save(`Nota-${schoolData.nama.replace(/\s+/g, "_")}-${orderId}.pdf`);
+    doc.save(`Nota-${schoolData.name.replace(/\s+/g, "_")}-${orderId}.pdf`);
   } catch (error) {
     console.error("Gagal generate PDF:", error);
     alert("Maaf, terjadi error internal saat membuat PDF.");

@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { supabase } from "../lib/supabaseClient";
+import {
+  getCurrentAdmin,
+  subscribeToAuth,
+} from "../infrastructure/auth/authRepository";
 
 export default function PrivateRoute() {
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 1. Cek sesi saat ini
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setLoading(false);
-    });
+    // Session saja tidak cukup; role admin diverifikasi dari database.
+    getCurrentAdmin()
+      .then((admin) => setSession(admin ? { admin } : null))
+      .catch(() => setSession(null))
+      .finally(() => setLoading(false));
 
     // 2. Dengarkan perubahan auth (misal logout)
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
+    const unsubscribe = subscribeToAuth((_event, session) => {
+      if (!session) {
+        setSession(null);
+        return;
+      }
+      getCurrentAdmin()
+        .then((admin) => setSession(admin ? { admin } : null))
+        .catch(() => setSession(null));
     });
 
-    return () => subscription.unsubscribe();
+    return unsubscribe;
   }, []);
 
   if (loading) {

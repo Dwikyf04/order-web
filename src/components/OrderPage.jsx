@@ -5,9 +5,9 @@ import SchoolForm from "./SchoolForm";
 import toast from "react-hot-toast";
 import ProductCatalog from "./ProductCatalog";
 import OrderSummary from "./OrderSummary";
-import generatePDF from "../utils/generatePDF";
-import { products } from "../data/products.js";
-import { supabase } from "../lib/supabaseClient"; // Pastikan file ini sudah ada
+import { createOrder } from "../application/orders/createOrder";
+import { useCatalog } from "../application/catalog/useCatalog";
+import { useSiteSettings } from "../application/content/SiteSettingsContext";
 
 export default function OrderPage() {
   // === STATE MANAGEMENT ===
@@ -16,6 +16,13 @@ export default function OrderPage() {
   const [step, setStep] = useState(1);
   const [category, setCategory] = useState("Semua");
   const [isLoading, setIsLoading] = useState(false); // State untuk loading saat checkout
+  const siteConfig = useSiteSettings();
+  const {
+    products,
+    categories,
+    loading: catalogLoading,
+    error: catalogError,
+  } = useCatalog({ category });
 
   // === FUNGSI LOGIKA ===
 
@@ -62,13 +69,6 @@ export default function OrderPage() {
     setCart(newCart);
   }
 
-  const filteredProducts = useMemo(() => {
-    if (category === "Semua") {
-      return products;
-    }
-    return products.filter((product) => product.category === category);
-  }, [category]);
-
   // TOTAL HARGA
   const totalPrice = useMemo(() => {
     return cart.reduce((total, item) => {
@@ -95,22 +95,24 @@ export default function OrderPage() {
 
     try {
       // 3. SIMPAN KE DATABASE SUPABASE
-      // Pastikan tabel 'orders' sudah dibuat di Supabase dengan kolom:
-      // school_name (text), customer_name (text), items (json), total_price (int8)
-      const { error } = await supabase.from("orders").insert([
-        {
-          school_name: schoolData.nama,
-          customer_name: "Admin Sekolah", // Atau ambil dari form jika ada field nama PJ
-          items: cart, // Simpan seluruh object cart
-          total_price: totalPrice,
-          created_at: new Date().toISOString(),
-        },
-      ]);
+      // Backend/database menghitung ulang harga dari katalog resmi.
+      const orderItems = cart.map((item) => ({
+        productId: typeof item.catalogId === "string" ? item.catalogId : null,
+        legacyProductId: String(item.catalogId ?? item.id),
+        variantId: item.variantId || null,
+        variantKey: item.variantKey || null,
+        quantity: item.qty,
+      }));
 
-      if (error) throw error;
+      const order = await createOrder({
+        school: schoolData,
+        customerName: schoolData.customerName || null,
+        items: orderItems,
+      });
 
       // 4. Jika sukses simpan DB, baru buat PDF
-      generatePDF(schoolData, cart, totalPrice);
+      const { default: generatePDF } = await import("../utils/generatePDF");
+      generatePDF(schoolData, cart, order.total_price, order.order_code, siteConfig);
 
       // 5. Sukses
       toast.success("Pesanan Berhasil! Data tersimpan & PDF diunduh.", {
@@ -153,10 +155,10 @@ export default function OrderPage() {
             <div className="p-4 bg-gray-50 rounded-lg flex justify-between items-center">
               <div>
                 <p>
-                  <strong>Nama:</strong> {schoolData.nama}
+                  <strong>Nama:</strong> {schoolData.name}
                 </p>
                 <p>
-                  <strong>Kontak:</strong> {schoolData.telepon}
+                  <strong>Kontak:</strong> {schoolData.phone}
                 </p>
               </div>
               <button
@@ -187,7 +189,7 @@ export default function OrderPage() {
               Katalog Produk
             </h2>
             <div className="flex flex-wrap gap-2">
-              {["Semua", "Elektronik", "Komputer", "Furnitur"].map((cat) => (
+              {["Semua", ...categories.map((item) => item.slug)].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
@@ -197,15 +199,25 @@ export default function OrderPage() {
                       : "bg-gray-100 hover:bg-gray-200 text-gray-600"
                   }`}
                 >
-                  {cat}
+                  {cat === "Semua"
+                    ? "Semua"
+                    : categories.find((item) => item.slug === cat)?.name || cat}
                 </button>
               ))}
             </div>
           </div>
 
-          {step === 2 && (
+          {step === 2 && catalogLoading && (
+            <p className="text-center text-gray-500 py-10">Memuat katalog...</p>
+          )}
+          {step === 2 && catalogError && (
+            <p className="text-center text-red-600 py-10">
+              Katalog belum dapat dimuat. Silakan coba lagi.
+            </p>
+          )}
+          {step === 2 && !catalogLoading && !catalogError && (
             <ProductCatalog
-              products={filteredProducts}
+              products={products}
               onProductAdd={handleProductAdd}
               showButton={true}
             />

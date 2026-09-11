@@ -946,7 +946,7 @@ export const products = [
     ],
   },
   {
-    id: 69,
+    id: 690,
     nama: "Kursi KD-1018",
     spesifikasi:
       "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
@@ -1317,16 +1317,6 @@ export const products = [
     category: "Furnitur",
     price: 24750000,
     img: paketGC,
-  },
-  {
-    id: 96,
-    nama: "Printer Laser",
-    spesifikasi:
-      "Printer laser dengan kualitas cetak terbaik dan performa tinggi, cocok untuk keperluan cetak di kantor atau sekolah.",
-    satuan: "Unit",
-    category: "Elektronik",
-    price: 24750000,
-    img: paketGD,
   },
   //   satuan: "Unit",
   //   category: "Furnitur",

@@ -1,8 +1,10 @@
 // src/components/Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSiteSettings } from "../application/content/SiteSettingsContext";
 
 export default function Navbar() {
+  const siteConfig = useSiteSettings();
   return (
     <nav className="bg-blue-700 text-white p-4 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -13,13 +15,13 @@ export default function Navbar() {
         >
           {/* Logo Palestina */}
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg"
-            alt="Palestine Flag"
+            src={siteConfig.logoUrl}
+            alt={`${siteConfig.name} logo`}
             className="h-8 w-auto rounded-sm shadow-sm"
           />
 
           {/* Nama Brand */}
-          <span>Tahutech</span>
+          <span>{siteConfig.name}</span>
         </Link>
 
         {/* NAVIGASI */}

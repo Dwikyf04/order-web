@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { supabase } from "../../lib/supabaseClient";
+import { signIn } from "../../infrastructure/auth/authRepository";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -14,12 +14,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
-
-      if (error) throw error;
+      await signIn(email, password);
 
       toast.success("Login Berhasil!");
       navigate("/admin"); // Arahkan ke admin setelah sukses

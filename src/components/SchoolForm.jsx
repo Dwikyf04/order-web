@@ -2,12 +2,13 @@ import React, { useState } from "react";
 
 export default function SchoolForm({ onSubmit }) {
   const [form, setForm] = useState({
-    nama: "",
-    alamat: "",
-    kota: "",
-    kecamatan: "",
-    telepon: "",
-    anggaran: "",
+    name: "",
+    address: "",
+    city: "",
+    district: "",
+    phone: "",
+    budget: "",
+    customerName: "",
   });
 
   function handleChange(e) {
@@ -29,35 +30,35 @@ export default function SchoolForm({ onSubmit }) {
       >
         <input
           className="input"
-          name="nama"
+          name="name"
           placeholder="Nama Sekolah"
           onChange={handleChange}
           required
         />
         <input
           className="input"
-          name="alamat"
+          name="address"
           placeholder="Alamat Sekolah"
           onChange={handleChange}
           required
         />
         <input
           className="input"
-          name="kota"
+          name="city"
           placeholder="Kota"
           onChange={handleChange}
           required
         />
         <input
           className="input"
-          name="kecamatan"
+          name="district"
           placeholder="Kecamatan"
           onChange={handleChange}
           required
         />
         <input
           className="input"
-          name="telepon"
+          name="phone"
           placeholder="Nomor Telepon"
           onChange={handleChange}
           required
@@ -65,24 +66,23 @@ export default function SchoolForm({ onSubmit }) {
 
         <select
           className="input"
-          name="anggaran"
+          name="budget"
           onChange={handleChange}
           required
         >
-          <option value="">Pilih Anggaran Bulanan</option>
-          <option value="januari">Januari</option>
-          <option value="februari">Februari</option>
-          <option value="maret">Maret</option>
-          <option value="april">April</option>
-          <option value="mei">Mei</option>
-          <option value="juni">Juni</option>
-          <option value="juli">Juli</option>
-          <option value="agustus">Agustus</option>
-          <option value="september">September</option>
-          <option value="oktober">Oktober</option>
-          <option value="november">November</option>
-          <option value="desember">Desember</option>
+          <option value="">Pilih Rentang Anggaran</option>
+          <option value="under-10m">Di bawah Rp10 juta</option>
+          <option value="10m-50m">Rp10–50 juta</option>
+          <option value="50m-100m">Rp50–100 juta</option>
+          <option value="over-100m">Di atas Rp100 juta</option>
         </select>
+
+        <input
+          className="input"
+          name="customerName"
+          placeholder="Nama PIC/Pemesan (opsional)"
+          onChange={handleChange}
+        />
 
         <button className="col-span-2 bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg mt-2">
           Simpan Data

@@ -19,7 +19,7 @@ export default function ProductCard({ product, onAddToCart, action }) {
 
   const handleAddClick = () => {
     if (onAddToCart && qty > 0) {
-      let itemToSend = product;
+      let itemToSend = { ...product, catalogId: product.id };
 
       // Jika ada varian, modifikasi item yang dikirim
       if (hasVariants) {
@@ -27,6 +27,8 @@ export default function ProductCard({ product, onAddToCart, action }) {
         itemToSend = {
           ...product,
           id: `${product.id}-${selectedVariantIndex}`, // ID Unik
+          catalogId: product.id,
+          variantKey: variant.name,
           nama: `${product.nama} (${variant.name})`, // Nama Lengkap
           price: variant.price, // Harga Varian
         };

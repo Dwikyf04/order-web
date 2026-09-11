@@ -1,8 +1,10 @@
 // src/pages/Home.jsx
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCatalog from "../components/ProductCatalog";
-import { products } from "../data/products";
+import { useCatalog } from "../application/catalog/useCatalog";
+import { useBrandPartners } from "../application/content/useBrandPartners";
+import { useSiteSettings } from "../application/content/SiteSettingsContext";
 import Footer from "../components/Footer";
 import { Wallet } from "lucide-react";
 import {
@@ -15,19 +17,12 @@ import {
 
 export default function Home() {
   const [category, setCategory] = useState("Unggulan");
-
-  // === LOGIKA FILTER UNGGULAN ===
-  const filteredProducts = useMemo(() => {
-    if (category === "Unggulan") {
-      const featuredIds = [90, 2, 92, 29, 93, 91, 3, 35, 94, 95, 96];
-
-      return featuredIds
-        .map((id) => products.find((product) => product.id === id))
-        .filter(Boolean);
-    }
-
-    return products.filter((product) => product.category === category);
-  }, [category]);
+  const siteConfig = useSiteSettings();
+  const { products, categories, loading, error } = useCatalog({
+    category,
+    featuredOnly: category === "Unggulan",
+  });
+  const { sponsors, partners } = useBrandPartners();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -39,7 +34,7 @@ export default function Home() {
               Pengadaan kebutuhan untuk Sekolah & Instansi
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-2xl">
-              TaHUtech menyediakan layanan pengadaan Barang dan Jasa untuk
+              {siteConfig.name} menyediakan layanan pengadaan Barang dan Jasa untuk
               Komputer, Elektronik, Furniture dan perlengkapan kantor/sekolah
               dengan proses profesional, transparan, dan dokumentasi lengkap
               (nota PDF otomatis)
@@ -72,7 +67,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="/img/Baru.png"
+              src={siteConfig.logoUrl}
               alt="Ilustrasi"
               className="w-full max-w-md rounded-xl shadow-xl"
               style={{
@@ -129,7 +124,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-2 md:self-auto">
-            {["Unggulan", "Elektronik", "Furnitur", "Komputer"].map((cat) => (
+            {["Unggulan", ...categories.map((item) => item.slug)].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
@@ -139,13 +134,23 @@ export default function Home() {
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
-                {cat}
+                {cat === "Unggulan"
+                  ? "Unggulan"
+                  : categories.find((item) => item.slug === cat)?.name || cat}
               </button>
             ))}
           </div>
         </div>
 
-        <ProductCatalog products={filteredProducts} showButton={false} />
+        {loading && (
+          <p className="text-center text-gray-500 py-10">Memuat katalog...</p>
+        )}
+        {error && (
+          <p className="text-center text-red-600 py-10">
+            Katalog belum dapat dimuat. Silakan coba lagi.
+          </p>
+        )}
+        {!loading && !error && <ProductCatalog products={products} showButton={false} />}
 
         <div className="mt-8 text-center">
           <p className="text-gray-600 mb-3 text-sm">
@@ -203,23 +208,13 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {[
-            { src: "/img/epson.jpg", name: "Epson" },
-            { src: "/img/asus.jpg", name: "Asus" },
-            { src: "/img/lenovo.jpg", name: "Lenovo" },
-            { src: "/img/hp.jpg", name: "HP" },
-            { src: "/img/maspion.jpg", name: "Maspion" },
-            { src: "/img/daikin.jpg", name: "Daikin" },
-            { src: "/img/rog.jpg", name: "ROG" },
-            { src: "/img/tuf.jpg", name: "TUF" },
-            { src: "/img/gree.png", name: "Gree" },
-          ].map((brand, i) => (
+          {sponsors.map((brand) => (
             <div
-              key={i}
+              key={brand.id}
               className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
-                src={brand.src}
+                src={brand.image_url}
                 alt={brand.name}
                 className="w-20 object-contain transition"
               />
@@ -236,20 +231,13 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {[
-            { src: "/img/patnership/toko_bagoes.jpeg", name: "Bagoestoko" },
-            { src: "/img/patnership/barata1.jpeg", name: "Barata" },
-            { src: "/img/patnership/cvbbs1.jpeg", name: "CV BBS" },
-            { src: "/img/patnership/mitraamanah1.jpeg", name: "Mitra Amanah" },
-            { src: "/img/patnership/shoes.png", name: "Shoes" },
-            { src: "/img/patnership/TaHU.png", name: "TaHU" },
-          ].map((brand, i) => (
+          {partners.map((brand) => (
             <div
-              key={i}
+              key={brand.id}
               className="bg-white rounded-xl shadow-sm p-4 flex items-center justify-center hover:shadow-md hover:scale-105 transition duration-300 cursor-pointer border"
             >
               <img
-                src={brand.src}
+                src={brand.image_url}
                 alt={brand.name}
                 className="w-20 object-contain transition"
               />
