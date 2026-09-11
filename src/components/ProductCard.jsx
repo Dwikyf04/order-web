@@ -45,10 +45,10 @@ export default function ProductCard({ product, onAddToCart, action }) {
   return (
     <>
       {/* === KARTU PRODUK UTAMA === */}
-      <div className="bg-white p-4 rounded-xl shadow hover:shadow-xl transition flex flex-col h-full border border-gray-100">
+      <div className="bg-white p-3 sm:p-4 rounded-xl shadow hover:shadow-xl transition flex flex-col h-full border border-gray-100 min-w-0">
         {/* GAMBAR PRODUK (SEKARANG BISA DIKLIK) */}
         <div
-          className="w-full h-44 overflow-hidden rounded-lg mb-3 bg-gray-100 group relative cursor-pointer"
+          className="w-full h-40 sm:h-44 overflow-hidden rounded-lg mb-3 bg-gray-100 group relative cursor-pointer"
           onClick={() => setIsImageOpen(true)} // Buka Modal saat diklik
           title="Klik untuk memperbesar gambar"
         >
@@ -72,7 +72,7 @@ export default function ProductCard({ product, onAddToCart, action }) {
 
         {/* INFO PRODUK */}
         <div className="flex-1">
-          <h4 className="font-bold text-gray-800 text-lg leading-snug">
+          <h4 className="font-bold text-gray-800 text-base sm:text-lg leading-snug break-words">
             {product.nama}
           </h4>
           <p className="text-gray-500 text-xs mt-1 mb-3">
@@ -109,7 +109,7 @@ export default function ProductCard({ product, onAddToCart, action }) {
           {action && <div>{action}</div>}
 
           {onAddToCart && (
-            <div className="flex gap-2 h-10">
+            <div className="flex gap-2 h-10 min-w-0">
               <input
                 type="number"
                 min="0"
@@ -117,13 +117,13 @@ export default function ProductCard({ product, onAddToCart, action }) {
                 onChange={(e) =>
                   setQty(Math.max(0, parseInt(e.target.value) || 0))
                 }
-                className="w-16 border border-gray-300 rounded-lg text-center font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-14 sm:w-16 shrink-0 border border-gray-300 rounded-lg text-center font-bold focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
 
               <button
                 onClick={handleAddClick}
                 disabled={qty === 0}
-                className={`flex-1 rounded-lg font-medium text-sm transition shadow-md active:scale-95 ${
+                className={`min-w-0 flex-1 rounded-lg font-medium text-xs sm:text-sm transition shadow-md active:scale-95 ${
                   qty === 0
                     ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                     : "bg-blue-700 hover:bg-blue-800 text-white"

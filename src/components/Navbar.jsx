@@ -7,7 +7,7 @@ export default function Navbar() {
   const siteConfig = useSiteSettings();
   return (
     <nav className="bg-blue-700 text-white p-4 shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row gap-3 sm:gap-6 justify-between items-start sm:items-center">
         {/* LOGO & BRAND */}
         <Link
           to="/"
@@ -25,7 +25,7 @@ export default function Navbar() {
         </Link>
 
         {/* NAVIGASI */}
-        <div className="flex gap-6 items-center text-sm md:text-base">
+        <div className="w-full sm:w-auto flex flex-wrap gap-3 sm:gap-6 items-center text-sm md:text-base">
           <Link to="/" className="hover:text-blue-200 transition">
             Home
           </Link>

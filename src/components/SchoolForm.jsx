@@ -25,7 +25,7 @@ export default function SchoolForm({ onSubmit }) {
       <h3 className="text-xl font-semibold mb-4">Data Sekolah</h3>
 
       <form
-        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
         onSubmit={submitForm}
       >
         <input
@@ -84,7 +84,7 @@ export default function SchoolForm({ onSubmit }) {
           onChange={handleChange}
         />
 
-        <button className="col-span-2 bg-blue-700 hover:bg-blue-800 text-white py-2 rounded-lg mt-2">
+        <button className="sm:col-span-2 bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-lg mt-2 font-semibold">
           Simpan Data
         </button>
       </form>

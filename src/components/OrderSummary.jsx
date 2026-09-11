@@ -12,7 +12,7 @@ export default function OrderSummary({
   const totalItems = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
 
   return (
-    <div className="bg-white shadow-lg p-6 rounded-xl border border-gray-200">
+    <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl border border-gray-200">
       <h2 className="text-xl font-bold mb-4 text-gray-800">
         Ringkasan Pesanan
       </h2>
@@ -31,7 +31,7 @@ export default function OrderSummary({
             >
               {/* BARIS 1: Nama Produk & Tombol Hapus */}
               <div className="flex justify-between items-start mb-2">
-                <span className="text-sm font-bold text-gray-800 w-10/12 leading-tight">
+                <span className="text-sm font-bold text-gray-800 min-w-0 pr-2 leading-tight break-words">
                   {item.nama}
                 </span>
                 <button
@@ -44,8 +44,8 @@ export default function OrderSummary({
               </div>
 
               {/* BARIS 2: Harga Satuan & Kontrol Quantity */}
-              <div className="flex justify-between items-center mt-2">
-                <div className="text-xs text-gray-500">
+              <div className="flex flex-wrap justify-between items-center gap-2 mt-2">
+                <div className="text-xs text-gray-500 break-all">
                   @ Rp {item.price.toLocaleString("id-ID")}
                 </div>
 

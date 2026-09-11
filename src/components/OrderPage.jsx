@@ -135,11 +135,11 @@ export default function OrderPage() {
 
   // === RENDER ===
   return (
-    <div className="max-w-7xl mx-auto p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="w-full max-w-7xl mx-auto px-3 py-4 sm:px-4 lg:px-8 grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(18rem,1fr)] gap-4 lg:gap-8">
       {/* === KOLOM KIRI (Main Content) === */}
       <div className="lg:col-span-2 space-y-6">
         {/* STEP 1: DATA SEKOLAH */}
-        <div className="bg-white shadow-lg p-6 rounded-xl border">
+        <div className="bg-white shadow-lg p-4 sm:p-6 rounded-xl border">
           <h2 className="text-xl font-bold mb-4 flex items-center">
             <span
               className={`flex items-center justify-center w-7 h-7 mr-3 rounded-full ${
@@ -173,11 +173,11 @@ export default function OrderPage() {
 
         {/* STEP 2: KATALOG PRODUK */}
         <div
-          className={`bg-white shadow-lg p-6 rounded-xl border ${
+          className={`bg-white shadow-lg p-4 sm:p-6 rounded-xl border ${
             step < 2 ? "opacity-50 pointer-events-none" : ""
           }`}
         >
-          <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-6 gap-4">
             <h2 className="text-xl font-bold flex items-center">
               <span
                 className={`flex items-center justify-center w-7 h-7 mr-3 rounded-full ${
@@ -188,12 +188,12 @@ export default function OrderPage() {
               </span>
               Katalog Produk
             </h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-1 max-w-full scrollbar-thin">
               {["Semua", ...categories.map((item) => item.slug)].map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
-                  className={`text-sm px-3 py-1 rounded-full transition ${
+                    className={`text-sm px-3 py-1 rounded-full transition whitespace-nowrap shrink-0 ${
                     category === cat
                       ? "bg-blue-600 text-white"
                       : "bg-gray-100 hover:bg-gray-200 text-gray-600"
@@ -231,7 +231,7 @@ export default function OrderPage() {
       </div>
 
       {/* === KOLOM KANAN (Sidebar Ringkasan) === */}
-      <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-8">
+      <div className="lg:col-span-1 space-y-6 xl:sticky xl:top-8 xl:self-start">
         <OrderSummary
           cart={cart}
           totalPrice={totalPrice}
