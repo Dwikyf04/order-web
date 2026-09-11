@@ -92,6 +92,7 @@ import paketFZ from "../assets/products/proyektor.png";
 import paketGA from "../assets/products/lemari-baru.jpeg";
 import paketGB from "../assets/products/speaker.jpg";
 import paketGC from "../assets/products/meja.jpg";
+import paketGD from "../assets/products/epson.jpg";
 
 import laptopI3 from "../assets/products/laptop-i3.jpg";
 import laptopI5 from "../assets/products/laptop-i5.jpg";
@@ -1316,6 +1317,16 @@ export const products = [
     category: "Furnitur",
     price: 24750000,
     img: paketGC,
+  },
+  {
+    id: 96,
+    nama: "Printer Laser",
+    spesifikasi:
+      "Printer laser dengan kualitas cetak terbaik dan performa tinggi, cocok untuk keperluan cetak di kantor atau sekolah.",
+    satuan: "Unit",
+    category: "Elektronik",
+    price: 24750000,
+    img: paketGD,
   },
   //   satuan: "Unit",
   //   category: "Furnitur",
