@@ -83,7 +83,7 @@ export default function ProductCard({ product, onAddToCart, action }) {
           {hasVariants && (
             <div className="mb-3">
               <label className="text-xs text-gray-500 font-bold mb-1 block">
-                Pilih Tipe:
+                {product.nama?.toLowerCase() === "kursi bandara" ? "Gambar ke 2" : "Pilih Tipe"}:
               </label>
               <select
                 className="w-full border border-gray-300 text-sm rounded-md p-1 focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"

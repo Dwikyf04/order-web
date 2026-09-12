@@ -1,5 +1,9 @@
 import paketB from "../assets/products/Laptop  Asus A413EP-VIP5751.webp";
 import paketC from "../assets/products/Kursi Tunggu AC-302  Bandara 4 set.webp";
+import kursiBandaraC401 from "../assets/products/kursi-bandara-c401.webp";
+import kursiBandaraC301 from "../assets/products/kursi-bandara-c301.webp";
+import kursiBandaraW350 from "../assets/products/kursi-bandara-w350.webp";
+import kursiBandaraW450 from "../assets/products/kursi-bandara-w450.webp";
 import paketD from "../assets/products/kursi-c-401.webp";
 import paketE from "../assets/products/kursi-susun.webp";
 import paketF from "../assets/products/kursi-kc-525.webp";
@@ -121,15 +125,18 @@ export const products = [
   },
   {
     id: 3,
-    nama: "Kursi Tunggu AC-302 / Bandara 4 set",
+    nama: "kursi bandara",
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
     price: 23500000,
     img: paketC,
     variants: [
-      { name: "paket 1", price: 23500000 },
-      { name: "paket 2", price: 25000000 },
+      { name: "Kursi Tunggu AC-302 / Bandara 4", price: 23500000, img: paketC },
+      { name: "Paket Bandara C401 4 Seat", price: 25000000, img: kursiBandaraC401 },
+      { name: "Paket Bandara C301 3 Seat", price: 22500000, img: kursiBandaraC301 },
+      { name: "Paket Bandara W350 3 Seat", price: 24000000, img: kursiBandaraW350 },
+      { name: "Paket Bandara W450 4 Seat", price: 27500000, img: kursiBandaraW450 },
     ],
   },
   {
