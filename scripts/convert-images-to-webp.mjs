@@ -12,7 +12,9 @@ let converted = 0;
 for (const file of files) {
   if (!file.isFile() || !supported.has(path.extname(file.name).toLowerCase())) continue;
   const source = path.join(assetDir, file.name);
-  const output = path.join(assetDir, `${path.basename(file.name, path.extname(file.name))}.webp`);
+  const sourceName = path.basename(file.name, path.extname(file.name));
+  const outputName = sourceName.replace(/-png$/i, "");
+  const output = path.join(assetDir, `${outputName}.webp`);
   await sharp(source).webp({ quality: 82, effort: 4 }).toFile(output);
   converted += 1;
 }

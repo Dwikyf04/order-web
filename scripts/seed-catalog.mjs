@@ -105,7 +105,7 @@ for (const [index, product] of products.entries()) {
         base_price: product.price,
         image_url: await uploadImage(supabase, bucket, product.img, imageCache),
         is_featured: [90, 2, 92, 29, 93, 91, 3, 35, 94, 95, 97].includes(product.id),
-        sort_order: index,
+        sort_order: product.sortOrder ?? index,
       },
       { onConflict: "legacy_id" }
     )
@@ -119,7 +119,7 @@ for (const [index, product] of products.entries()) {
       .upsert(
         {
           product_id: row.id,
-          legacy_key: variant.name,
+          legacy_key: variant.key || variant.name,
           name: variant.name,
           price: variant.price,
           image_url: await uploadImage(supabase, bucket, variant.img, imageCache),
@@ -130,7 +130,7 @@ for (const [index, product] of products.entries()) {
     if (variantError) throw variantError;
   }
 
-  const currentVariantKeys = (product.variants || []).map((variant) => variant.name);
+  const currentVariantKeys = (product.variants || []).map((variant) => variant.key || variant.name);
   const { data: existingVariants, error: existingVariantsError } = await supabase
     .from("product_variants")
     .select("id, legacy_key")

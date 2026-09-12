@@ -4,9 +4,56 @@ import kursiBandaraC401 from "../assets/products/kursi-bandara-c401.webp";
 import kursiBandaraC301 from "../assets/products/kursi-bandara-c301.webp";
 import kursiBandaraW350 from "../assets/products/kursi-bandara-w350.webp";
 import kursiBandaraW450 from "../assets/products/kursi-bandara-w450.webp";
-import kursiStaff128 from "../assets/products/kursi-staff-128.webp";
-import kursiStaff125 from "../assets/products/kursi-staff-125.webp";
-import kursiStaff126 from "../assets/products/kursi-staff-126.webp";
+import kursi90Busa from "../assets/products/kursi-90-busa.webp";
+import kursi107 from "../assets/products/kursi-107-5016.webp";
+import kursi111 from "../assets/products/kursi-111-5110.webp";
+import kursi118 from "../assets/products/kursi-118-007.webp";
+import kursi119 from "../assets/products/kursi-119-025.webp";
+import kursi125 from "../assets/products/kursi-125-4005.webp";
+import kursi126 from "../assets/products/kursi-126-4006.webp";
+import kursi128 from "../assets/products/kursi-128-4055.webp";
+import kursi138Hitam from "../assets/products/kursi-138-h011-hitam.webp";
+import mejaKantor71A from "../assets/products/meja-kantor-71-1819.webp";
+import mejaKantor71B from "../assets/products/meja-kantor-71-a41.webp";
+import mejaKantor66 from "../assets/products/meja-kantor-66-hx02.webp";
+import mejaKantor68 from "../assets/products/meja-kantor-68-hx05.webp";
+import mejaKantor67 from "../assets/products/meja-kantor-67-hx04.webp";
+import lemari221Aal309 from "../assets/products/lemari-221-aal309.webp";
+import lemari225Aal424 from "../assets/products/lemari-225-aal424.webp";
+import lemari224Aal318 from "../assets/products/lemari-224-aal318.webp";
+import lemari223Aal315 from "../assets/products/lemari-223-aal315.webp";
+import lemari220Aal306 from "../assets/products/lemari-220-aal306.webp";
+import lemari219Aal106 from "../assets/products/lemari-219-aal106.webp";
+import lemari218Aal105 from "../assets/products/lemari-218-aal105.webp";
+import lemari217Aal104 from "../assets/products/lemari-217-aal104.webp";
+import lemari216Aal102 from "../assets/products/lemari-216-aal102.webp";
+import lemari206Aa333 from "../assets/products/lemari-206-aa333.webp";
+import lemari205Aa331 from "../assets/products/lemari-205-aa331.webp";
+import lemari204Aa311 from "../assets/products/lemari-204-aa311.webp";
+import lemari203Aa233 from "../assets/products/lemari-203-aa233.webp";
+import lemari202Aa36 from "../assets/products/lemari-202-aa36.webp";
+import lemari202Aa19 from "../assets/products/lemari-202-aa19.webp";
+import lemari201Aa36 from "../assets/products/lemari-201-aa36.webp";
+import lemari201Aa19 from "../assets/products/lemari-201-aa19.webp";
+import lemari200Aa4 from "../assets/products/lemari-200-aa4.webp";
+import lemari199Aa343 from "../assets/products/lemari-199-aa343.webp";
+import lemari198Aa342 from "../assets/products/lemari-198-aa342.webp";
+import lemari197Aa34 from "../assets/products/lemari-197-aa34.webp";
+import lemari196Aa36 from "../assets/products/lemari-196-aa36.webp";
+import lemari196Aa33 from "../assets/products/lemari-196-aa33.webp";
+import lemari196Aa19 from "../assets/products/lemari-196-aa19.webp";
+import lemari195Aa36 from "../assets/products/lemari-195-aa36.webp";
+import lemari194B44 from "../assets/products/lemari-194-b44.webp";
+import lemari194B42 from "../assets/products/lemari-194-b42.webp";
+import lemari193B19 from "../assets/products/lemari-193-b19.webp";
+import lemari193B6 from "../assets/products/lemari-193-b6.webp";
+import lemari192B40 from "../assets/products/lemari-192-b40.webp";
+import lemari192B19 from "../assets/products/lemari-192-b19.webp";
+import lemari192B6 from "../assets/products/lemari-192-b6.webp";
+import lemari192B3 from "../assets/products/lemari-192-b3.webp";
+import lemari159WbDalam from "../assets/products/lemari-159-wb-dalam.webp";
+import lemari237Dapur345 from "../assets/products/lemari-237-lemari-dapur-345.webp";
+import lemari236Dapur335 from "../assets/products/lemari-236-lemari-dapur-335.webp";
 import paketD from "../assets/products/kursi-c-401.webp";
 import paketE from "../assets/products/kursi-susun.webp";
 import paketF from "../assets/products/kursi-kc-525.webp";
@@ -96,7 +143,6 @@ import paketFW from "../assets/products/kursi-kantor-h5.webp";
 import paketFX from "../assets/products/PCkomputeri5.webp";
 import paketFY from "../assets/products/Kipas.webp";
 import paketFZ from "../assets/products/proyektor.webp";
-import paketGA from "../assets/products/lemari-baru.webp";
 import paketGB from "../assets/products/speaker.webp";
 import paketGC from "../assets/products/meja.webp";
 
@@ -1287,34 +1333,82 @@ export const products = [
   },
   {
     id: 93,
-    nama: "Lemari",
+    nama: "LEMARI BESI (B)",
     spesifikasi:
-      "Lemari dengan desain modern dan kapasitas penyimpanan yang luas, cocok untuk kebutuhan kantor atau sekolah.",
+      "Lemari besi seri B untuk kebutuhan penyimpanan kantor atau sekolah.",
     satuan: "Unit",
     category: "Furnitur",
-    price: 24750000,
-    img: paketGA,
+    price: 2250000,
+    img: lemari192B19,
     variants: [
-      { name: "paket 1", price: 24750000 },
-      { name: "paket 2", price: 26500000 },
-      { name: "paket 3", price: 28000000 },
-      { name: "paket 4", price: 30000000 },
-      { name: "paket 5", price: 32000000 },
-      { name: "paket 6", price: 35000000 },
-      { name: "paket 7", price: 40000000 },
-      { name: "paket 8", price: 45000000 },
-      { name: "paket 9", price: 50000000 },
-      { name: "paket 10", price: 55000000 },
-      { name: "paket 11", price: 60000000 },
-      { name: "paket 12", price: 65000000 },
-      { name: "paket 13", price: 70000000 },
-      { name: "paket 14", price: 75000000 },
-      { name: "paket 15", price: 80000000 },
-      { name: "paket 16", price: 85000000 },
-      { name: "paket 17", price: 90000000 },
-      { name: "paket 18", price: 95000000 },
-      { name: "paket 19", price: 100000000 },
-      { name: "paket 20", price: 105000000 },
+      { name: "LEMARI BESI 192", key: "192", price: 2250000, img: lemari192B19 },
+      { name: "LEMARI BESI 193", key: "193", price: 2250000, img: lemari193B19 },
+      { name: "LEMARI BESI 194", key: "194", price: 3250000, img: lemari194B42 },
+    ],
+  },
+  {
+    id: 98,
+    nama: "LEMARI BESI (AA)",
+    spesifikasi: "Lemari besi seri AA untuk kebutuhan penyimpanan kantor atau sekolah.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 1500000,
+    img: lemari202Aa36,
+    variants: [
+      { name: "LEMARI BESI 202", key: "202", price: 1500000, img: lemari202Aa36 },
+      { name: "LEMARI BESI 201", key: "201", price: 1500000, img: lemari201Aa36 },
+      { name: "LEMARI BESI 195", key: "195", price: 3000000, img: lemari195Aa36 },
+      { name: "LEMARI BESI 196", key: "196", price: 3000000, img: lemari196Aa36 },
+      { name: "LEMARI BESI 197", key: "197", price: 3500000, img: lemari197Aa34 },
+      { name: "LEMARI BESI 198", key: "198", price: 3500000, img: lemari198Aa342 },
+      { name: "LEMARI BESI 199", key: "199", price: 3750000, img: lemari199Aa343 },
+      { name: "LEMARI BESI 200", key: "200", price: 3750000, img: lemari200Aa4 },
+      { name: "LEMARI BESI 203", key: "203", price: 4000000, img: lemari203Aa233 },
+      { name: "LEMARI BESI 204", key: "204", price: 4000000, img: lemari204Aa311 },
+      { name: "LEMARI BESI 205", key: "205", price: 4000000, img: lemari205Aa331 },
+      { name: "LEMARI BESI 206", key: "206", price: 4000000, img: lemari206Aa333 },
+    ],
+  },
+  {
+    id: 99,
+    nama: "LEMARI LOCKER",
+    spesifikasi: "Lemari locker besi dengan beberapa pilihan jumlah locker.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 3000000,
+    img: lemari220Aal306,
+    variants: [
+      { name: "LEMARI 6 LOCKER 220", key: "220", price: 3000000, img: lemari220Aal306 },
+      { name: "LEMARI 9 LOCKER 221", key: "221", price: 3000000, img: lemari221Aal309 },
+      { name: "LEMARI 12 LOCKER 222", key: "222", price: 3250000, img: lemari219Aal106 },
+      { name: "LEMARI 15 LOCKER 223", key: "223", price: 3500000, img: lemari223Aal315 },
+      { name: "LEMARI 18 LOCKER 224", key: "224", price: 3750000, img: lemari224Aal318 },
+      { name: "LEMARI 24 LOCKER 225", key: "225", price: 4000000, img: lemari225Aal424 },
+    ],
+  },
+  {
+    id: 100,
+    nama: "KITCHEN SET, SHOE RACK, MEJA RIAS & MEJA TERAS",
+    spesifikasi: "Produk kitchen set dan kabinet sesuai daftar katalog.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 3750000,
+    img: lemari236Dapur335,
+    variants: [
+      { name: "KITCHEN 35 CABINET 236", key: "236", price: 3750000, img: lemari236Dapur335 },
+      { name: "KITCHEN 45 CABINET 237", key: "237", price: 3750000, img: lemari237Dapur345 },
+    ],
+  },
+  {
+    id: 101,
+    nama: "RAK SERBAGUNA, BUFFET & RANJANG",
+    spesifikasi: "Produk penyimpanan dan furnitur sesuai daftar katalog.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 5750000,
+    img: paketAA,
+    variants: [
+      { name: "BRANKAS 78", key: "275", price: 5750000, img: paketAA },
     ],
   },
   {
@@ -1329,28 +1423,45 @@ export const products = [
   },
   {
     id: 97,
-    nama: "Kursi Staff",
+    nama: "KURSI",
     spesifikasi:
-      "Kursi staff untuk kebutuhan kantor dan ruang kerja, dengan pilihan model ergonomis.",
+      "Kursi kantor dan kursi susun untuk kebutuhan kantor, sekolah, dan ruang kerja.",
     satuan: "Unit",
     category: "Furnitur",
-    price: 24750000,
-    img: kursiStaff128,
+    price: 325000,
+    img: kursi90Busa,
     variants: [
-      { name: "128 Kursi Kantor", price: 24750000, img: kursiStaff128 },
-      { name: "125 Kursi Kantor Hitam Merah Biru", price: 24750000, img: kursiStaff125 },
-      { name: "126 Kursi Hadap", price: 24750000, img: kursiStaff126 },
+      { name: "KURSI SUSUN BUSA", key: "90", price: 325000, img: kursi90Busa },
+      { name: "KURSI KANTOR 125", key: "125", price: 650000, img: kursi125 },
+      { name: "KURSI KANTOR 107", key: "107", price: 650000, img: kursi107 },
+      { name: "KURSI KANTOR 126", key: "126", price: 650000, img: kursi126 },
+      { name: "KURSI KANTOR 128", key: "128", price: 665000, img: kursi128 },
+      { name: "KURSI KANTOR 111", key: "111", price: 665000, img: kursi111 },
+      { name: "KURSI KANTOR 118", key: "118", price: 1175000, img: kursi118 },
+      { name: "KURSI KANTOR 119", key: "119", price: 1175000, img: kursi119 },
+      { name: "KURSI KANTOR 138", key: "138", price: 1175000, img: kursi138Hitam },
+      { name: "KURSI PIMPINAN M1", key: "135-kursi-pimpinan-m1", price: 3000000, img: paketFQ },
+      { name: "KURSI M30 PIMPINAN M2", key: "135-kursi-m30-pimpinan-m2", price: 3000000, img: paketFR },
+      { name: "KURSI KANTOR 130", key: "130", price: 3500000, img: paketFW },
     ],
   },
   {
     id: 95,
-    nama: "Meja Kantor",
+    nama: "Meja Siswa, Meja Kantor",
     spesifikasi:
       "Meja kantor dengan desain ergonomis dan bahan berkualitas tinggi, cocok untuk keperluan kerja di kantor atau sekolah.",
     satuan: "Unit",
     category: "Furnitur",
     price: 24750000,
     img: paketGC,
+    sortOrder: -1,
+    variants: [
+      { name: "71 Meja Pimpinan", key: "71-meja-pimpinan-1819", price: 24750000, img: mejaKantor71A },
+      { name: "71 Meja Pimpinan", key: "71-meja-pimpinan-a41", price: 24750000, img: mejaKantor71B },
+      { name: "66 Meja Kursi Siswa", price: 24750000, img: mejaKantor66 },
+      { name: "68 Meja Kursi Siswa", price: 24750000, img: mejaKantor68 },
+      { name: "67 Meja Kursi Siswa", price: 24750000, img: mejaKantor67 },
+    ],
   },
   //   satuan: "Unit",
   //   category: "Furnitur",
