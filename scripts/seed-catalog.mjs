@@ -127,6 +127,22 @@ for (const [index, product] of products.entries()) {
     if (variantError) throw variantError;
   }
 
+  const currentVariantKeys = (product.variants || []).map((variant) => variant.name);
+  const { data: existingVariants, error: existingVariantsError } = await supabase
+    .from("product_variants")
+    .select("id, legacy_key")
+    .eq("product_id", row.id);
+  if (existingVariantsError) throw existingVariantsError;
+  for (const existingVariant of existingVariants || []) {
+    if (!currentVariantKeys.includes(existingVariant.legacy_key)) {
+      const { error: deactivateError } = await supabase
+        .from("product_variants")
+        .update({ active: false })
+        .eq("id", existingVariant.id);
+      if (deactivateError) throw deactivateError;
+    }
+  }
+
   console.log(`Seeded ${index + 1}/${products.length}: ${product.nama}`);
 }
 

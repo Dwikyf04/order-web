@@ -133,10 +133,10 @@ export const products = [
     img: paketC,
     variants: [
       { name: "Kursi Tunggu AC-302 / Bandara 4", price: 23500000, img: paketC },
-      { name: "Paket Bandara C401 4 Seat", price: 25000000, img: kursiBandaraC401 },
-      { name: "Paket Bandara C301 3 Seat", price: 22500000, img: kursiBandaraC301 },
-      { name: "Paket Bandara W350 3 Seat", price: 24000000, img: kursiBandaraW350 },
-      { name: "Paket Bandara W450 4 Seat", price: 27500000, img: kursiBandaraW450 },
+      { name: "Kursi Bandara", price: 25000000, img: kursiBandaraC401 },
+      { name: "77 Kursi Bandara", price: 22500000, img: kursiBandaraC301 },
+      { name: "76 Kursi Bandara", price: 24000000, img: kursiBandaraW350 },
+      { name: "75 Kursi Bandara", price: 27500000, img: kursiBandaraW450 },
     ],
   },
   {
