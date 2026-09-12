@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import crypto from "node:crypto";
 import path from "node:path";
 import vm from "node:vm";
 import { createClient } from "@supabase/supabase-js";
@@ -38,6 +39,7 @@ async function uploadImage(supabase, bucket, relativePath, cache) {
 
   const filePath = path.resolve(root, relativePath);
   const file = await fs.readFile(filePath);
+  const version = crypto.createHash("sha1").update(file).digest("hex").slice(0, 12);
   const objectPath = relativePath.replaceAll("\\", "/");
   const { error: uploadError } = await supabase.storage
     .from(bucket)
@@ -45,8 +47,9 @@ async function uploadImage(supabase, bucket, relativePath, cache) {
 
   if (uploadError) throw uploadError;
   const { data } = supabase.storage.from(bucket).getPublicUrl(objectPath);
-  cache.set(relativePath, data.publicUrl);
-  return data.publicUrl;
+  const versionedUrl = `${data.publicUrl}?v=${version}`;
+  cache.set(relativePath, versionedUrl);
+  return versionedUrl;
 }
 
 function contentType(filePath) {
@@ -101,7 +104,7 @@ for (const [index, product] of products.entries()) {
         unit: product.satuan || "Unit",
         base_price: product.price,
         image_url: await uploadImage(supabase, bucket, product.img, imageCache),
-        is_featured: [90, 2, 92, 29, 93, 91, 3, 35, 94, 95].includes(product.id),
+        is_featured: [90, 2, 92, 29, 93, 91, 3, 35, 94, 95, 97].includes(product.id),
         sort_order: index,
       },
       { onConflict: "legacy_id" }

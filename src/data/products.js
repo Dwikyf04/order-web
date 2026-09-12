@@ -4,6 +4,9 @@ import kursiBandaraC401 from "../assets/products/kursi-bandara-c401.webp";
 import kursiBandaraC301 from "../assets/products/kursi-bandara-c301.webp";
 import kursiBandaraW350 from "../assets/products/kursi-bandara-w350.webp";
 import kursiBandaraW450 from "../assets/products/kursi-bandara-w450.webp";
+import kursiStaff128 from "../assets/products/kursi-staff-128.webp";
+import kursiStaff125 from "../assets/products/kursi-staff-125.webp";
+import kursiStaff126 from "../assets/products/kursi-staff-126.webp";
 import paketD from "../assets/products/kursi-c-401.webp";
 import paketE from "../assets/products/kursi-susun.webp";
 import paketF from "../assets/products/kursi-kc-525.webp";
@@ -125,15 +128,15 @@ export const products = [
   },
   {
     id: 3,
-    nama: "kursi bandara",
+    nama: "Kursi Bandara",
     spesifikasi: "",
     satuan: "Unit",
     category: "Furnitur",
     price: 23500000,
     img: paketC,
     variants: [
-      { name: "Kursi Tunggu AC-302 / Bandara 4", price: 23500000, img: paketC },
-      { name: "Kursi Bandara", price: 25000000, img: kursiBandaraC401 },
+      { name: "Kursi Tunggu AC Bandara", price: 23500000, img: paketC },
+      { name: "78 Kursi Bandara", price: 25000000, img: kursiBandaraC401 },
       { name: "77 Kursi Bandara", price: 22500000, img: kursiBandaraC301 },
       { name: "76 Kursi Bandara", price: 24000000, img: kursiBandaraW350 },
       { name: "75 Kursi Bandara", price: 27500000, img: kursiBandaraW450 },
@@ -1323,6 +1326,21 @@ export const products = [
     category: "Elektronik",
     price: 1500000,
     img: paketGB,
+  },
+  {
+    id: 97,
+    nama: "Kursi Staff",
+    spesifikasi:
+      "Kursi staff untuk kebutuhan kantor dan ruang kerja, dengan pilihan model ergonomis.",
+    satuan: "Unit",
+    category: "Furnitur",
+    price: 24750000,
+    img: kursiStaff128,
+    variants: [
+      { name: "128 Kursi Kantor", price: 24750000, img: kursiStaff128 },
+      { name: "125 Kursi Kantor Hitam Merah Biru", price: 24750000, img: kursiStaff125 },
+      { name: "126 Kursi Hadap", price: 24750000, img: kursiStaff126 },
+    ],
   },
   {
     id: 95,
