@@ -1,20 +1,37 @@
 // src/components/ProductCard.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+function variantKey(variant) {
+  return String(variant.id ?? variant.key ?? variant.name);
+}
+
+function cheapestVariant(variants) {
+  return variants.reduce(
+    (cheapest, variant) =>
+      Number(variant.price) < Number(cheapest.price) ? variant : cheapest,
+    variants[0]
+  );
+}
 
 export default function ProductCard({ product, onAddToCart, action }) {
   // State untuk Logic Toko
   const [qty, setQty] = useState(0);
-  const [selectedVariantId, setSelectedVariantId] = useState(product.variants?.[0]?.id || "");
+  const hasVariants = product.variants && product.variants.length > 0;
+  const defaultVariant = hasVariants ? cheapestVariant(product.variants) : null;
+  const defaultVariantId = defaultVariant ? variantKey(defaultVariant) : "";
+  const [selectedVariantId, setSelectedVariantId] = useState(defaultVariantId);
+
+  useEffect(() => {
+    setSelectedVariantId(defaultVariantId);
+    setQty(0);
+  }, [product.id, defaultVariantId]);
 
   // FITUR BARU: State untuk Modal Gambar
   const [isImageOpen, setIsImageOpen] = useState(false);
 
-  // Cek apakah produk memiliki varian?
-  const hasVariants = product.variants && product.variants.length > 0;
-
   // Tentukan harga yang ditampilkan (Varian vs Default)
   const selectedVariant = hasVariants
-    ? product.variants.find((variant) => variant.id === selectedVariantId) || product.variants[0]
+    ? product.variants.find((variant) => variantKey(variant) === selectedVariantId) || defaultVariant
     : null;
   const currentPrice = hasVariants
     ? selectedVariant.price
@@ -91,7 +108,7 @@ export default function ProductCard({ product, onAddToCart, action }) {
                 onChange={(e) => setSelectedVariantId(e.target.value)}
               >
                 {product.variants.map((variant) => (
-                  <option key={variant.id} value={variant.id}>
+                  <option key={variantKey(variant)} value={variantKey(variant)}>
                     {variant.name}
                   </option>
                 ))}

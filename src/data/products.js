@@ -1446,7 +1446,8 @@ export const products = [
     variants: [
       { name: "Meja + Kursi Murid", key: "67", price: 750000, img: mejaKantor67 },
       { name: "Meja + Kursi Murid", key: "66", price: 1150000, img: mejaKantor66 },
-      { name: "Meja Direktur", key: "71", price: 6000000, img: mejaKantor71A },
+      { name: "Meja Pimpinan 1", key: "71-pimpinan-1", price: 6000000, img: mejaKantor71A },
+      { name: "Meja Pimpinan 2", key: "71-pimpinan-2", price: 6000000, img: mejaKantor71B },
     ],
   },
   //   satuan: "Unit",
