@@ -54,6 +54,14 @@ import lemari192B3 from "../assets/products/lemari-192-b3.webp";
 import lemari159WbDalam from "../assets/products/lemari-159-wb-dalam.webp";
 import lemari237Dapur345 from "../assets/products/lemari-237-lemari-dapur-345.webp";
 import lemari236Dapur335 from "../assets/products/lemari-236-lemari-dapur-335.webp";
+import lemari192B3Jual from "../assets/products/lemari-192-b3-jual.webp";
+import lemari192B6Jual from "../assets/products/lemari-192-b6-jual.webp";
+import lemari192B19Jual from "../assets/products/lemari-192-b19-jual.webp";
+import lemari192B40Jual from "../assets/products/lemari-192-b40-jual.webp";
+import lemari193B6Jual from "../assets/products/lemari-193-b6-jual.webp";
+import lemari193B19Jual from "../assets/products/lemari-193-b19-jual.webp";
+import lemari194B42Jual from "../assets/products/lemari-194-b42-jual.webp";
+import lemari194B44Jual from "../assets/products/lemari-194-b44-jual.webp";
 import paketD from "../assets/products/kursi-c-401.webp";
 import paketE from "../assets/products/kursi-susun.webp";
 import paketF from "../assets/products/kursi-kc-525.webp";
@@ -1323,11 +1331,16 @@ export const products = [
     satuan: "Unit",
     category: "Furnitur",
     price: 2250000,
-    img: lemari192B19,
+    img: lemari192B3Jual,
     variants: [
-      { name: "192 LEMARI ARSIP B3/B6/B19/B40", key: "192", price: 2250000, img: lemari192B19 },
-      { name: "193 LEMARI ARSIP B19/B6", key: "193", price: 2250000, img: lemari193B19 },
-      { name: "194 LEMARI ARSIP B40/B42/B44", key: "194", price: 3250000, img: lemari194B42 },
+      { name: "192 LEMARI ARSIP B3", key: "192-b3", price: 2250000, img: lemari192B3Jual },
+      { name: "192 LEMARI ARSIP B6", key: "192-b6", price: 2250000, img: lemari192B6Jual },
+      { name: "192 LEMARI ARSIP B19", key: "192-b19", price: 2250000, img: lemari192B19Jual },
+      { name: "192 LEMARI ARSIP B40", key: "192-b40", price: 2250000, img: lemari192B40Jual },
+      { name: "193 LEMARI ARSIP B6", key: "193-b6", price: 2250000, img: lemari193B6Jual },
+      { name: "193 LEMARI ARSIP B19", key: "193-b19", price: 2250000, img: lemari193B19Jual },
+      { name: "194 LEMARI ARSIP B42", key: "194-b42", price: 3250000, img: lemari194B42Jual },
+      { name: "194 LEMARI ARSIP B44", key: "194-b44", price: 3250000, img: lemari194B44Jual },
     ],
   },
   {
