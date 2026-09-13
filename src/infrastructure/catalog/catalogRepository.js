@@ -1,5 +1,13 @@
 import { supabase } from "../../lib/supabaseClient";
 
+const featuredCatalogOrder = [
+  95, 93, 90,
+  97, 98, 2,
+  29, 99, 92,
+  91, 100, 35,
+  94, 101,
+];
+
 function mapProduct(row) {
   return {
     id: row.id,
@@ -36,7 +44,18 @@ export async function listCatalog({ category, featuredOnly = false } = {}) {
 
   const { data, error } = await query;
   if (error) throw error;
-  return (data || []).map(mapProduct);
+
+  const rows = data || [];
+  if (featuredOnly) {
+    const order = new Map(featuredCatalogOrder.map((legacyId, index) => [legacyId, index]));
+    rows.sort((a, b) => {
+      const aOrder = order.get(a.legacy_id) ?? Number.MAX_SAFE_INTEGER;
+      const bOrder = order.get(b.legacy_id) ?? Number.MAX_SAFE_INTEGER;
+      return aOrder - bOrder;
+    });
+  }
+
+  return rows.map(mapProduct);
 }
 
 export async function listCategories() {
