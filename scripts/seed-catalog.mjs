@@ -54,7 +54,13 @@ async function uploadImage(supabase, bucket, relativePath, cache) {
 
 function contentType(filePath) {
   const extension = path.extname(filePath).toLowerCase();
-  return extension === ".png" ? "image/png" : extension === ".jpeg" || extension === ".jpg" ? "image/jpeg" : "application/octet-stream";
+  return extension === ".png"
+    ? "image/png"
+    : extension === ".jpeg" || extension === ".jpg"
+      ? "image/jpeg"
+      : extension === ".webp"
+        ? "image/webp"
+        : "application/octet-stream";
 }
 
 const source = await fs.readFile(path.resolve(root, "src/data/products.js"), "utf8");
@@ -104,7 +110,8 @@ for (const [index, product] of products.entries()) {
         unit: product.satuan || "Unit",
         base_price: product.price,
         image_url: await uploadImage(supabase, bucket, product.img, imageCache),
-        is_featured: [90, 2, 92, 29, 93, 91, 3, 35, 94, 95, 97].includes(product.id),
+        active: true,
+        is_featured: [90, 2, 92, 29, 93, 91, 35, 94, 95, 97, 98, 99, 100, 101].includes(product.id),
         sort_order: product.sortOrder ?? index,
       },
       { onConflict: "legacy_id" }
@@ -123,6 +130,7 @@ for (const [index, product] of products.entries()) {
           name: variant.name,
           price: variant.price,
           image_url: await uploadImage(supabase, bucket, variant.img, imageCache),
+          active: true,
           sort_order: variantIndex,
         },
         { onConflict: "product_id,legacy_key" }
@@ -147,6 +155,23 @@ for (const [index, product] of products.entries()) {
   }
 
   console.log(`Seeded ${index + 1}/${products.length}: ${product.nama}`);
+}
+
+const { data: existingProducts, error: existingProductsError } = await supabase
+  .from("products")
+  .select("id, legacy_id")
+  .not("legacy_id", "is", null);
+if (existingProductsError) throw existingProductsError;
+
+for (const existingProduct of existingProducts || []) {
+  if (!ids.includes(existingProduct.legacy_id)) {
+    const { error: deactivateError } = await supabase
+      .from("products")
+      .update({ active: false })
+      .eq("id", existingProduct.id);
+    if (deactivateError) throw deactivateError;
+    console.log(`Deactivated stale catalog product legacy_id=${existingProduct.legacy_id}`);
+  }
 }
 
 console.log(`Catalog seed complete: ${products.length} products.`);
