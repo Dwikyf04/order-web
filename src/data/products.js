@@ -151,6 +151,8 @@ import paketFW from "../assets/products/kursi-kantor-h5.webp";
 import paketFX from "../assets/products/PCkomputeri5.webp";
 import paketFY from "../assets/products/Kipas.webp";
 import paketFZ from "../assets/products/proyektor.webp";
+import proyektorAcer from "../assets/products/proyektor-acer.jpg";
+import proyektorEpson from "../assets/products/proyektor-epson.webp";
 import paketGB from "../assets/products/speaker.webp";
 import paketGC from "../assets/products/meja.webp";
 
@@ -1316,12 +1318,19 @@ export const products = [
   {
     id: 92,
     nama: "Proyektor",
-    spesifikasi:
-      "V222FAK-BA785W/R7-5700U/Mem 16GB/HDD 1TB + SSD 512GB/NO VGA/WIN 11 HOME/OHS 2021/NO DVD/27 inch TOUCH/Black",
+    spesifikasi: "Proyektor untuk kebutuhan presentasi kantor dan sekolah.",
     satuan: "Unit",
     category: "Elektronik",
-    price: 24750000,
-    img: paketFZ,
+    price: 6750000,
+    img: proyektorEpson,
+    variants: [
+      { name: "X1123HP", key: "x1123hp", price: 7000000, img: proyektorAcer },
+      { name: "X1229", key: "x1229", price: 7500000, img: proyektorAcer },
+      { name: "0012SL", key: "0012sl", price: 6750000, img: proyektorEpson },
+      { name: "EB-E01", key: "eb-e01", price: 7500000, img: proyektorEpson },
+      { name: "EB-E600", key: "eb-e600", price: 8000000, img: proyektorEpson },
+      { name: "EB-X600", key: "eb-x600", price: 8500000, img: proyektorEpson },
+    ],
   },
   {
     id: 93,
