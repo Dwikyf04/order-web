@@ -1324,9 +1324,9 @@ export const products = [
     price: 6750000,
     img: proyektorEpson,
     variants: [
+      { name: "0012SL", key: "0012sl", price: 6750000, img: proyektorEpson },
       { name: "X1123HP", key: "x1123hp", price: 7000000, img: proyektorAcer },
       { name: "X1229", key: "x1229", price: 7500000, img: proyektorAcer },
-      { name: "0012SL", key: "0012sl", price: 6750000, img: proyektorEpson },
       { name: "EB-E01", key: "eb-e01", price: 7500000, img: proyektorEpson },
       { name: "EB-E600", key: "eb-e600", price: 8000000, img: proyektorEpson },
       { name: "EB-X600", key: "eb-x600", price: 8500000, img: proyektorEpson },
