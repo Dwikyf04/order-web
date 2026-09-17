@@ -11,7 +11,14 @@ function formatDate(value) {
   });
 }
 
-export default function OrderTable({ orders, onPaymentChange, onDeliveryChange, onSelect }) {
+export default function OrderTable({
+  orders,
+  onPaymentChange,
+  onDeliveryChange,
+  onSelect,
+  onDelete,
+  deletingOrderId,
+}) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
       <div className="overflow-x-auto">
@@ -24,6 +31,7 @@ export default function OrderTable({ orders, onPaymentChange, onDeliveryChange, 
               <th className="p-4 text-right">Total Harga</th>
               <th className="p-4 text-center">Pembayaran</th>
               <th className="p-4 text-center">Pengiriman</th>
+              <th className="p-4 text-center">Aksi</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -72,6 +80,16 @@ export default function OrderTable({ orders, onPaymentChange, onDeliveryChange, 
                     <option value="Belum Terkirim">Belum Terkirim</option>
                     <option value="Terkirim">Terkirim</option>
                   </select>
+                </td>
+                <td className="p-4 align-top text-center">
+                  <button
+                    type="button"
+                    onClick={() => onDelete(order)}
+                    disabled={deletingOrderId === order.id}
+                    className="rounded-lg bg-red-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-red-300"
+                  >
+                    {deletingOrderId === order.id ? "Menghapus..." : "Hapus"}
+                  </button>
                 </td>
               </tr>
             ))}

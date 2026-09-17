@@ -4,7 +4,7 @@ import Filters from "./Filters";
 import OrderTable from "./OrderTable";
 import OrderDetailModal from "./OrderDetailModal";
 import { exportOrdersToExcel } from "../../application/orders/exportOrders";
-import { listOrders, updateOrderStatus } from "../../infrastructure/orders/orderRepository";
+import { deleteOrder, listOrders, updateOrderStatus } from "../../infrastructure/orders/orderRepository";
 import { signOut } from "../../infrastructure/auth/authRepository";
 import CatalogAdmin from "./CatalogAdmin";
 
@@ -17,6 +17,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [actionError, setActionError] = useState("");
+  const [deletingOrderId, setDeletingOrderId] = useState(null);
   const [activeSection, setActiveSection] = useState("orders");
   const navigate = useNavigate();
 
@@ -71,6 +72,25 @@ export default function AdminDashboard() {
     }
   }
 
+  async function handleDeleteOrder(order) {
+    const confirmed = window.confirm(
+      `Hapus riwayat pesanan ${order.order_code}? Data pesanan dan detail barangnya akan dihapus permanen.`,
+    );
+    if (!confirmed) return;
+
+    setActionError("");
+    setDeletingOrderId(order.id);
+    try {
+      await deleteOrder(order.id);
+      setOrders((current) => current.filter((item) => item.id !== order.id));
+      setSelectedOrder((current) => current?.id === order.id ? null : current);
+    } catch (error) {
+      setActionError(error.message || "Gagal menghapus riwayat pesanan.");
+    } finally {
+      setDeletingOrderId(null);
+    }
+  }
+
   async function handleLogout() {
     await signOut();
     navigate("/login");
@@ -109,6 +129,8 @@ export default function AdminDashboard() {
               onSelect={setSelectedOrder}
               onPaymentChange={(id, value) => changeStatus(id, "payment_status", value)}
               onDeliveryChange={(id, value) => changeStatus(id, "delivery_status", value)}
+              onDelete={handleDeleteOrder}
+              deletingOrderId={deletingOrderId}
             />
           )}
         </>}

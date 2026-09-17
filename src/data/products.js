@@ -62,6 +62,7 @@ import lemari193B6Jual from "../assets/products/lemari-193-b6-jual.webp";
 import lemari193B19Jual from "../assets/products/lemari-193-b19-jual.webp";
 import lemari194B42Jual from "../assets/products/lemari-194-b42-jual.webp";
 import lemari194B44Jual from "../assets/products/lemari-194-b44-jual.webp";
+import lemari222LockerJual from "../assets/products/lemari-222-locker-jual.png";
 import paketD from "../assets/products/kursi-c-401.webp";
 import paketE from "../assets/products/kursi-susun.webp";
 import paketF from "../assets/products/kursi-kc-525.webp";
@@ -1342,14 +1343,14 @@ export const products = [
     price: 2250000,
     img: lemari192B3Jual,
     variants: [
-      { name: "192 LEMARI ARSIP B3", key: "192-b3", price: 2250000, img: lemari192B3Jual },
-      { name: "192 LEMARI ARSIP B6", key: "192-b6", price: 2250000, img: lemari192B6Jual },
-      { name: "192 LEMARI ARSIP B19", key: "192-b19", price: 2250000, img: lemari192B19Jual },
-      { name: "192 LEMARI ARSIP B40", key: "192-b40", price: 2250000, img: lemari192B40Jual },
+      { name: "192 LEMARI ARSIP B3", key: "192-b3", price: 2500000, img: lemari192B3Jual },
+      { name: "192 LEMARI ARSIP B6", key: "192-b6", price: 2500000, img: lemari192B6Jual },
+      { name: "192 LEMARI ARSIP B19", key: "192-b19", price: 2500000, img: lemari192B19Jual },
+      { name: "192 LEMARI ARSIP B40", key: "192-b40", price: 2500000, img: lemari192B40Jual },
       { name: "193 LEMARI ARSIP B6", key: "193-b6", price: 2250000, img: lemari193B6Jual },
       { name: "193 LEMARI ARSIP B19", key: "193-b19", price: 2250000, img: lemari193B19Jual },
-      { name: "194 LEMARI ARSIP B42", key: "194-b42", price: 3250000, img: lemari194B42Jual },
-      { name: "194 LEMARI ARSIP B44", key: "194-b44", price: 3250000, img: lemari194B44Jual },
+      { name: "194 LEMARI ARSIP B42", key: "194-b42", price: 2750000, img: lemari194B42Jual },
+      { name: "194 LEMARI ARSIP B44", key: "194-b44", price: 2250000, img: lemari194B44Jual },
     ],
   },
   {
@@ -1387,7 +1388,7 @@ export const products = [
     variants: [
       { name: "220 LEMARI LOCKER AAL-306", key: "220", price: 3000000, img: lemari220Aal306 },
       { name: "221 LEMARI LOCKER AAL-309", key: "221", price: 3250000, img: lemari221Aal309 },
-      { name: "222 LEMARI LOCKER AAL-312", key: "222", price: 3500000, img: lemari219Aal106 },
+      { name: "222 LEMARI LOCKER AAL-312", key: "222", price: 3500000, img: lemari222LockerJual },
       { name: "223 LEMARI LOCKER AAL-315", key: "223", price: 3750000, img: lemari223Aal315 },
       { name: "224 LEMARI LOCKER AAL-318", key: "224", price: 4000000, img: lemari224Aal318 },
       { name: "225 LEMARI LOCKER AAL-424", key: "225", price: 4500000, img: lemari225Aal424 },

@@ -36,3 +36,11 @@ export async function updateOrderStatus(orderId, status) {
   if (error) throw error;
   return data;
 }
+
+export async function deleteOrder(orderId) {
+  const { error } = await supabase.rpc("delete_order", {
+    p_order_id: orderId,
+  });
+
+  if (error) throw error;
+}
