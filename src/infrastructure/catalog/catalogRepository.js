@@ -23,6 +23,7 @@ function mapProduct(row) {
       .sort((a, b) => a.sort_order - b.sort_order)
       .map((variant) => ({
       id: variant.id,
+      key: variant.legacy_key,
       name: variant.name,
       price: Number(variant.price),
       img: variant.image_url,

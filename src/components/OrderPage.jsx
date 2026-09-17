@@ -35,14 +35,14 @@ export default function OrderPage() {
   function handleProductAdd(productToAdd, quantity = 1) {
     setCart((prevCart) => {
       const existingProduct = prevCart.find(
-        (item) => item.id === productToAdd.id
+        (item) => item.id === productToAdd.id,
       );
 
       if (existingProduct) {
         return prevCart.map((item) =>
           item.id === productToAdd.id
             ? { ...item, qty: item.qty + quantity }
-            : item
+            : item,
         );
       } else {
         return [...prevCart, { ...productToAdd, qty: quantity }];
@@ -50,7 +50,7 @@ export default function OrderPage() {
     });
 
     toast.success(
-      `${quantity} ${productToAdd.satuan || "item"} masuk keranjang`
+      `${quantity} ${productToAdd.satuan || "item"} masuk keranjang`,
     );
   }
 
@@ -59,8 +59,8 @@ export default function OrderPage() {
     if (newQty < 1) return;
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === productId ? { ...item, qty: newQty } : item
-      )
+        item.id === productId ? { ...item, qty: newQty } : item,
+      ),
     );
   }
 
@@ -112,7 +112,13 @@ export default function OrderPage() {
 
       // 4. Jika sukses simpan DB, baru buat PDF
       const { default: generatePDF } = await import("../utils/generatePDF");
-      generatePDF(schoolData, cart, order.total_price, order.order_code, siteConfig);
+      generatePDF(
+        schoolData,
+        cart,
+        order.total_price,
+        order.order_code,
+        siteConfig,
+      );
 
       // 5. Sukses
       toast.success("Pesanan Berhasil! Data tersimpan & PDF diunduh.", {
@@ -193,7 +199,7 @@ export default function OrderPage() {
                 <button
                   key={cat}
                   onClick={() => setCategory(cat)}
-                    className={`text-sm px-3 py-1 rounded-full transition whitespace-nowrap shrink-0 ${
+                  className={`text-sm px-3 py-1 rounded-full transition whitespace-nowrap shrink-0 ${
                     category === cat
                       ? "bg-blue-600 text-white"
                       : "bg-gray-100 hover:bg-gray-200 text-gray-600"

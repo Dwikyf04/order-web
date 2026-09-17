@@ -5,6 +5,11 @@ function variantKey(variant) {
   return String(variant.id ?? variant.key ?? variant.name);
 }
 
+function isUuid(value) {
+  return typeof value === "string" &&
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+}
+
 function cheapestVariant(variants) {
   return variants.reduce(
     (cheapest, variant) =>
@@ -48,7 +53,8 @@ export default function ProductCard({ product, onAddToCart, action }) {
           ...product,
           id: `${product.id}-${variant.id}`,
           catalogId: product.id,
-          variantKey: variant.name,
+          variantId: isUuid(variant.id) ? variant.id : null,
+          variantKey: variant.key ?? variant.name,
           nama: `${product.nama} (${variant.name})`, // Nama Lengkap
           price: variant.price, // Harga Varian
         };
